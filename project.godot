@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="Brackeys Feb 2026"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://cchgj2pvut2k3"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://cn73bwnly67ux"
 
 [dotnet]
 
-project/assembly_name="New Game Project"
+project/assembly_name="BrackeysFeb2026"
 
 [physics]
 
@@ -25,5 +30,3 @@ project/assembly_name="New Game Project"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
