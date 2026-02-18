@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dqc07htn3j5fi"]
+
+[resource]
+resource_name = "Tiles"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.847474, 0.84747463, 0.84747416, 1)
+roughness = 0.35
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

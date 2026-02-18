@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cqqfiopkvnubv"]
+
+[resource]
+resource_name = "Gaps"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.5211406, 0.52114064, 0.52114046, 1)
+metallic_specular = 0.35
+roughness = 0.07
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

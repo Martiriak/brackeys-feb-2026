@@ -1,0 +1,77 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://mcyqa28nnoaf"
+path="res://.godot/imported/CRT_TV.fbx-008278392c563bb0970a4285b97507d6.scn"
+
+[deps]
+
+source_file="res://assets/Room_Hub/CRT_Television/CRT_TV.fbx"
+dest_files=["res://.godot/imported/CRT_TV.fbx-008278392c563bb0970a4285b97507d6.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Back": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Back.tres",
+"use_external/path": "uid://dsr2ps2ik6w5e"
+},
+"Cage": {
+"use_external/enabled": true,
+"use_external/fallback_path": "",
+"use_external/path": ""
+},
+"Chip": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Chip.tres",
+"use_external/path": "uid://cshybebhih3p"
+},
+"Circuit_Board": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Circuit_Board.tres",
+"use_external/path": "uid://bciaiqroy21jn"
+},
+"Display": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Display.tres",
+"use_external/path": "uid://borgka02k53kq"
+},
+"Tube": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Tube.tres",
+"use_external/path": "uid://dky1lqb2mpb0f"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

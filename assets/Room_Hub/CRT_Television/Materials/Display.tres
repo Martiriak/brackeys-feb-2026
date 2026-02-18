@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://borgka02k53kq"]
+
+[ext_resource type="Texture2D" uid="uid://d2fqgeijtgne8" path="res://assets/Room_Hub/CRT_Television/Textures/diffuse_television.png" id="1_ccahi"]
+
+[resource]
+resource_name = "Display"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ccahi")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
