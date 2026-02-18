@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b8e8o08gbt1a8"]
+
+[ext_resource type="Script" uid="uid://d4b5drx5lyymv" path="res://scripts/tv-hub/tv.gd" id="1_wh3ns"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wh3ns"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a2bd8"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="Tv" type="Node3D" unique_id=1832031211]
+script = ExtResource("1_wh3ns")
+metadata/_custom_type_script = "uid://d4b5drx5lyymv"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=243405672]
+mesh = SubResource("BoxMesh_wh3ns")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2075459143]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0.501)
+texture = SubResource("ViewportTexture_a2bd8")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=621390382]
+
+[node name="CenterContainer" type="CenterContainer" parent="Sprite3D/SubViewport" unique_id=578641924]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport/CenterContainer" unique_id=1372105408]
+layout_mode = 2
+text = "Puzzo
+"
