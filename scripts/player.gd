@@ -1,25 +1,37 @@
 extends CharacterBody3D
 
+#Currently highlighted object under the crosshair.
 var ActiveObj = null
+#Object currently held by the player.
 var pickObj = null
+#Stores original scale of picked object (currently unused).
 var original_object_scale : Vector3
+#Used to restore physics collision after placing the object.
 var original_collision_layer : int
 var original_collision_mask : int
+#Whether the current held object can be placed at its position.
 var can_place :bool = false
 
+#Initial player transform, used for reset if player falls.
 var init_pos :Vector3
 var init_rotation : Vector3
 
+#Bounding data used to calculate safe placement and collision checks.
 var aabb = null
 var max_horizontal_area = 0.0
 
-
+#Camera pivot for vertical look.
 @onready var head = $head
+#Marker where held objects are positioned.
 @onready var placePos = $head/Camera3D/Placer
+#Player collision nodes.
 @onready var collision_body = $body
 @onready var collision_foot = $foot
+#Current movement speed (walk/run).
 @onready var SPEED = walk_speed
+#Reserved for placement ray (not used directly here).
 @onready var placeRay :RayCast3D
+#Preview materials used to indicate valid/invalid placement.
 @onready var can_place_material = StandardMaterial3D.new()
 @onready var cannot_place_material = StandardMaterial3D.new()
 
@@ -30,15 +42,15 @@ var max_horizontal_area = 0.0
 @export var max_held_size : float = 1.0
 ## Rotation speed of the held item (Fast rotate)
 @export var fast_rotate_speed : float = 3.0
-## Precise rotation angle
+## Snap rotation angle for precise rotation.
 @export var snap_angle_degrees : float = 15.0
 ## Transparency of held item (0 is completely opaque and 1 is completely transparent)
 @export_range(0, 0.9) var pickObj_transparency :float = 0.5
-## The duration of physics processing after the object is placed
+## Delay before physics sleeping is re-enabled after placement.
 @export var sleep_delay : float = 0.5
 
 @export_category("Player Movement Settings")
-## Jump vlocity
+## Jump velocity
 @export var JUMP_VELOCITY: float = 4.0
 ## Run speed
 @export var run_speed : float = 8.0
@@ -60,7 +72,9 @@ var outlineCam : Camera3D
 
 
 func _ready() -> void:
+	#Mouse capture
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#player reset position
 	init_pos = self.global_position
 	init_rotation = self.global_rotation
 		
@@ -79,7 +93,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	
+	#Held Object logic
 	if pickObj != null:
 		var space_state = get_world_3d().direct_space_state
 		
@@ -166,12 +180,11 @@ func _physics_process(delta: float) -> void:
 		pickObj.global_rotation.x = 0
 		pickObj.global_rotation.z = 0
 
+	#Player Movement
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -182,6 +195,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()	
+	
+	#shows UI Prompt and recursively toggles rendering layer for Meshes (for outline)
 	if $head/Camera3D/lookat.is_colliding():
 		var collider = $head/Camera3D/lookat.get_collider()
 		if ActiveObj != collider:
@@ -191,13 +206,13 @@ func _physics_process(delta: float) -> void:
 			if ActiveObj is PickableObject:
 				get_node(ObjNameUI).get_node("ObjName").text = '“E" to pick up: ' + ActiveObj.name
 				set_all_meshes_layer(ActiveObj, 20, true)
-
 	else:
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
 			ActiveObj = null
 			get_node(ObjNameUI).get_node("ObjName").text = ""
-		
+	
+	#reset player if falls
 	if self.global_position.y <= -10:
 		self.global_position = init_pos
 		self.global_rotation = init_rotation
@@ -211,8 +226,12 @@ func _input(event: InputEvent) -> void:
 
 	if Input.is_action_just_pressed("pick"):
 		if pickObj == null:
+			#Disable collisions, freezes physics, reparent pickedobj to placePos
+			#reset transform and computes bounding box for replacement checks
 			PickObj()
 		else:
+			#restore collision and reparents to world root preserving rotation
+			#restore physics after sleep clearing preview materials
 			RemoveObj()
 
 	if Input.is_action_pressed("run") and self.is_on_floor():
