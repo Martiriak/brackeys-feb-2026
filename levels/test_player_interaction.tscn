@@ -57,7 +57,7 @@ OutlineCamSceneParent = NodePath("../UI")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0380564, 2, -0.4078343)
 
 [node name="PickableCube2" parent="." unique_id=1569757743 instance=ExtResource("4_8oiou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.853358, 2.0000002, 2.1746786)
+transform = Transform3D(1, 0, 0, 0, -0.07487428, -0.997193, 0, 0.997193, -0.07487428, 3.853358, 2.0000002, 2.1746786)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2086991417]
 environment = SubResource("Environment_qdncq")

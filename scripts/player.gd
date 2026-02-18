@@ -114,7 +114,8 @@ func _physics_process(delta: float) -> void:
 			motion_query.transform = Transform3D(Basis(), safe_origin)
 			motion_query.motion = motion
 			motion_query.exclude = [self, pickObj]
-
+			
+			#prevents clipping
 			var result = space_state.cast_motion(motion_query)
 		
 
@@ -135,7 +136,8 @@ func _physics_process(delta: float) -> void:
 		var ray_query = PhysicsRayQueryParameters3D.create(adjusted_start_point, ray_end)
 		ray_query.exclude = [self, pickObj]
 		var ray_result = space_state.intersect_ray(ray_query)
-
+		
+		#Checks ground collision via raycast
 		if ray_result:
 			pickObj.visible = true
 			var ground_collider = ray_result.collider
@@ -151,6 +153,7 @@ func _physics_process(delta: float) -> void:
 			shape_query.transform = potential_transform
 			shape_query.exclude = [self, pickObj, ground_collider]
 			var overlaps = space_state.intersect_shape(shape_query)
+			#Tests shape overlap to validate placement
 			if overlaps.is_empty():
 				can_place = true
 				pickObj.get_node("MeshInstance3D").set_surface_override_material(0, can_place_material)
@@ -245,6 +248,12 @@ func find_node_in_group(node, group_name):
 			return child
 	return null
 
+func InteractObj():
+	#we use the same collider for pickup
+	var interact_collider = $head/Camera3D/lookat.get_collider() as InteractableObject
+	#if interact_collider:
+		
+
 func PickObj():
 	var pickCollider = $head/Camera3D/lookat.get_collider()
 	if pickCollider is PickableObject and pickCollider != null:
@@ -320,8 +329,8 @@ func RemoveObj():
 			mesh_instance.set_transparency(0)
 		
 		pickObj = null
-		
-		
+
+
 # Activate object handling after object placement
 func _wait_and_resume_sleep(Obj):
 	var timer = Timer.new()
@@ -333,10 +342,8 @@ func _wait_and_resume_sleep(Obj):
 	await timer.timeout
 	Obj.can_sleep = true
 
-
 func set_all_meshes_layer(parent_node: Node, layer_number: int, value: bool) -> void:
 	if parent_node != null:
 		var mesh_nodes: Array[Node] = parent_node.find_children("*", "MeshInstance3D", true)
 		for mesh in mesh_nodes:
 			mesh.set_layer_mask_value(layer_number, value)
-			
