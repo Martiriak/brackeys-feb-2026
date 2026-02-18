@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dudghce2a50ug"]
 
-[ext_resource type="Script" uid="uid://w6uhwcfwmt2w" path="res://scripts/objects/PickableObject.gd" id="1_4xp6x"]
+[ext_resource type="Script" uid="uid://w6uhwcfwmt2w" path="res://scripts/objects/pickable_object.gd" id="1_4xp6x"]
 [ext_resource type="Material" uid="uid://c2c1oltp7ms0q" path="res://assets/materials/pickable_material.tres" id="2_b0myv"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4xp6x"]
