@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cte6vjjo7wkcq"]
+
+[ext_resource type="Script" uid="uid://w6uhwcfwmt2w" path="res://scripts/objects/PickableObject.gd" id="1_w8rt7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8rt7"]
+albedo_color = Color(1, 0.50980395, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhgmd"]
+material = SubResource("StandardMaterial3D_w8rt7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8rt7"]
+
+[node name="PickableCube" type="RigidBody3D" unique_id=1569110791]
+continuous_cd = true
+script = ExtResource("1_w8rt7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1253258714]
+mesh = SubResource("BoxMesh_lhgmd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1415558332]
+shape = SubResource("BoxShape3D_w8rt7")

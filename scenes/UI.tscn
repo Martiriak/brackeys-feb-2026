@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://dx0qjbubxt7y8"]
+
+[ext_resource type="Script" uid="uid://cuj5vwhux7g37" path="res://scripts/ui/pause.gd" id="1_qui0h"]
+[ext_resource type="Script" uid="uid://dqw4f6c07j4yu" path="res://scripts/ui/quit.gd" id="2_vrfts"]
+[ext_resource type="Script" uid="uid://bp7r73hk1escf" path="res://scripts/ui/outline_control.gd" id="3_0mc3e"]
+[ext_resource type="Shader" uid="uid://bbvnbh1rpr5fy" path="res://assets/shaders/outline.gdshader" id="4_2n5f6"]
+
+[sub_resource type="SystemFont" id="SystemFont_mioa3"]
+font_names = PackedStringArray("Apotek")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_jp5lf"]
+font_names = PackedStringArray("Apotek")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_db48e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3n6t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j48j4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjrpd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fq3yi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adtfk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fte3j"]
+shader = ExtResource("4_2n5f6")
+shader_parameter/width = 3.0000001425
+shader_parameter/color = Color(0, 0.83733344, 0.07483681, 1)
+
+[node name="2Dlayers" type="CanvasLayer" unique_id=1635865898]
+
+[node name="AimPoint" type="Control" parent="." unique_id=776198358]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="AimPoint" unique_id=1616982030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(4.5, 4.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="ObjName" type="Label" parent="AimPoint" unique_id=281799890]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = 17.0
+offset_right = 127.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(83, 23)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="pause" type="Control" parent="." unique_id=1914697835]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 8.0
+offset_bottom = 16.0
+script = ExtResource("1_qui0h")
+
+[node name="PauseUI" type="SubViewportContainer" parent="pause" unique_id=1459151882]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stretch = true
+
+[node name="PauseUI" type="SubViewport" parent="pause/PauseUI" unique_id=1974312951]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="MenuBar" type="Control" parent="pause/PauseUI/PauseUI" unique_id=914979958]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -312.0
+offset_right = 544.0
+grow_vertical = 0
+
+[node name="GamePause" type="Label" parent="pause/PauseUI/PauseUI/MenuBar" unique_id=1634153208]
+layout_mode = 0
+offset_left = 43.0
+offset_right = 456.0
+offset_bottom = 88.0
+theme_override_fonts/font = SubResource("SystemFont_mioa3")
+theme_override_font_sizes/font_size = 73
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RESUME" type="Button" parent="pause/PauseUI/PauseUI/MenuBar" unique_id=1802347812]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 84.0
+offset_right = 342.0
+offset_bottom = 163.0
+size_flags_horizontal = 4
+focus_mode = 1
+theme_override_fonts/font = SubResource("SystemFont_jp5lf")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_db48e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o3n6t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j48j4")
+text = "RESUME"
+alignment = 0
+
+[node name="QUIT" type="Button" parent="pause/PauseUI/PauseUI/MenuBar" unique_id=1678573435]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 160.0
+offset_right = 227.0
+offset_bottom = 239.0
+focus_mode = 1
+theme_override_fonts/font = SubResource("SystemFont_jp5lf")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tjrpd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fq3yi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_adtfk")
+text = "QUIT"
+alignment = 0
+script = ExtResource("2_vrfts")
+
+[node name="OutlinerControl" type="Control" parent="." unique_id=1467316214]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_0mc3e")
+metadata/_edit_lock_ = true
+
+[node name="OutlineContainer" type="SubViewportContainer" parent="OutlinerControl" unique_id=227043773]
+material = SubResource("ShaderMaterial_fte3j")
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 720.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="OutlinerControl/OutlineContainer" unique_id=1288204016]
+transparent_bg = true
+handle_input_locally = false
+debug_draw = 1
+size = Vector2i(1080, 720)
+render_target_update_mode = 4
+
+[node name="OutlineCam" type="Camera3D" parent="OutlinerControl/OutlineContainer/SubViewport" unique_id=977043825]
+cull_mask = 524288
+
+[connection signal="pressed" from="pause/PauseUI/PauseUI/MenuBar/RESUME" to="pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="pause/PauseUI/PauseUI/MenuBar/QUIT" to="pause" method="_on_quit_pressed"]
+[connection signal="pressed" from="pause/PauseUI/PauseUI/MenuBar/QUIT" to="pause/PauseUI/PauseUI/MenuBar/QUIT" method="_on_pressed"]

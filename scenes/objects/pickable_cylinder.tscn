@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dudghce2a50ug"]
+
+[ext_resource type="Script" uid="uid://w6uhwcfwmt2w" path="res://scripts/objects/PickableObject.gd" id="1_4xp6x"]
+[ext_resource type="Material" uid="uid://c2c1oltp7ms0q" path="res://assets/materials/pickable_material.tres" id="2_b0myv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4xp6x"]
+material = ExtResource("2_b0myv")
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v86fb"]
+height = 1.0
+
+[node name="PickableCube" type="RigidBody3D" unique_id=1569110791]
+continuous_cd = true
+script = ExtResource("1_4xp6x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1253258714]
+mesh = SubResource("CylinderMesh_4xp6x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1415558332]
+shape = SubResource("CylinderShape3D_v86fb")
