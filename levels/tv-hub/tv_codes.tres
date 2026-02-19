@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TvCodes" format=3 uid="uid://d2v7gfi0x57ic"]
+
+[ext_resource type="Script" uid="uid://bqda8k38qg0so" path="res://scripts/tv-hub/tv_codes.gd" id="1_ph3wx"]
+
+[resource]
+script = ExtResource("1_ph3wx")
+metadata/_custom_type_script = "uid://bqda8k38qg0so"

@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "Back": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Back.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Materials/Back.tres",
 "use_external/path": "uid://dsr2ps2ik6w5e"
 },
 "Cage": {
@@ -51,22 +51,22 @@ _subresources={
 },
 "Chip": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Chip.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Materials/Chip.tres",
 "use_external/path": "uid://cshybebhih3p"
 },
 "Circuit_Board": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Circuit_Board.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Materials/Circuit_Board.tres",
 "use_external/path": "uid://bciaiqroy21jn"
 },
 "Display": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Display.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Materials/Display.tres",
 "use_external/path": "uid://borgka02k53kq"
 },
 "Tube": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Tube.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/CRT_Television/Materials/Tube.tres",
 "use_external/path": "uid://dky1lqb2mpb0f"
 }
 }

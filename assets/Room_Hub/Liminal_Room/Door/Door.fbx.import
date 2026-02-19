@@ -41,12 +41,12 @@ _subresources={
 "materials": {
 "Door": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/Liminal_Room/Door/Door.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/Liminal_Room/Door/Materials/Door.tres",
 "use_external/path": "uid://bckkc0xvrxkaa"
 },
 "Handle": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Room_Hub/Liminal_Room/Door/Handle.tres",
+"use_external/fallback_path": "res://assets/Room_Hub/Liminal_Room/Door/Materials/Handle.tres",
 "use_external/path": "uid://ekhgahcaonep"
 }
 }

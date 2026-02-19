@@ -1,6 +1,9 @@
-class_name InteractableObject
-#@TODO INTERACTABLE
-extends RigidBody3D
+@abstract class_name InteractableObject
+extends Node3D
+
+#Abstract class for all intreactable objects, implement the on_interaction function
+@abstract func on_interaction(p: Player)
+
 
 var init_pos : Vector3
 var init_rotate : Vector3
