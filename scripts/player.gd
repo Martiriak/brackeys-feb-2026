@@ -210,6 +210,7 @@ func _physics_process(delta: float) -> void:
 				get_node(ObjNameUI).get_node("ObjName").text = '“E" to pick up: ' + ActiveObj.name
 				set_all_meshes_layer(ActiveObj, 20, true)
 			elif ActiveObj is InteractableObject:
+				set_all_meshes_layer(ActiveObj, 20, true)
 				get_node(ObjNameUI).get_node("ObjName").text = '“E" to interact: ' + ActiveObj.name
 
 	else:
