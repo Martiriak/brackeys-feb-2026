@@ -202,7 +202,7 @@ func _physics_process(delta: float) -> void:
 	#shows UI Prompt and recursively toggles rendering layer for Meshes (for outline)
 	if $head/Camera3D/lookat.is_colliding():
 		var collider = $head/Camera3D/lookat.get_collider()
-		if ActiveObj != collider:
+		if ActiveObj != collider and !pickObj:
 			if ActiveObj != null:
 				set_all_meshes_layer(ActiveObj, 20, false)
 			ActiveObj = collider

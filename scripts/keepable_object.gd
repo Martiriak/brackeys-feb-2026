@@ -32,5 +32,5 @@ func body_exited(body: Node3D) -> void:
 		return
 	tv.keepable_object.erase(self)
 
-	get_node("MeshInstance3D/OutLiner").visible = true
+	get_node("MeshInstance3D/OutLiner").visible = false
 	pass
