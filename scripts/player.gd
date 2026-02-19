@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 #Currently highlighted object under the crosshair.
 var ActiveObj = null
@@ -209,6 +209,9 @@ func _physics_process(delta: float) -> void:
 			if ActiveObj is PickableObject:
 				get_node(ObjNameUI).get_node("ObjName").text = '“E" to pick up: ' + ActiveObj.name
 				set_all_meshes_layer(ActiveObj, 20, true)
+			elif ActiveObj is InteractableObject:
+				get_node(ObjNameUI).get_node("ObjName").text = '“E" to interact: ' + ActiveObj.name
+
 	else:
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
@@ -227,11 +230,13 @@ func _input(event: InputEvent) -> void:
 		var new_rotation_x = head.rotation.x + deg_to_rad(-event.relative.y) * 0.1
 		head.rotation.x = clamp(new_rotation_x, deg_to_rad(-90), deg_to_rad(90))
 
-	if Input.is_action_just_pressed("pick"):
+	if Input.is_action_just_pressed("interact"):
 		if pickObj == null:
 			#Disable collisions, freezes physics, reparent pickedobj to placePos
 			#reset transform and computes bounding box for replacement checks
 			PickObj()
+			#...or interact
+			InteractObj()
 		else:
 			#restore collision and reparents to world root preserving rotation
 			#restore physics after sleep clearing preview materials
@@ -250,8 +255,9 @@ func find_node_in_group(node, group_name):
 
 func InteractObj():
 	#we use the same collider for pickup
-	var interact_collider = $head/Camera3D/lookat.get_collider() as InteractableObject
-	#if interact_collider:
+	var interactable = $head/Camera3D/lookat.get_collider() as InteractableObject
+	if interactable:
+		interactable.on_interaction(self)
 		
 
 func PickObj():

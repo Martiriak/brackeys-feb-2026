@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk4udun610apy"
-path.s3tc="res://.godot/imported/row_boat_pixel_BaseColor.png-45f189195a120ee031f4dd7fe8cd0bfe.s3tc.ctex"
+path.s3tc="res://.godot/imported/row_boat_pixel_BaseColor.png-af3d4037bd0f1f31cb66612705753f60.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Boat/textures/row_boat_pixel_BaseColor.png"
-dest_files=["res://.godot/imported/row_boat_pixel_BaseColor.png-45f189195a120ee031f4dd7fe8cd0bfe.s3tc.ctex"]
+source_file="res://assets/Boat/Textures/row_boat_pixel_BaseColor.png"
+dest_files=["res://.godot/imported/row_boat_pixel_BaseColor.png-af3d4037bd0f1f31cb66612705753f60.s3tc.ctex"]
 
 [params]
 

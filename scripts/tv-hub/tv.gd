@@ -13,3 +13,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_code_accepted(code: String) -> void:
 	print(code)
 	# TODO: check if code corresponds to one that can change the scene.
+
+func on_interaction(p: Player):
+	print(p.name+" Interacted!")
