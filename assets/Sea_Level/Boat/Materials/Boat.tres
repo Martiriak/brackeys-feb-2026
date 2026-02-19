@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dnfjs38oqwdof"]
 
-[ext_resource type="Texture2D" uid="uid://bph6xc0gy5k5l" path="res://assets/Sea_Level/Boat/Textures/row_boat_dither_BaseColor.png" id="1_ek3nf"]
+[ext_resource type="Texture2D" uid="uid://bv4yl7mdfbn5b" path="res://assets/Sea_Level/Boat/Textures/row_boat_dither_BaseColor.png" id="1_ek3nf"]
 
 [resource]
 resource_name = "lambert1"
