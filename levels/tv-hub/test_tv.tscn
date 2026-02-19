@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bjulkaba8gcft"]
+
+[ext_resource type="PackedScene" uid="uid://dx0qjbubxt7y8" path="res://scenes/UI.tscn" id="1_1iy86"]
+[ext_resource type="PackedScene" uid="uid://b8e8o08gbt1a8" path="res://levels/tv-hub/tv.tscn" id="1_8mejo"]
+[ext_resource type="PackedScene" uid="uid://ddlafp7346rpu" path="res://scenes/player.tscn" id="2_kyqa2"]
+[ext_resource type="PackedScene" uid="uid://cte6vjjo7wkcq" path="res://scenes/objects/pickable_cube.tscn" id="3_j5csr"]
+[ext_resource type="PackedScene" uid="uid://dudghce2a50ug" path="res://scenes/objects/pickable_cylinder.tscn" id="4_fasyk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2gq08"]
+size = Vector3(20, 3, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibofi"]
+size = Vector3(20, 3, 20)
+
+[sub_resource type="PrismMesh" id="PrismMesh_6nm56"]
+left_to_right = 0.0
+size = Vector3(6, 2, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7p5up"]
+points = PackedVector3Array(-3, -1, -2.5, -3, 1, -2.5, 3, -1, -2.5, -3, -1, 2.5, -3, 1, 2.5, 3, -1, 2.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_llcap"]
+
+[sub_resource type="Sky" id="Sky_8oiou"]
+sky_material = SubResource("ProceduralSkyMaterial_llcap")
+
+[sub_resource type="Environment" id="Environment_mamkj"]
+background_mode = 2
+sky = SubResource("Sky_8oiou")
+
+[node name="TestTv" type="Node3D" unique_id=493658959]
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=551809984]
+mesh = SubResource("BoxMesh_2gq08")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=178032725]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=808058977]
+shape = SubResource("BoxShape3D_ibofi")
+
+[node name="Ramp" type="MeshInstance3D" parent="." unique_id=674741838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8201265, 2.5064802, -3.1519494)
+mesh = SubResource("PrismMesh_6nm56")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp" unique_id=1141821547]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp/StaticBody3D" unique_id=533316910]
+shape = SubResource("ConvexPolygonShape3D_7p5up")
+
+[node name="UI" parent="." unique_id=1635865898 instance=ExtResource("1_1iy86")]
+
+[node name="player" parent="." unique_id=375316983 instance=ExtResource("2_kyqa2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2537963, 0)
+ObjNameUISceneParent = NodePath("../UI")
+OutlineCamSceneParent = NodePath("../UI")
+
+[node name="PickableCube" parent="." unique_id=1569110791 instance=ExtResource("3_j5csr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0380564, 2, -0.4078343)
+
+[node name="PickableCube2" parent="." unique_id=1774517131 instance=ExtResource("4_fasyk")]
+transform = Transform3D(1, 0, 0, 0, -0.07487428, -0.997193, 0, 0.997193, -0.07487428, 3.853358, 2.0000002, 2.1746786)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1955605487]
+environment = SubResource("Environment_mamkj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1278435704]
+transform = Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 0, 4.2686343, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Tv" parent="." unique_id=1832031211 instance=ExtResource("1_8mejo")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.19877672, 2.9426596, -7.2027354)
