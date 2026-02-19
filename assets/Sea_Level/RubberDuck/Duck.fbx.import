@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drlumnddjwus1"
-path="res://.godot/imported/Boat.fbx-220e64a88b343338c8c65566c61bc993.scn"
+uid="uid://3sxw7045h1rv"
+path="res://.godot/imported/Duck.fbx-e2d15acba901f37b5e2cc9e17cbf7f48.scn"
 
 [deps]
 
-source_file="res://assets/Boat/Boat.fbx"
-dest_files=["res://.godot/imported/Boat.fbx-220e64a88b343338c8c65566c61bc993.scn"]
+source_file="res://assets/Sea_Level/RubberDuck/Duck.fbx"
+dest_files=["res://.godot/imported/Duck.fbx-e2d15acba901f37b5e2cc9e17cbf7f48.scn"]
 
 [params]
 
@@ -39,10 +39,20 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"lambert1": {
+"Duck_Eyes": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/Boat/Materials/Boat.tres",
-"use_external/path": "uid://dnfjs38oqwdof"
+"use_external/fallback_path": "res://assets/Sea_Level/RubberDuck/Materials/Duck_Eyes.tres",
+"use_external/path": "uid://cq3k57m47rkwh"
+},
+"Duck_Orange": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Sea_Level/RubberDuck/Materials/Duck_Orange.tres",
+"use_external/path": "uid://c0xlvqtxb1w5s"
+},
+"Duck_Yellow": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/Sea_Level/RubberDuck/Materials/Duck_Yellow.tres",
+"use_external/path": "uid://fnavey1slfu2"
 }
 }
 }

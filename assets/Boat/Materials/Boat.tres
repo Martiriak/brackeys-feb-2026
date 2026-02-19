@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnfjs38oqwdof"]
-
-[ext_resource type="Texture2D" uid="uid://bk4udun610apy" path="res://assets/Boat/textures/row_boat_pixel_BaseColor.png" id="1_ykuj0"]
-
-[resource]
-resource_name = "lambert1"
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_ykuj0")
-emission_enabled = true

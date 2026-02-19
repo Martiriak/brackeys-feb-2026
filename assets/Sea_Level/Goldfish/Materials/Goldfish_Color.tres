@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bl4iej52d2s44"]
+
+[ext_resource type="Texture2D" uid="uid://by0nbwr3pw0a4" path="res://assets/Sea_Level/Goldfish/textures/goldfish_diffuse.png" id="1_rjsu8"]
+
+[resource]
+resource_name = "Goldfish_Color"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_rjsu8")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
