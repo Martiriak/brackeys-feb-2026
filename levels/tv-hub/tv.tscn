@@ -34,4 +34,8 @@ render_target_update_mode = 4
 
 [node name="TvScreen" parent="Sprite3D/SubViewport" unique_id=26968705 instance=ExtResource("2_a2bd8")]
 
+[node name="TvCamera" type="Camera3D" parent="." unique_id=1225215199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.15)
+projection = 1
+
 [connection signal="code_accepted" from="Sprite3D/SubViewport/TvScreen" to="." method="_on_code_accepted"]
