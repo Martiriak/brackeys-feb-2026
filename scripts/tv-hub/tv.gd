@@ -11,6 +11,10 @@ extends InteractableObject
 
 var keepable_object = []
 
+
+var _locked_player: Player = null
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	sub_viewport.push_input(event)
 
@@ -19,12 +23,23 @@ func _on_code_accepted(code: String) -> void:
 	print(code)
 	# TODO: check if code corresponds to one that can change the scene.
 	# USE tv_codes!
+	if is_instance_valid(_locked_player):
+		_locked_player.unlock_play()
+		var children_cameras: Array[Node] = _locked_player.find_children("*", "Camera3D")
+		if not children_cameras.is_empty():
+			var camera := children_cameras[0] as Camera3D
+			if is_instance_valid(camera):
+				camera.current = false
+	_locked_player = null
+	tv_camera.current = false
 
 
 func on_interaction(p: Player) -> void:
+	_locked_player = p
+	p.lock_play()
 	var children_cameras: Array[Node] = p.find_children("*", "Camera3D")
 	if not children_cameras.is_empty():
 		var camera := children_cameras[0] as Camera3D
 		if is_instance_valid(camera):
 			camera.current = false
-			tv_camera.current = true
+	tv_camera.current = true

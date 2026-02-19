@@ -34,6 +34,8 @@ var max_horizontal_area = 0.0
 #Preview materials used to indicate valid/invalid placement.
 @onready var can_place_material = StandardMaterial3D.new()
 @onready var cannot_place_material = StandardMaterial3D.new()
+@onready var look_at := $head/Camera3D/lookat as RayCast3D
+
 
 
 
@@ -71,14 +73,28 @@ var ObjNameUI : NodePath
 var outlineCam : Camera3D
 
 
+var _locked: bool = false
+
+func lock_play() -> void:
+	if is_instance_valid(ActiveObj):
+		set_all_meshes_layer(ActiveObj, 20, false)
+		ActiveObj = null
+	get_node(ObjNameUI).get_node("ObjName").text = ""
+	_locked = true
+
+
+func unlock_play() -> void:
+	_locked = false
+
+
 func _ready() -> void:
 	#Mouse capture
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	#player reset position
 	init_pos = self.global_position
 	init_rotation = self.global_rotation
-		
-	$head/Camera3D/lookat.target_position.z = - lookat_distance
+	
+	look_at.target_position.z = - lookat_distance
 	
 	can_place_material.albedo_color = Color(0, 1, 0, 0.5)
 	cannot_place_material.albedo_color = Color(1, 0, 0, 0.5)
@@ -87,11 +103,16 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if _locked:
+		return
+	
 	if outlineCam != null:
 		outlineCam.transform = $head/Camera3D.global_transform
 
 
 func _physics_process(delta: float) -> void:
+	if _locked:
+		return
 	
 	#Held Object logic
 	if pickObj != null:
@@ -196,12 +217,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()	
+	
+	move_and_slide()
 	
 	#shows UI Prompt and recursively toggles rendering layer for Meshes (for outline)
-	if $head/Camera3D/lookat.is_colliding():
-		var collider = $head/Camera3D/lookat.get_collider()
+	if look_at.is_colliding():
+		var collider = look_at.get_collider()
 		if ActiveObj != collider and !pickObj:
 			if ActiveObj != null:
 				set_all_meshes_layer(ActiveObj, 20, false)
@@ -258,13 +279,13 @@ func find_node_in_group(node, group_name):
 
 func InteractObj():
 	#we use the same collider for pickup
-	var interactable = $head/Camera3D/lookat.get_collider() as InteractableObject
+	var interactable = look_at.get_collider() as InteractableObject
 	if interactable:
 		interactable.on_interaction(self)
 		
 
 func PickObj():
-	var pickCollider = $head/Camera3D/lookat.get_collider()
+	var pickCollider = look_at.get_collider()
 	if pickCollider is PickableObject and pickCollider != null:
 		pickObj = pickCollider
 		set_all_meshes_layer(ActiveObj, 20, false)
