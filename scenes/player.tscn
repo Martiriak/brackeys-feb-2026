@@ -12,6 +12,7 @@
 script = ExtResource("1_4flbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1044853861]
+visible = false
 mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="body" type="CollisionShape3D" parent="." unique_id=37569775]
