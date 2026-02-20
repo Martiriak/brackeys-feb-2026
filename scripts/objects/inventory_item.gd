@@ -3,6 +3,9 @@ extends InteractableObject
 
 @export var item_id : int = 0
 
+func get_string_to_print():
+	return '"E" to pick: ' + self.name
+
 func on_interaction(p: Player):
 	if not p.inventoryItemsDict.has(item_id):
 		p.inventoryItemsDict[item_id] = 0
