@@ -20,7 +20,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_code_accepted(code: String) -> void:
-	print(code)
+	if not tv_codes:
+		tv_screen.animate_shader(true)
+	
+	if not tv_codes.verify_code(code):
+		tv_screen.animate_shader(true)
+		return
+	
 	# TODO: check if code corresponds to one that can change the scene.
 	# USE tv_codes!
 	if is_instance_valid(_locked_player):

@@ -11,15 +11,41 @@ var symbols: Array[CompressedTexture2D] = [
 @export
 var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png")
 
+@onready var _shader_rect := $ColorRect as ColorRect
 @onready var _active_slot_indicator := $CenterContainer/ActiveSlotIndicator as Control
 
 var _slots: Array[TextureRect]
 var _symbols_for_slots: Array[int]
 var _active_slot: int = 0
 
+var _shader_timeline: float = 0.0
+var _flash_tween: Tween
+var _is_empty: bool = true
 
 signal code_accepted(code: String)
 
+func _animate_wrong_code(value: float):
+	_shader_rect.material.set_shader_parameter("pixel_progress", value)
+	_shader_rect.material.set_shader_parameter("color_progress", value)
+	_shader_timeline = value
+	
+	if _shader_timeline < 0.8 and not _is_empty:
+		reset_symbols()
+
+func animate_shader(is_code_correct : bool):
+	_shader_rect.material.set_shader_parameter("pixel_progress", 1.0)
+	_shader_rect.material.set_shader_parameter("color_progress", 1.0)
+	
+	if _flash_tween:
+		_flash_tween.kill()
+	
+	_flash_tween = create_tween()
+	
+	# 3. Animate it back to 0.0 over 0.5 seconds (Fade effect OFF)
+	_flash_tween.tween_method(_animate_wrong_code, 1.0, 0.0, 1.0) 
+	
+	_flash_tween.set_trans(Tween.TRANS_CUBIC)
+	_flash_tween.set_ease(Tween.EASE_IN)
 
 func get_current_code() -> String:
 	var result: String = ""
@@ -30,10 +56,10 @@ func get_current_code() -> String:
 
 func accept_current_code() -> void:
 	code_accepted.emit(get_current_code())
-	reset_symbols()
 
 
 func reset_symbols() -> void:
+	_is_empty = true
 	for index: int in range(0, _slots.size()):
 		_slots[index].texture = no_symbol
 		_symbols_for_slots[index] = -1
@@ -47,7 +73,8 @@ func set_active_slot(new_active_slot: int) -> void:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if GameManager.player_ref and GameManager.player_ref._locked:
+	var is_tween_playing = _flash_tween and _flash_tween.is_running()
+	if GameManager.player_ref and GameManager.player_ref._locked and not is_tween_playing:
 		if event.is_action_pressed("ui_accept"):
 			accept_current_code()
 		
@@ -60,11 +87,13 @@ func _gui_input(event: InputEvent) -> void:
 		elif event.is_action_pressed("ui_up"):
 			_symbols_for_slots[_active_slot] = (_symbols_for_slots[_active_slot] + 1) % symbols.size()
 			_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
+			_is_empty = false
 		elif event.is_action_pressed("ui_down"):
 			_symbols_for_slots[_active_slot] -= 1
 			if _symbols_for_slots[_active_slot] < 0:
 				_symbols_for_slots[_active_slot] = symbols.size() - 1
 			_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
+			_is_empty = false;
 
 
 func _ready() -> void:

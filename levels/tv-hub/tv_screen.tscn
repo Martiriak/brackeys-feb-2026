@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4ihp1u5ljl4o" path="res://scripts/tv-hub/tv_screen.gd" id="1_iin34"]
 [ext_resource type="Texture2D" uid="uid://cv0n4v3a54t38" path="res://icon.svg" id="2_4najk"]
+[ext_resource type="Shader" uid="uid://e1i6kv5tenpj" path="res://assets/shaders/tv_screen.gdshader" id="2_yeh6g"]
 
 [sub_resource type="Gradient" id="Gradient_yeh6g"]
 colors = PackedColorArray(0.36959997, 0.47114667, 0.56, 1, 0.423, 0.6774, 0.9, 1)
@@ -9,6 +10,12 @@ colors = PackedColorArray(0.36959997, 0.47114667, 0.56, 1, 0.423, 0.6774, 0.9, 1
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0b7xu"]
 gradient = SubResource("Gradient_yeh6g")
 height = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yeh6g"]
+shader = ExtResource("2_yeh6g")
+shader_parameter/tv_screen_size = Vector2(1152, 648)
+shader_parameter/target_res = 64.0
+shader_parameter/progress = 0.0
 
 [node name="TvScreen" type="Control" unique_id=26968705]
 layout_mode = 3
@@ -56,3 +63,13 @@ texture = ExtResource("2_4najk")
 [node name="ActiveSlotIndicator" type="TextureRect" parent="CenterContainer" unique_id=681166850]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_0b7xu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1357443485]
+material = SubResource("ShaderMaterial_yeh6g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
