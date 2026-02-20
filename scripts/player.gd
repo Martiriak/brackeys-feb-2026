@@ -72,6 +72,8 @@ var max_horizontal_area = 0.0
 var ObjNameUI : NodePath
 var outlineCam : Camera3D
 
+## TODO: do we need more items in the inventory?
+var bHasInventoryItem : bool = false
 
 var _locked: bool = false
 
@@ -241,7 +243,7 @@ func _physics_process(delta: float) -> void:
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
 			ActiveObj = null
-			get_node(ObjNameUI).get_node("ObjName").text = ""
+		get_node(ObjNameUI).get_node("ObjName").text = ""
 	
 	#reset player if falls
 	if self.global_position.y <= -10:
