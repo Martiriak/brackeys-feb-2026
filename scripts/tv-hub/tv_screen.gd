@@ -36,6 +36,8 @@ func animate_shader(is_code_correct : bool):
 	_shader_rect.material.set_shader_parameter("pixel_progress", 1.0)
 	_shader_rect.material.set_shader_parameter("color_progress", 1.0)
 	
+	
+	
 	if _flash_tween:
 		_flash_tween.kill()
 	

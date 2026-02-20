@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddlafp7346rpu" path="res://scenes/player.tscn" id="2_kyqa2"]
 [ext_resource type="PackedScene" uid="uid://cte6vjjo7wkcq" path="res://scenes/objects/pickable_cube.tscn" id="3_j5csr"]
 [ext_resource type="PackedScene" uid="uid://dudghce2a50ug" path="res://scenes/objects/pickable_cylinder.tscn" id="4_fasyk"]
+[ext_resource type="PackedScene" uid="uid://c3s0u5ds8snn5" path="res://scenes/hub.tscn" id="6_j5csr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2gq08"]
 size = Vector3(20, 3, 20)
@@ -21,16 +22,17 @@ points = PackedVector3Array(-3, -1, -2.5, -3, 1, -2.5, 3, -1, -2.5, -3, -1, 2.5,
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_llcap"]
 
-[sub_resource type="Sky" id="Sky_8oiou"]
+[sub_resource type="Sky" id="Sky_j5csr"]
 sky_material = SubResource("ProceduralSkyMaterial_llcap")
 
 [sub_resource type="Environment" id="Environment_mamkj"]
 background_mode = 2
-sky = SubResource("Sky_8oiou")
+sky = SubResource("Sky_j5csr")
 
 [node name="TestTv" type="Node3D" unique_id=493658959]
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=551809984]
+transform = Transform3D(0.552704, 0, 0, 0, 1, 0, 0, 0, 0.4961111, -1.4577041, 0, -1.8976626)
 mesh = SubResource("BoxMesh_2gq08")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=178032725]
@@ -40,6 +42,7 @@ shape = SubResource("BoxShape3D_ibofi")
 
 [node name="Ramp" type="MeshInstance3D" parent="." unique_id=674741838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8201265, 2.5064802, -3.1519494)
+visible = false
 mesh = SubResource("PrismMesh_6nm56")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ramp" unique_id=1141821547]
@@ -56,9 +59,11 @@ OutlineCamSceneParent = NodePath("../UI")
 
 [node name="PickableCube" parent="." unique_id=1569110791 instance=ExtResource("3_j5csr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0380564, 2, -0.4078343)
+visible = false
 
 [node name="PickableCube2" parent="." unique_id=1774517131 instance=ExtResource("4_fasyk")]
 transform = Transform3D(1, 0, 0, 0, -0.07487428, -0.997193, 0, 0.997193, -0.07487428, 3.853358, 2.0000002, 2.1746786)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1955605487]
 environment = SubResource("Environment_mamkj")
@@ -70,3 +75,6 @@ shadow_enabled = true
 
 [node name="Tv" parent="." unique_id=1832031211 instance=ExtResource("1_8mejo")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.19877672, 2.9426596, -7.2027354)
+
+[node name="Hub" parent="." unique_id=1315658809 instance=ExtResource("6_j5csr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.180835, -1.5655911, 4.5486097)

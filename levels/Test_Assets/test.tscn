@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dxodjhe34sgto"]
 
 [ext_resource type="PackedScene" uid="uid://mcyqa28nnoaf" path="res://assets/Room_Hub/CRT_Television/CRT_TV.fbx" id="1_vva1i"]
-[ext_resource type="PackedScene" uid="uid://c480v8xe2rgv7" path="res://assets/Room_Hub/Liminal_Room/Door/Door.fbx" id="2_c37yv"]
-[ext_resource type="PackedScene" uid="uid://dy0jfhuynky8s" path="res://assets/Room_Hub/Liminal_Room/Walls/Floor.fbx" id="3_oo4sf"]
-[ext_resource type="PackedScene" uid="uid://ivid32vjqv3r" path="res://assets/Room_Hub/Liminal_Room/Walls/Wall.fbx" id="4_b1bet"]
+[ext_resource type="PackedScene" uid="uid://c3s0u5ds8snn5" path="res://scenes/hub.tscn" id="2_oo4sf"]
 [ext_resource type="PackedScene" uid="uid://chbtf22v0mfro" path="res://assets/Room_Hub/Liminal_Room/Walls/Wall_Door.fbx" id="5_g3kki"]
 [ext_resource type="PackedScene" uid="uid://drlumnddjwus1" path="res://assets/Sea_Level/Boat/Boat.fbx" id="6_oo4sf"]
 [ext_resource type="PackedScene" uid="uid://d0xwadq128kwx" path="res://assets/Human_Placeholder/Human.fbx" id="7_b1bet"]
@@ -34,23 +32,7 @@ shape = SubResource("BoxShape3D_cgub0")
 [node name="CRT_TV" parent="." unique_id=1346626361 instance=ExtResource("1_vva1i")]
 transform = Transform3D(0.9999984, 0, 0.0017278418, 0, 1, 0, -0.0017278418, 0, 0.9999984, 3.2303295, 2.1127431, -4.5144796)
 
-[node name="Door" parent="." unique_id=1070054373 instance=ExtResource("2_c37yv")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.7542431, 1.5150294, -0.75759614)
-
-[node name="Floor" parent="." unique_id=231571417 instance=ExtResource("3_oo4sf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2365415, 1.4808149, -3.2697434)
-
-[node name="Wall" parent="." unique_id=1563082311 instance=ExtResource("4_b1bet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2365415, 1.5180042, -3.2697434)
-
-[node name="Wall2" parent="." unique_id=1585407494 instance=ExtResource("4_b1bet")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.2365415, 1.5180042, -3.2697434)
-
-[node name="Wall4" parent="." unique_id=151264847 instance=ExtResource("4_b1bet")]
-transform = Transform3D(1.9106855e-15, 1.8398792, -4.3711385e-08, 4.371139e-08, -8.0423675e-08, -0.99999994, -1, 0, -4.3711385e-08, 0.7058923, 1.7482288, -3.2697434)
-
-[node name="Wall3" parent="." unique_id=572232477 instance=ExtResource("4_b1bet")]
-transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, 3.2365415, 1.5180042, -3.2697434)
+[node name="Node" parent="." unique_id=1315658809 instance=ExtResource("2_oo4sf")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1683334371]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 0.5117647, 0, -1, -2.2369946e-08, 3.1085806, 4.17649, -2.7754192)

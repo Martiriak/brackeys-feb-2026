@@ -6,6 +6,7 @@ uniform float target_res = 64.0;                   // The "crunchy" resolution
 
 uniform float pixel_progress : hint_range(0.0, 1.0) = 0.0; // 0 = Normal, 1 = Pixelated
 uniform float color_progress : hint_range(0.0, 1.0) = 0.0; // 0 = Normal, 1 = Pixelated
+uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 
 void fragment() {
     // 1. Calculate Aspect Ratio

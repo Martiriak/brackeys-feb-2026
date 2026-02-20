@@ -15,7 +15,8 @@ height = 16
 shader = ExtResource("2_yeh6g")
 shader_parameter/tv_screen_size = Vector2(1152, 648)
 shader_parameter/target_res = 64.0
-shader_parameter/progress = 0.0
+shader_parameter/pixel_progress = 0.0
+shader_parameter/color_progress = 0.0
 
 [node name="TvScreen" type="Control" unique_id=26968705]
 layout_mode = 3

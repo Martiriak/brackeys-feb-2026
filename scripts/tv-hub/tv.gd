@@ -30,20 +30,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_code_accepted(code: String) -> void:
-	if not tv_codes:
-		tv_screen.animate_shader(true)
-	
-	if not tv_codes.verify_code(code):
-		tv_screen.animate_shader(true)
-		return
-	
+
 	# TODO: check if code corresponds to one that can change the scene.
 	# USE tv_codes!
 	var level = GameManager.get_level(code)
 	if level:
-		print("correct code")
-	else:
-		print("wrong code")
+		GameManager.load_new_level(level)
+	
+	tv_screen.animate_shader(true if level else false)
 
 
 func _exit_terminal():
