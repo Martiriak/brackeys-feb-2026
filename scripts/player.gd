@@ -72,8 +72,8 @@ var max_horizontal_area = 0.0
 var ObjNameUI : NodePath
 var outlineCam : Camera3D
 
-## TODO: do we need more items in the inventory?
-var bHasInventoryItem : bool = false
+## TODO: do we need a struct for the inventory?
+var inventoryItemsDict = {}
 
 var _locked: bool = false
 
