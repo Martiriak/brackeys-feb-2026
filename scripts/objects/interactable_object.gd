@@ -6,6 +6,9 @@ extends Node3D
 
 func can_interact(p: Player):
 	return true
+	
+func get_string_to_print():
+	return '"E" to interact:' + self.name
 
 var init_pos : Vector3
 var init_rotate : Vector3
