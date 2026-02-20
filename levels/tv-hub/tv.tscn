@@ -39,3 +39,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.15)
 projection = 1
 
 [connection signal="code_accepted" from="Sprite3D/SubViewport/TvScreen" to="." method="_on_code_accepted"]
+[connection signal="exit_terminal" from="Sprite3D/SubViewport/TvScreen" to="." method="_on_exit_terminal"]
