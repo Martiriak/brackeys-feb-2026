@@ -47,23 +47,24 @@ func set_active_slot(new_active_slot: int) -> void:
 
 
 func _gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		accept_current_code()
-	
-	elif event.is_action_pressed("ui_left"):
-		set_active_slot((_active_slot - 1) % _slots.size())
+	if GameManager.player_ref and GameManager.player_ref._locked:
+		if event.is_action_pressed("ui_accept"):
+			accept_current_code()
 		
-	elif event.is_action_pressed("ui_right"):
-		set_active_slot((_active_slot + 1) % _slots.size())
-	
-	elif event.is_action_pressed("ui_up"):
-		_symbols_for_slots[_active_slot] = (_symbols_for_slots[_active_slot] + 1) % symbols.size()
-		_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
-	elif event.is_action_pressed("ui_down"):
-		_symbols_for_slots[_active_slot] -= 1
-		if _symbols_for_slots[_active_slot] < 0:
-			_symbols_for_slots[_active_slot] = symbols.size() - 1
-		_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
+		elif event.is_action_pressed("ui_left"):
+			set_active_slot((_active_slot - 1) % _slots.size())
+			
+		elif event.is_action_pressed("ui_right"):
+			set_active_slot((_active_slot + 1) % _slots.size())
+		
+		elif event.is_action_pressed("ui_up"):
+			_symbols_for_slots[_active_slot] = (_symbols_for_slots[_active_slot] + 1) % symbols.size()
+			_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
+		elif event.is_action_pressed("ui_down"):
+			_symbols_for_slots[_active_slot] -= 1
+			if _symbols_for_slots[_active_slot] < 0:
+				_symbols_for_slots[_active_slot] = symbols.size() - 1
+			_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
 
 
 func _ready() -> void:

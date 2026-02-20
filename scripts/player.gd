@@ -96,6 +96,7 @@ func _ready() -> void:
 	
 	look_at.target_position.z = - lookat_distance
 	
+	GameManager.player_ref = self
 	can_place_material.albedo_color = Color(0, 1, 0, 0.5)
 	cannot_place_material.albedo_color = Color(1, 0, 0, 0.5)
 	ObjNameUI = NodePath(str(ObjNameUISceneParent) + "/AimPoint")
