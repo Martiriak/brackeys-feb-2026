@@ -14,9 +14,19 @@ var keepable_object = []
 
 var _locked_player: Player = null
 
-
+#logic to avoid to detect the interact soon but only after the release
+var first_time: bool = true
+	
 func _unhandled_input(event: InputEvent) -> void:
 	sub_viewport.push_input(event)
+	
+	#logic to avoid to detect the interact soon but only after the release
+	if tv_camera.current and Input.is_action_just_released("interact"):
+		first_time = false
+	if tv_camera.current and Input.is_action_just_pressed("interact"):
+		if !first_time:
+			_exit_terminal()
+			first_time = true
 
 
 func _on_code_accepted(code: String) -> void:
@@ -29,6 +39,14 @@ func _on_code_accepted(code: String) -> void:
 	
 	# TODO: check if code corresponds to one that can change the scene.
 	# USE tv_codes!
+	var level = GameManager.get_level(code)
+	if level:
+		print("correct code")
+	else:
+		print("wrong code")
+
+
+func _exit_terminal():
 	if is_instance_valid(_locked_player):
 		_locked_player.unlock_play()
 		var children_cameras: Array[Node] = _locked_player.find_children("*", "Camera3D")
@@ -38,8 +56,7 @@ func _on_code_accepted(code: String) -> void:
 				camera.current = false
 	_locked_player = null
 	tv_camera.current = false
-
-
+	
 func on_interaction(p: Player) -> void:
 	_locked_player = p
 	p.lock_play()
