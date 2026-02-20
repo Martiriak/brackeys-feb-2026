@@ -72,8 +72,8 @@ var max_horizontal_area = 0.0
 var ObjNameUI : NodePath
 var outlineCam : Camera3D
 
-## TODO: do we need more items in the inventory?
-var bHasInventoryItem : bool = false
+## TODO: do we need a struct for the inventory?
+var inventoryItemsDict = {}
 
 var _locked: bool = false
 
@@ -223,19 +223,24 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	
 	#shows UI Prompt and recursively toggles rendering layer for Meshes (for outline)
 	if look_at.is_colliding():
+		# Reset previous items
+		if ActiveObj != null:
+			set_all_meshes_layer(ActiveObj, 20, false)
+		get_node(ObjNameUI).get_node("ObjName").text = ""
+		
 		var collider = look_at.get_collider()
-		if ActiveObj != collider and !pickObj:
-			if ActiveObj != null:
-				set_all_meshes_layer(ActiveObj, 20, false)
+		# If I have a pick object do not highlight or show UI
+		if !pickObj:
 			ActiveObj = collider
 			if ActiveObj is PickableObject:
 				get_node(ObjNameUI).get_node("ObjName").text = '“E" to pick up: ' + ActiveObj.name
 				set_all_meshes_layer(ActiveObj, 20, true)
-			elif ActiveObj is InteractableObject:
+			elif ActiveObj is InteractableObject and (ActiveObj as InteractableObject).can_interact(self):
 				set_all_meshes_layer(ActiveObj, 20, true)
-				get_node(ObjNameUI).get_node("ObjName").text = '“E" to interact: ' + ActiveObj.name
+				get_node(ObjNameUI).get_node("ObjName").text = (ActiveObj as InteractableObject).get_string_to_print()
 			else:
 				get_node(ObjNameUI).get_node("ObjName").text = ""
 
@@ -283,7 +288,7 @@ func find_node_in_group(node, group_name):
 func InteractObj():
 	#we use the same collider for pickup
 	var interactable = look_at.get_collider() as InteractableObject
-	if interactable:
+	if interactable and interactable.can_interact(self):
 		interactable.on_interaction(self)
 		
 

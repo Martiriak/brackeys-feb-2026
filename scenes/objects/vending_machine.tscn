@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://byx5jik4b5u6a"]
+
+[ext_resource type="Script" uid="uid://cv4xvuplvql0a" path="res://scripts/objects/locked_object.gd" id="1_rg8gw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8rt7"]
+albedo_color = Color(0.6390301, 0.61130613, 0.9700274, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dpip7"]
+material = SubResource("StandardMaterial3D_w8rt7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ucgg"]
+
+[node name="VendingMachine" type="StaticBody3D" unique_id=1401058196]
+script = ExtResource("1_rg8gw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1357426540]
+mesh = SubResource("BoxMesh_dpip7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=3257229]
+shape = SubResource("BoxShape3D_6ucgg")

@@ -10,7 +10,7 @@ material = SubResource("StandardMaterial3D_npg62")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5towm"]
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=2083441910]
+[node name="Coin" type="StaticBody3D" unique_id=2083441910]
 script = ExtResource("1_npg62")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1795491006]

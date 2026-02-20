@@ -4,6 +4,11 @@ extends Node3D
 #Abstract class for all intreactable objects, implement the on_interaction function
 @abstract func on_interaction(p: Player)
 
+func can_interact(p: Player):
+	return true
+	
+func get_string_to_print():
+	return '"E" to interact:' + self.name
 
 var init_pos : Vector3
 var init_rotate : Vector3
