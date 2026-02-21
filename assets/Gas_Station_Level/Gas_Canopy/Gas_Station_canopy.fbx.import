@@ -44,6 +44,11 @@ _subresources={
 "use_external/fallback_path": "res://assets/Gas_Station_Level/Gas_Canopy/Material/Gas_Station_Canopy.tres",
 "use_external/path": "uid://ddet5dwwpcfwb"
 }
+},
+"nodes": {
+"PATH:Gas_Station_Canopy": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0
