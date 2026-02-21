@@ -54,6 +54,7 @@ func _exit_terminal():
 				camera.current = false
 	_locked_player = null
 	tv_camera.current = false
+	tv_screen.toggle_show_symbol(true)
 	
 func on_interaction(p: Player) -> void:
 	_locked_player = p

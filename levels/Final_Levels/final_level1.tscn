@@ -3,7 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://c4u8tle0rgstt" path="res://assets/Gas_Station_Level/GasStation.tscn" id="1_utcio"]
 [ext_resource type="PackedScene" uid="uid://bvlol1n83lo7d" path="res://assets/Gas_Station_Level/Floor.glb" id="2_8sgh0"]
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
-[ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://assets/Gas_Station_Level/Script/shop_light.gd" id="4_enybr"]
+[ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://scripts/lights/shop_flickering_light.gd" id="4_enybr"]
+
+[sub_resource type="GDScript" id="GDScript_aqq0a"]
+script/source = "extends Node3D
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]
 sky_top_color = Color(0.21800351, 0.26721764, 0.33278427, 1)
@@ -26,6 +30,7 @@ adjustment_brightness = 0.9
 adjustment_contrast = 1.05
 
 [node name="FinalLevel1" type="Node3D" unique_id=1071886748]
+script = SubResource("GDScript_aqq0a")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1344723811]
 environment = SubResource("Environment_utcio")
@@ -115,7 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -70)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -35)
 
 [node name="VendingMachine" parent="." unique_id=1401058196 instance=ExtResource("2_aqq0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3535566, 0, 3.5184212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3535566, 2.3841858e-07, 3.5184212)
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="VendingMachine" unique_id=1384081823]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.43887138, 1.9521232, 0.07758522)
@@ -131,10 +136,11 @@ spot_range = 7.4320974
 spot_angle = 46.727894
 
 [node name="Shop_Light" type="SpotLight3D" parent="." unique_id=205437086]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.232037, 0)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.1714225, -0.34206486)
 light_color = Color(0.5649617, 0.5649616, 0.5649616, 1)
-light_energy = 0.723
+light_energy = 0.8
+light_size = 0.5
 shadow_enabled = true
-spot_range = 12.449687
-spot_angle = 85.063835
+spot_range = 13.799706
+spot_angle = 89.99
 script = ExtResource("4_enybr")
