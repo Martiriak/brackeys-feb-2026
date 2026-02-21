@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://be35g0j8glr1y"]
+
+[ext_resource type="Script" uid="uid://c3jr17krotbor" path="res://assets/Sea_Level/Boat/boat.gd" id="1_4ceb7"]
+[ext_resource type="PackedScene" uid="uid://drlumnddjwus1" path="res://assets/Sea_Level/Boat/Boat.fbx" id="1_8qt8p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ceb7"]
+size = Vector3(4.432541, 0.76538086, 11.093002)
+
+[node name="BoatScene" type="Node3D" unique_id=299400715]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1205826380]
+script = ExtResource("1_4ceb7")
+
+[node name="Boat" parent="RigidBody3D" unique_id=476004110 instance=ExtResource("1_8qt8p")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=566846549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14020538, 0.34509277, -0.14962006)
+shape = SubResource("BoxShape3D_4ceb7")
+
+[node name="PlayerSocket" type="Node3D" parent="RigidBody3D" unique_id=30049169]

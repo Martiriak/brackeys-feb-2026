@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4ihp1u5ljl4o" path="res://scripts/tv-hub/tv_screen.gd" id="1_iin34"]
 [ext_resource type="Texture2D" uid="uid://cv0n4v3a54t38" path="res://icon.svg" id="2_4najk"]
 [ext_resource type="Shader" uid="uid://e1i6kv5tenpj" path="res://assets/shaders/tv_screen.gdshader" id="2_yeh6g"]
+[ext_resource type="Texture2D" uid="uid://bxyhao5wu1i70" path="res://assets/Images/Pesce_png.png" id="3_0b7xu"]
 
 [sub_resource type="Gradient" id="Gradient_yeh6g"]
 colors = PackedColorArray(0.36959997, 0.47114667, 0.56, 1, 0.423, 0.6774, 0.9, 1)
@@ -15,8 +16,10 @@ height = 16
 shader = ExtResource("2_yeh6g")
 shader_parameter/tv_screen_size = Vector2(1152, 648)
 shader_parameter/target_res = 64.0
+shader_parameter/extreme_res = 16.0
 shader_parameter/pixel_progress = 0.0
 shader_parameter/color_progress = 0.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
 
 [node name="TvScreen" type="Control" unique_id=26968705]
 layout_mode = 3
@@ -64,6 +67,14 @@ texture = ExtResource("2_4najk")
 [node name="ActiveSlotIndicator" type="TextureRect" parent="CenterContainer" unique_id=681166850]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_0b7xu")
+
+[node name="Hint" type="TextureRect" parent="CenterContainer" unique_id=2072840451]
+visible = false
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+texture = ExtResource("3_0b7xu")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1357443485]
 material = SubResource("ShaderMaterial_yeh6g")

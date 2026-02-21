@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://c016sx8i7wyhb"]
 
 [ext_resource type="PackedScene" uid="uid://dqorx6glhubr6" path="res://testDani/aquaLevel.tscn" id="1_pcpin"]
+[ext_resource type="PackedScene" uid="uid://be35g0j8glr1y" path="res://testDani/BoatScene.tscn" id="2_y22u7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aqq0a"]
 resource_local_to_scene = true
-size = Vector3(0.07, 4.019928, 29.225853)
+size = Vector3(0.07, 82.83235, 82.39106)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8sgh0"]
 resource_local_to_scene = true
-size = Vector3(0.052890778, 4.0770416, 29.171822)
+size = Vector3(0.052890778, 82.87641, 83.26036)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_enybr"]
 resource_local_to_scene = true
-size = Vector3(29.004917, 4.0560303, 0.09144592)
+size = Vector3(82.97071, 82.61737, 0.09144592)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cwakm"]
 resource_local_to_scene = true
-size = Vector3(29.016426, 3.9447021, 0.091098785)
+size = Vector3(82.246414, 82.40875, 0.091098785)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1f6yb"]
 resource_local_to_scene = true
@@ -24,12 +25,12 @@ size = Vector3(29.002525, 0.086582005, 28.995535)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pcpin"]
 
-[sub_resource type="Sky" id="Sky_8oiou"]
+[sub_resource type="Sky" id="Sky_6neer"]
 sky_material = SubResource("ProceduralSkyMaterial_pcpin")
 
 [sub_resource type="Environment" id="Environment_y22u7"]
 background_mode = 2
-sky = SubResource("Sky_8oiou")
+sky = SubResource("Sky_6neer")
 
 [node name="FinalLevel2" type="Node3D" unique_id=1071886748]
 
@@ -37,35 +38,35 @@ sky = SubResource("Sky_8oiou")
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="StaticBodyL" type="StaticBody3D" parent="BoundaryCollisions" unique_id=477783211]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -14.609277, 0, 0)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -40.425533, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyL" unique_id=658845553]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.052001, 2.067642, -0.040926144)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.052001953, 41.473846, 0.14581364)
 shape = SubResource("BoxShape3D_aqq0a")
 
 [node name="StaticBodyR" type="StaticBody3D" parent="BoundaryCollisions" unique_id=647918202]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 14.574391, 0, 0)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 40.93826, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyR" unique_id=673072816]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.0067567825, 2.0519788, 0.002554655)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.006752014, 41.45166, -0.14363131)
 shape = SubResource("BoxShape3D_8sgh0")
 
 [node name="StaticBodyF" type="StaticBody3D" parent="BoundaryCollisions" unique_id=1100157455]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, -14.61677)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, -41.404827)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyF" unique_id=1912112564]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.002282858, 2.010925, 0.028182983)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.44319636, 41.291584, 0.028186798)
 shape = SubResource("BoxShape3D_enybr")
 
 [node name="StaticBodyB" type="StaticBody3D" parent="BoundaryCollisions" unique_id=1528423805]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 14.55174)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 40.32621)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyB" unique_id=65014565]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.0664576, 2.019226, -0.036481857)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.51583934, 41.25124, -0.03647995)
 shape = SubResource("BoxShape3D_cwakm")
 
 [node name="StaticBodyT" type="StaticBody3D" parent="BoundaryCollisions" unique_id=1810364504]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.7679667, 0)
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 82.26335, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyT" unique_id=777904297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04683892, 1.398617, -0.038300753)
@@ -82,3 +83,6 @@ light_energy = 0.0
 light_indirect_energy = 0.0
 light_cull_mask = 4294966787
 sky_mode = 1
+
+[node name="BoatScene" parent="." unique_id=299400715 instance=ExtResource("2_y22u7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7093887, 0)

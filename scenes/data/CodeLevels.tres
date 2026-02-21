@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("1_vl75r")
 code_level_map = Dictionary[String, PackedScene]({
+"-1-1-1-1-1": ExtResource("2_rk7sk"),
 "0-1-1-1-1": ExtResource("1_rquve"),
 "00000": ExtResource("2_rk7sk"),
 "21002": ExtResource("3_31hl1")
