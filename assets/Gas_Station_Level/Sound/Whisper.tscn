@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c8bof2vk74fej"]
+
+[ext_resource type="Script" uid="uid://dkt81t5s38hiw" path="res://scripts/spawner/whisper.gd" id="1_bu14k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bu14k"]
+size = Vector3(1.8067627, 3.6453552, 1.4707031)
+
+[node name="Whisper" type="Node3D" unique_id=629229930]
+script = ExtResource("1_bu14k")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=185254099]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1096207286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8746332, 0)
+shape = SubResource("BoxShape3D_bu14k")
+
+[connection signal="body_entered" from="Area3D" to="." method="on_enter"]
