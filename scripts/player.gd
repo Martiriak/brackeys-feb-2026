@@ -109,7 +109,9 @@ func lock_play() -> void:
 func unlock_play() -> void:
 	_locked = false
 
-
+func update_look_at_distance(d : int):
+	look_at.target_position.z = d
+	
 func _ready() -> void:
 	#Mouse capture
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -117,7 +119,7 @@ func _ready() -> void:
 	init_pos = self.global_position
 	init_rotation = self.global_rotation
 	
-	look_at.target_position.z = - lookat_distance
+	update_look_at_distance(-lookat_distance)
 	
 	GameManager.player_ref = self
 	can_place_material.albedo_color = Color(0, 1, 0, 0.5)

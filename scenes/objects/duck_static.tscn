@@ -5,7 +5,8 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_omh46"]
 radius = 0.59309036
 
-[node name="StaticBody3D" type="RigidBody3D" unique_id=734332998]
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1810680453]
+collision_layer = 0
 
 [node name="Duck" parent="." unique_id=943551404 instance=ExtResource("1_omh46")]
 
