@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://dky1lqb2mpb0f" path="res://assets/Room_Hub/CRT_Television/Materials/Tube.tres" id="4_103ec"]
 [ext_resource type="Material" uid="uid://cshybebhih3p" path="res://assets/Room_Hub/CRT_Television/Materials/Chip.tres" id="5_2x5y6"]
 [ext_resource type="Material" uid="uid://borgka02k53kq" path="res://assets/Room_Hub/CRT_Television/Materials/Display.tres" id="6_qoyvj"]
+[ext_resource type="Shader" uid="uid://cxvxtyrisomb5" path="res://assets/shaders/tv_static.gdshader" id="8_kcctm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wh3ns"]
 
@@ -165,6 +166,17 @@ shadow_mesh = SubResource("ArrayMesh_o4wcl")
 [sub_resource type="ViewportTexture" id="ViewportTexture_a2bd8"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_103ec"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2x5y6"]
+render_priority = 0
+shader = ExtResource("8_kcctm")
+shader_parameter/flash_color = Color(0.62288105, 0.62288105, 0.62288105, 1)
+shader_parameter/intensity = 0.0
+shader_parameter/hole_size = Vector2(0.33, 0.27)
+shader_parameter/edge_softness = 0.05
+shader_parameter/static_speed = 20.0
+
 [node name="Tv" type="RigidBody3D" unique_id=1585059994]
 freeze = true
 script = ExtResource("1_wh3ns")
@@ -192,5 +204,19 @@ render_target_update_mode = 4
 
 [node name="TvCamera" type="Camera3D" parent="." unique_id=1225215199]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.6)
+
+[node name="ScreenStaticEffect" type="MeshInstance3D" parent="." unique_id=1569918540]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0058530867, 0.08598997, 0.3193632)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_103ec")
+surface_material_override/0 = SubResource("ShaderMaterial_2x5y6")
+
+[node name="sfx_player" type="AudioStreamPlayer3D" parent="." unique_id=633356291]
+
+[node name="ambience_player" type="AudioStreamPlayer3D" parent="." unique_id=1565288994]
+attenuation_model = 2
+max_db = 6.0
+max_distance = 6.0
+attenuation_filter_cutoff_hz = 1000.0
 
 [connection signal="code_accepted" from="Sprite3D/SubViewport/TvScreen" to="." method="_on_code_accepted"]

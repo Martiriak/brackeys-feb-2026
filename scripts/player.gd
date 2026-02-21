@@ -265,7 +265,8 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x) * 0.1)
 		var new_rotation_x = head.rotation.x + deg_to_rad(-event.relative.y) * 0.1
 		head.rotation.x = clamp(new_rotation_x, deg_to_rad(-90), deg_to_rad(90))
-
+	if _locked:
+		return
 	if Input.is_action_just_pressed("interact"):
 		if pickObj == null:
 			#Disable collisions, freezes physics, reparent pickedobj to placePos

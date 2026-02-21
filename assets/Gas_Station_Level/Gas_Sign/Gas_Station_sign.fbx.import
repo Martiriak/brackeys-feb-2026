@@ -49,6 +49,11 @@ _subresources={
 "use_external/fallback_path": "res://assets/Gas_Station_Level/Gas_Sign/Materials/Gas_Station_Sign.tres",
 "use_external/path": "uid://dw31df7whmanr"
 }
+},
+"nodes": {
+"PATH:Gas_Station_Sign": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0
