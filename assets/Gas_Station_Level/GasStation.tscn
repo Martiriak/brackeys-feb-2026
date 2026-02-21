@@ -19,9 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.025044, 0.21047336, -1.6692
 [node name="Gas_Station_pump2" parent="." unique_id=837504923 instance=ExtResource("2_6ygms")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.575048, 0.21047336, -1.6003603)
 
-[node name="Gas_Station_pump5" parent="." unique_id=900134914 instance=ExtResource("2_6ygms")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.575048, 0.21047336, -4.290376)
-
 [node name="Gas_Station_pump3" parent="." unique_id=2118837022 instance=ExtResource("2_6ygms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.023389, 0.21047336, 2.2146494)
 
