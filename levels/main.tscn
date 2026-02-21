@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ddlafp7346rpu" path="res://scenes/player.tscn" id="2_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://dx0qjbubxt7y8" path="res://scenes/UI.tscn" id="3_5k4jt"]
 [ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="4_m1504"]
-[ext_resource type="PackedScene" uid="uid://corr042pvu3es" path="res://assets/Gas_Station_Level/Sound/WhisperSpawnerManager.tscn" id="6_5k4jt"]
-[ext_resource type="PackedScene" uid="uid://v1nn3fps1fla" path="res://assets/Gas_Station_Level/Sound/FixSpawn.tscn" id="7_qy63d"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m1504"]
 
@@ -35,11 +33,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087926626, 0.5559664, 2.008
 
 [node name="TVSocket" type="Node3D" parent="." unique_id=1247484571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04782796, 0.47086346, -2.1992583)
-
-[node name="WhisperSpawnerManager" parent="." unique_id=106007613 instance=ExtResource("6_5k4jt")]
-
-[node name="FixSpawn_0" parent="WhisperSpawnerManager" unique_id=174693622 instance=ExtResource("7_qy63d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6476405, 0.6135032, 0)
-
-[node name="FixSpawn_1" parent="WhisperSpawnerManager" unique_id=950580309 instance=ExtResource("7_qy63d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.013396, 0.5907686, 0)
