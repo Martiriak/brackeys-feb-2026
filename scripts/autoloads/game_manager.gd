@@ -11,10 +11,14 @@ func _ready() -> void:
 
 func get_level(code: String)-> PackedScene:
 	return code_level_res.code_level_map.get(code)
+
+func set_current_level(current_node : Node):
+	_current_level = current_node
 	
 func load_new_level(new_level : PackedScene):
 	if _current_level:
 		_current_level.queue_free()
+		
 	var spawned_level = new_level.instantiate()
 	get_tree().root.add_child(spawned_level)
 	
