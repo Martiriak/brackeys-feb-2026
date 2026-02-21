@@ -11,11 +11,16 @@ var symbols: Array[CompressedTexture2D] = [
 @export
 var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png")
 
+
+
+@export var sfx_click_up: AudioStream  = preload("res://SFX/TV_Select_Up.wav")
+@export var sfx_click_down: AudioStream  = preload("res://SFX/TV_Select_Down.wav")
+
 @onready var _shader_rect := $ColorRect as ColorRect
 @onready var _active_slot_indicator := $CenterContainer/ActiveSlotIndicator as Control
 @onready var _hint_image := $CenterContainer/Hint as TextureRect
 @onready var _symbol_container := $CenterContainer/Slots as HBoxContainer
-
+@onready var sfx_player: AudioStreamPlayer3D = $sfx_player
 
 var _slots: Array[TextureRect]
 var _symbols_for_slots: Array[int]
@@ -121,7 +126,6 @@ func set_active_slot(new_active_slot: int) -> void:
 	_slots[_active_slot].add_child(_active_slot_indicator)
 	_active_slot_indicator.position = Vector2(0.0, 72.0)
 
-
 func _gui_input(event: InputEvent) -> void:
 	var is_tween_playing = _flash_tween and _flash_tween.is_running()
 	
@@ -139,13 +143,16 @@ func _gui_input(event: InputEvent) -> void:
 			_symbols_for_slots[_active_slot] = (_symbols_for_slots[_active_slot] + 1) % symbols.size()
 			_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
 			_is_empty = false
+			sfx_player.stream = sfx_click_up
+			sfx_player.play()
 		elif event.is_action_pressed("ui_down"):
 			_symbols_for_slots[_active_slot] -= 1
 			if _symbols_for_slots[_active_slot] < 0:
 				_symbols_for_slots[_active_slot] = symbols.size() - 1
 			_slots[_active_slot].texture = symbols[_symbols_for_slots[_active_slot]]
 			_is_empty = false;
-
+			sfx_player.stream = sfx_click_down
+			sfx_player.play()
 
 func _ready() -> void:
 	for widget in $CenterContainer/Slots.get_children():
