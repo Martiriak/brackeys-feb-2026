@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://0muenxmiq5kd"]
+
+[ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="1_omh46"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_omh46"]
+radius = 0.59309036
+
+[node name="StaticBody3D" type="RigidBody3D" unique_id=734332998]
+
+[node name="Duck" parent="." unique_id=943551404 instance=ExtResource("1_omh46")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2018826218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38948065, 0.047870338)
+shape = SubResource("SphereShape3D_omh46")

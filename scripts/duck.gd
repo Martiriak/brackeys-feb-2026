@@ -1,5 +1,5 @@
 class_name Duck
-extends PickableObject
+extends InventoryItem
 
 
 var goto = Vector3(0.0, 0.0, 0.0)
@@ -48,15 +48,7 @@ func _process(delta: float) -> void:
 			return
 		
 		position += direction * speed * delta
-	if _launch:
-		var collision = move_and_collide(position +  Vector3(0.0, 0.0, 1.0) * ( 0.5 * 9.81 * pow(delta, 2)) + _launch_speed * delta * rotation)
-		if collision:
-			_launch = false
-			
-func launch(player_position: Vector3) -> void:
-	position = player_position
-	_launch = true
-	
-	 
-
+ 
+func get_string_to_print():
+	return '"E" to pick: duck'
 	
