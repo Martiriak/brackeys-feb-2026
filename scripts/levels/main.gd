@@ -2,6 +2,6 @@ extends Node3D
 
 @onready var hub_node: Node3D = $FinalHub
 
-func _ready():
-	GameManager.set_current_level(hub_node)
-	
+
+func _ready() -> void:
+	GameManager.set_main_hub_level(hub_node)

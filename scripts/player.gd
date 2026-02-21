@@ -261,6 +261,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# Web builds wont capture mouse automatically
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x) * 0.1)
 		var new_rotation_x = head.rotation.x + deg_to_rad(-event.relative.y) * 0.1
