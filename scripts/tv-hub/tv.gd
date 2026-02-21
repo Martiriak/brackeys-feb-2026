@@ -34,8 +34,12 @@ func _on_code_accepted(code: String) -> void:
 	# TODO: check if code corresponds to one that can change the scene.
 	# USE tv_codes!
 	var level = GameManager.get_level(code)
+	print(code)
 	if level:
+		print("Code found")
 		GameManager.load_new_level(level)
+	else:
+		print("Error")
 	
 	tv_screen.animate_shader(true if level else false)
 
