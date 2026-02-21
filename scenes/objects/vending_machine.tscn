@@ -1,20 +1,30 @@
 [gd_scene format=3 uid="uid://byx5jik4b5u6a"]
 
 [ext_resource type="Script" uid="uid://cv4xvuplvql0a" path="res://scripts/objects/locked_object.gd" id="1_rg8gw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8rt7"]
-albedo_color = Color(0.6390301, 0.61130613, 0.9700274, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_dpip7"]
-material = SubResource("StandardMaterial3D_w8rt7")
+[ext_resource type="PackedScene" uid="uid://cw2idw1gulxi1" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine.glb" id="2_w77ry"]
+[ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="3_51x25"]
+[ext_resource type="PackedScene" uid="uid://cny34qslkxkks" path="res://assets/Gas_Station_Level/Soda_Can/SodaCan.glb" id="4_v5k5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucgg"]
+size = Vector3(0.8659973, 2.1538086, 1.3684082)
 
 [node name="VendingMachine" type="StaticBody3D" unique_id=1401058196]
 script = ExtResource("1_rg8gw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1357426540]
-mesh = SubResource("BoxMesh_dpip7")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=3257229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14448547, 1.0742519, -0.018432617)
 shape = SubResource("BoxShape3D_6ucgg")
+
+[node name="VendingMachine" parent="." unique_id=2044447561 instance=ExtResource("2_w77ry")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=1802454106]
+transform = Transform3D(0.9894116, -0.14513671, 0, 0.14513671, 0.9894116, 0, 0, 0, 1, 0.381719, 0.49966082, 0.11802703)
+
+[node name="Duck" parent="VendingMachine" unique_id=943551404 instance=ExtResource("3_51x25")]
+transform = Transform3D(0.07919879, 0, 0.025922878, 0, 0.083333336, 0, -0.025922878, 0, 0.07919879, 0.2938217, 1.1565193, 0.08401561)
+
+[node name="SodaCan" parent="VendingMachine" unique_id=972569640 instance=ExtResource("4_v5k5w")]
+transform = Transform3D(1.1666667, 0, 0, 0, 1.1666667, 0, 0, 0, 1.1666667, 0.28952098, 1.0273181, -0.030798912)
+
+[editable path="VendingMachine"]
