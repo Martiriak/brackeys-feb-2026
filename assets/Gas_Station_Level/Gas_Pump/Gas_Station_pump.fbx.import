@@ -44,6 +44,11 @@ _subresources={
 "use_external/fallback_path": "res://assets/Gas_Station_Level/Gas_Pump/Material/Gas_Pump.tres",
 "use_external/path": "uid://dkmqw3raj4aw5"
 }
+},
+"nodes": {
+"PATH:GasPump": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0
