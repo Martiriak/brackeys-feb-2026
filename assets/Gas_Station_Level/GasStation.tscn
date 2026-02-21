@@ -14,16 +14,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.16404, 0, 0)
 visible = false
 
 [node name="Gas_Station_pump" parent="." unique_id=778893594 instance=ExtResource("2_6ygms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0067945, 0.21047336, -1.6692848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.025044, 0.21047336, -1.6692848)
 
 [node name="Gas_Station_pump2" parent="." unique_id=837504923 instance=ExtResource("2_6ygms")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.62877, 0.21047336, -1.6692848)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.575048, 0.21047336, -1.6003603)
+
+[node name="Gas_Station_pump5" parent="." unique_id=900134914 instance=ExtResource("2_6ygms")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.575048, 0.21047336, -4.290376)
 
 [node name="Gas_Station_pump3" parent="." unique_id=2118837022 instance=ExtResource("2_6ygms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0067945, 0.21047336, 2.285621)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.023389, 0.21047336, 2.2146494)
 
 [node name="Gas_Station_pump4" parent="." unique_id=1092023880 instance=ExtResource("2_6ygms")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.62877, 0.21047336, 2.285621)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.5727487, 0.21047336, 2.2590947)
 
 [node name="Gas_Station_canopy" parent="." unique_id=1225966984 instance=ExtResource("3_m8340")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81011, 0, 0.27177334)
