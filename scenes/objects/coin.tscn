@@ -1,20 +1,17 @@
 [gd_scene format=3 uid="uid://mbkdysknckn8"]
 
 [ext_resource type="Script" uid="uid://bn82p58k3ywir" path="res://scripts/objects/inventory_item.gd" id="1_npg62"]
+[ext_resource type="PackedScene" uid="uid://buy8pj1lg7dni" path="res://assets/Gas_Station_Level/Coin/Coin.glb" id="2_xxg5f"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npg62"]
-albedo_color = Color(1, 0.50980395, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_xxg5f"]
-material = SubResource("StandardMaterial3D_npg62")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5towm"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xxg5f"]
+height = 0.03538513
+radius = 0.10498047
 
 [node name="Coin" type="StaticBody3D" unique_id=2083441910]
 script = ExtResource("1_npg62")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1795491006]
-mesh = SubResource("BoxMesh_xxg5f")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1552586268]
-shape = SubResource("BoxShape3D_5towm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015578389, 0)
+shape = SubResource("CylinderShape3D_xxg5f")
+
+[node name="Coin" parent="." unique_id=543950727 instance=ExtResource("2_xxg5f")]

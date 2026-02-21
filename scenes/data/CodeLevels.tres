@@ -1,16 +1,43 @@
 [gd_resource type="Resource" script_class="CodeLevelMap" format=3 uid="uid://bx248p01xwq63"]
 
+[ext_resource type="Texture2D" uid="uid://by1e53c6gc2ct" path="res://assets/Images/Soda_Can_Sprite.png" id="1_158k7"]
 [ext_resource type="PackedScene" uid="uid://cnsws4h4ccdgd" path="res://levels/Final_Levels/final_level1.tscn" id="1_rquve"]
 [ext_resource type="Script" uid="uid://3rxyo6r3rs0i" path="res://scripts/data/code_level.gd" id="1_vl75r"]
 [ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="2_rk7sk"]
+[ext_resource type="Script" uid="uid://2x7fre16mmnh" path="res://scripts/data/level_entry.gd" id="3_6dyiw"]
 [ext_resource type="PackedScene" uid="uid://c016sx8i7wyhb" path="res://levels/Final_Levels/final_level2.tscn" id="3_31hl1"]
+[ext_resource type="Texture2D" uid="uid://bxyhao5wu1i70" path="res://assets/Images/Pesce_png.png" id="4_nyj5f"]
+
+[sub_resource type="Resource" id="Resource_k4t0h"]
+script = ExtResource("3_6dyiw")
+scene = ExtResource("2_rk7sk")
+preview_texture = ExtResource("4_nyj5f")
+metadata/_custom_type_script = "uid://2x7fre16mmnh"
+
+[sub_resource type="Resource" id="Resource_158k7"]
+script = ExtResource("3_6dyiw")
+scene = ExtResource("1_rquve")
+preview_texture = ExtResource("1_158k7")
+metadata/_custom_type_script = "uid://2x7fre16mmnh"
+
+[sub_resource type="Resource" id="Resource_6dyiw"]
+script = ExtResource("3_6dyiw")
+scene = ExtResource("2_rk7sk")
+preview_texture = ExtResource("4_nyj5f")
+metadata/_custom_type_script = "uid://2x7fre16mmnh"
+
+[sub_resource type="Resource" id="Resource_nyj5f"]
+script = ExtResource("3_6dyiw")
+scene = ExtResource("3_31hl1")
+preview_texture = ExtResource("4_nyj5f")
+metadata/_custom_type_script = "uid://2x7fre16mmnh"
 
 [resource]
 script = ExtResource("1_vl75r")
-code_level_map = Dictionary[String, PackedScene]({
-"-1-1-1-1-1": ExtResource("2_rk7sk"),
-"0-1-1-1-1": ExtResource("1_rquve"),
-"00000": ExtResource("2_rk7sk"),
-"21002": ExtResource("3_31hl1")
+code_level_map = Dictionary[String, ExtResource("3_6dyiw")]({
+"-1-1-1-1-1": SubResource("Resource_k4t0h"),
+"0-1-1-1-1": SubResource("Resource_158k7"),
+"00000": SubResource("Resource_6dyiw"),
+"21002": SubResource("Resource_nyj5f")
 })
 metadata/_custom_type_script = "uid://3rxyo6r3rs0i"
