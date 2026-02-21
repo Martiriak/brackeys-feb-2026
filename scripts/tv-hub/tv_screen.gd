@@ -21,7 +21,7 @@ var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png
 @onready var _hint_image := $CenterContainer/Hint as TextureRect
 @onready var _symbol_container := $CenterContainer/Slots as HBoxContainer
 @onready var sfx_player: AudioStreamPlayer3D = $sfx_player
-@onready var _enter_key: TextureRect = $EnterKey
+@onready var _ui_tutorial: Control = $UITutorial
 
 
 var _slots: Array[TextureRect]
@@ -39,8 +39,8 @@ func is_animating_screen():
 	return _flash_tween and _flash_tween.is_running()
 
 
-func set_enter_key_visibility(is_visible: bool) -> void:
-	_enter_key.visible = is_visible
+func set_ui_tutorial_visibility(is_visible: bool) -> void:
+	_ui_tutorial.visible = is_visible
 
 
 func set_hint_texture(new_texture : Texture2D):

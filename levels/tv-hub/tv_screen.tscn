@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cv0n4v3a54t38" path="res://icon.svg" id="2_4najk"]
 [ext_resource type="Shader" uid="uid://e1i6kv5tenpj" path="res://assets/shaders/tv_screen.gdshader" id="2_yeh6g"]
 [ext_resource type="Texture2D" uid="uid://bxyhao5wu1i70" path="res://assets/Images/Pesce_png.png" id="3_0b7xu"]
-[ext_resource type="Texture2D" uid="uid://doafrggr1xoed" path="res://assets/Room_Hub/enter_key.png" id="5_chy2e"]
 
 [sub_resource type="Gradient" id="Gradient_yeh6g"]
 colors = PackedColorArray(0.36959997, 0.47114667, 0.56, 1, 0.423, 0.6774, 0.9, 1)
@@ -89,7 +88,7 @@ color = Color(1, 1, 1, 0)
 
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="." unique_id=757677335]
 
-[node name="EnterKey" type="TextureRect" parent="." unique_id=331035053]
+[node name="UITutorial" type="VBoxContainer" parent="." unique_id=709654293]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -97,11 +96,20 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -320.0
-offset_top = -358.0
-offset_right = -64.0
-offset_bottom = -102.0
+offset_left = -488.0
+offset_top = -248.0
+offset_right = -116.0
+offset_bottom = -154.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("5_chy2e")
-expand_mode = 1
+alignment = 1
+
+[node name="Confirm" type="Label" parent="UITutorial" unique_id=1100375066]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Press \"Enter\" to confirm"
+
+[node name="Exit" type="Label" parent="UITutorial" unique_id=127152124]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Press \"E\" to exit"
