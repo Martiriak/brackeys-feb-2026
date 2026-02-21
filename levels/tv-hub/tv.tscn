@@ -167,9 +167,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o4wcl")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_a8qxm"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8qxm"]
 render_priority = 0
 shader = ExtResource("7_qoyvj")
+shader_parameter/sprite_texture = SubResource("ViewportTexture_a8qxm")
 shader_parameter/r_displacement = Vector2(8, 0)
 shader_parameter/g_displacement = Vector2(0, 2)
 shader_parameter/b_displacement = Vector2(-8, 0)

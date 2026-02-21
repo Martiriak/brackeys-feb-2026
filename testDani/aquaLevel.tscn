@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dqorx6glhubr6"]
 
 [ext_resource type="Shader" uid="uid://dhvvjehcggtdg" path="res://testDani/waterPlane.gdshader" id="2_2n85q"]
+[ext_resource type="PackedScene" uid="uid://8q3eokc17bps" path="res://scenes/objects/moon.tscn" id="2_r3tio"]
 [ext_resource type="PackedScene" uid="uid://cxh7gtx7qoupu" path="res://assets/Sea_Level/RubberDuck/Duck.tscn" id="4_2n85q"]
 [ext_resource type="PackedScene" uid="uid://doccpmiy36g3p" path="res://assets/Sea_Level/Goldfish/goldfish.fbx" id="4_r3tio"]
 [ext_resource type="Script" uid="uid://87dp26xgf15n" path="res://assets/Sea_Level/Goldfish/goldfish.gd" id="5_5yn76"]
@@ -29,15 +30,8 @@ shader_parameter/roughness = 0.2
 shader_parameter/specular_strength = 0.5
 shader_parameter/opacity = 0.3070000145825
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3tio"]
-emission_enabled = true
-emission = Color(18.892157, 18.892157, 0, 1)
-emission_energy_multiplier = 14.13
-normal_scale = -4.53
-subsurf_scatter_strength = 1.0
-refraction_enabled = true
-
-[sub_resource type="SphereMesh" id="SphereMesh_5yn76"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qiwpe"]
+size = Vector3(193.35352, 1, 8.16748)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yn76"]
 blend_mode = 3
@@ -64,6 +58,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6186218, -3.8428907, -1.029
 mesh = SubResource("ArrayMesh_r3tio")
 surface_material_override/0 = SubResource("ShaderMaterial_qiwpe")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="waterPlane/MeshInstance3D" unique_id=751388839]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="waterPlane/MeshInstance3D/StaticBody3D" unique_id=853362593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.528546, -30.203125, -2.9737244, -0.27222824)
+shape = SubResource("BoxShape3D_qiwpe")
+
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=668805793]
 transform = Transform3D(1, 0, 0, 0, 0.9639005, 0.26626268, 0, -0.26626268, 0.9639005, -2.2696514, 49.46818, -8.170662)
 light_color = Color(0.943956, 0.71744794, 0, 1)
@@ -74,10 +74,8 @@ shadow_enabled = true
 spot_range = 77.426765
 spot_angle = 28.758944
 
-[node name="Moon" type="MeshInstance3D" parent="." unique_id=166288550]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -1.5862799, 25.572327, -42.272377)
-material_override = SubResource("StandardMaterial3D_r3tio")
-mesh = SubResource("SphereMesh_5yn76")
+[node name="Moon2" parent="." unique_id=1677997414 instance=ExtResource("2_r3tio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5862799, 62.09788, -42.272377)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1728024117]
 transform = Transform3D(1, 0, 0, 0, -0.9108998, 0.41262764, 0, -0.41262764, -0.9108998, -4.7279644, 32.48642, -47.152508)
@@ -162,6 +160,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.092857, 3.335947, 17.0481
 script = ExtResource("5_5yn76")
 radius = 30.0
 speed = -0.5
+height = 0.1
 
 [node name="RigidBody3D" type="RigidBody3D" parent="goldfish" unique_id=285029630]
 
@@ -174,6 +173,7 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 62.548244, 22.008615, 0)
 script = ExtResource("5_5yn76")
 radius = 100.0
 speed = -0.3
+height = 20.0
 
 [node name="Duck" parent="." unique_id=649853383 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)

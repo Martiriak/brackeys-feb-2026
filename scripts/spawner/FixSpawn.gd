@@ -7,4 +7,5 @@ func spawn(obj_to_spawn):
 
 func on_obj_to_spawn_is_remove() -> void:
 	if get_child_count() <= 0:
-		get_parent()._spawn_next()
+		if get_parent():
+			get_parent()._spawn_next()

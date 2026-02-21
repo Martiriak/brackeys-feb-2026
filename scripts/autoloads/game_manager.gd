@@ -13,6 +13,8 @@ var instantiated_levels : Dictionary[PackedScene, Node3D] = {}
 
 var game_completed : bool = false
 
+signal on_game_resume
+
 
 func _ready() -> void:
 	# Pre-instantiate all levels in the background at start
@@ -68,5 +70,3 @@ func set_main_hub_level(main_hub_node : Node3D):
 		if entry.scene.resource_path.contains("final_hub.tscn"):
 			instantiated_levels[entry.scene] = main_hub_node
 	_current_level = main_hub_node
-	
-	
