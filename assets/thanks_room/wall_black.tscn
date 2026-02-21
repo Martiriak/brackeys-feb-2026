@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://yuk7820lc4bl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8p7sq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8p7sq"]
+material = SubResource("StandardMaterial3D_8p7sq")
+size = Vector3(5, 2.8, 0.05)
+
+[node name="WallBlack" type="Node3D" unique_id=1586918327]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1851321074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4000001, 0)
+mesh = SubResource("BoxMesh_8p7sq")

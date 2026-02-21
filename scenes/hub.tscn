@@ -4,10 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://dy0jfhuynky8s" path="res://assets/Room_Hub/Liminal_Room/Walls/Floor.fbx" id="2_7wvbm"]
 [ext_resource type="PackedScene" uid="uid://ivid32vjqv3r" path="res://assets/Room_Hub/Liminal_Room/Walls/Wall.fbx" id="3_bfqb0"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w6xti"]
+size = Vector3(1, 2.2, 0.1)
+
 [node name="Hub" type="Node3D" unique_id=1315658809]
 
 [node name="Door" parent="." unique_id=1533708439 instance=ExtResource("1_w6xti")]
 transform = Transform3D(1.08, 1.509958e-07, -1.509958e-07, -1.6307547e-07, 1, 0, -1.6307547e-07, -2.2799733e-14, -1, 0.65519345, 0.015029371, 2.542404)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door" unique_id=1179869578]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D" unique_id=434367642]
+transform = Transform3D(1, 3.1876005e-21, 0, 3.718077e-21, 1, 0, 0, -3.676123e-19, 1, -0.5555562, 0.8999999, -0.049999714)
+shape = SubResource("BoxShape3D_w6xti")
 
 [node name="Floor" parent="." unique_id=1513779618 instance=ExtResource("2_7wvbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13654152, -0.019185126, 0.03025657)

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://gbxbpmkchpe0"]
+
+[ext_resource type="Script" uid="uid://cey2ord0yrd8j" path="res://scripts/levels/final_hub.gd" id="1_oeq7w"]
+[ext_resource type="PackedScene" uid="uid://wpu2oxwmstpd" path="res://assets/thanks_room/floor_black.tscn" id="2_tp5pd"]
+[ext_resource type="PackedScene" uid="uid://yuk7820lc4bl" path="res://assets/thanks_room/wall_black.tscn" id="4_l441a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hddnf"]
+resource_local_to_scene = true
+size = Vector3(0.07, 2.756897, 4.983)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4srok"]
+resource_local_to_scene = true
+size = Vector3(0.052890778, 2.7175598, 4.9416847)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jr57e"]
+resource_local_to_scene = true
+size = Vector3(4.7483253, 2.7041016, 0.091098785)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opvql"]
+resource_local_to_scene = true
+size = Vector3(4.8489666, 0.086582005, 4.9349813)
+
+[node name="ThanksLevel" type="Node3D" unique_id=1594104338]
+script = ExtResource("1_oeq7w")
+
+[node name="BoundaryCollisions" type="Node3D" parent="." unique_id=1366651675]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="StaticBodyL" type="StaticBody3D" parent="BoundaryCollisions" unique_id=42289980]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -2.0421376, 0, 0.41666663)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyL" unique_id=1985473224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052000046, 1.4361267, 0.019)
+shape = SubResource("BoxShape3D_hddnf")
+
+[node name="StaticBodyR" type="StaticBody3D" parent="BoundaryCollisions" unique_id=2056469143]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 2.2052743, 0, 0.41666663)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyR" unique_id=1685839771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006757498, 1.3722382, 0.0162525)
+shape = SubResource("BoxShape3D_4srok")
+
+[node name="StaticBodyB" type="StaticBody3D" parent="BoundaryCollisions" unique_id=34706892]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 2.1070576)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyB" unique_id=1487295462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07728767, 1.3989258, -0.036481857)
+shape = SubResource("BoxShape3D_jr57e")
+
+[node name="StaticBodyT" type="StaticBody3D" parent="BoundaryCollisions" unique_id=374402498]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 2.2262998, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundaryCollisions/StaticBodyT" unique_id=896565495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13395593, -0.0006542206, 0.023643078)
+shape = SubResource("BoxShape3D_opvql")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2144366733]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.05434698, -0.47109094, 0)
+light_energy = 1.739
+spot_range = 7.3673234
+spot_angle = 87.41741
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1083157216]
+transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, -0.05434698, 3.3422315, 0)
+light_energy = 0.058
+spot_range = 7.3673234
+spot_angle = 87.41741
+
+[node name="FloorBlack" parent="." unique_id=894055037 instance=ExtResource("2_tp5pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+
+[node name="Wall" parent="." unique_id=330462906 instance=ExtResource("4_l441a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 2.5)
+
+[node name="Wall2" parent="." unique_id=1917291098 instance=ExtResource("4_l441a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.35, 0, 9.685755e-08)
+
+[node name="Wall3" parent="." unique_id=1548516497 instance=ExtResource("4_l441a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.6500003, 0, 9.685755e-08)
+
+[node name="Wall4" parent="." unique_id=923173301 instance=ExtResource("4_l441a")]
+transform = Transform3D(-4.371139e-08, -2, -4.371139e-08, 0, -8.742278e-08, 1, -1, 8.742278e-08, 1.9106855e-15, 2.7500002, 2.65, 9.685755e-08)
