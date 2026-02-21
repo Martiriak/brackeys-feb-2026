@@ -12,7 +12,8 @@ var instantiated_levels : Dictionary[PackedScene, Node3D] = {}
 
 func _ready() -> void:
 	# Pre-instantiate all levels in the background at start
-	pre_instantiate_all_levels()
+	#pre_instantiate_all_levels()
+	pass
 
 func pre_instantiate_all_levels():
 	for code in code_level_res.code_level_map:
