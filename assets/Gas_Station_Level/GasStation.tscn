@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ducsbqe3q8n2q" path="res://assets/Gas_Station_Level/Gas_Sign/Gas_Station_sign.fbx" id="4_n0gbf"]
 [ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="5_ib125"]
 [ext_resource type="PackedScene" uid="uid://cqwggrqay2syl" path="res://assets/Gas_Station_Level/Gas_Shop/Gas_Station_Shop.glb" id="6_o0f8f"]
-[ext_resource type="PackedScene" uid="uid://bvlol1n83lo7d" path="res://assets/Gas_Station_Level/Floor.glb" id="7_y1i4k"]
 
 [node name="GasStation" type="Node3D" unique_id=1830225918]
 
@@ -46,27 +45,3 @@ transform = Transform3D(-0.7145215, 0, 0.69961345, 0, 1, 0, -0.69961345, 0, -0.7
 
 [node name="Gas_Station_Shop" parent="." unique_id=68532882 instance=ExtResource("6_o0f8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6259818, 0, -0.6027193)
-
-[node name="Floor" parent="." unique_id=225847350 instance=ExtResource("7_y1i4k")]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=586761048]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.923755, 4.410764, 0)
-spot_range = 7.4320974
-spot_angle = 51.693436
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=187101265]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.7727556, 4.410764, 0)
-spot_range = 7.183748
-spot_angle = 51.693436
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1338925505]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.6795979, 0)
-light_energy = 0.664
-spot_range = 12.449687
-spot_angle = 85.063835
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="." unique_id=1569914682]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.6875615, 1.9641778, 4.0518513)
-spot_range = 1.161
-spot_angle = 61.039814
-spot_angle_attenuation = 1.6245031
