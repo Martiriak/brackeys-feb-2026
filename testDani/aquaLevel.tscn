@@ -29,9 +29,6 @@ shader_parameter/roughness = 0.2
 shader_parameter/specular_strength = 0.5
 shader_parameter/opacity = 0.3070000145825
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qiwpe"]
-size = Vector3(193.35352, 1, 8.16748)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3tio"]
 emission_enabled = true
 emission = Color(18.892157, 18.892157, 0, 1)
@@ -66,12 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.287215, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6186218, -3.8428907, -1.0290279)
 mesh = SubResource("ArrayMesh_r3tio")
 surface_material_override/0 = SubResource("ShaderMaterial_qiwpe")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="waterPlane/MeshInstance3D" unique_id=751388839]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="waterPlane/MeshInstance3D/StaticBody3D" unique_id=853362593]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.528546, -30.203125, -2.9737244, -0.27222824)
-shape = SubResource("BoxShape3D_qiwpe")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=668805793]
 transform = Transform3D(1, 0, 0, 0, 0.9639005, 0.26626268, 0, -0.26626268, 0.9639005, -2.2696514, 49.46818, -8.170662)
@@ -171,7 +162,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.092857, 3.335947, 17.0481
 script = ExtResource("5_5yn76")
 radius = 30.0
 speed = -0.5
-height = 0.1
 
 [node name="RigidBody3D" type="RigidBody3D" parent="goldfish" unique_id=285029630]
 
@@ -184,19 +174,57 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 62.548244, 22.008615, 0)
 script = ExtResource("5_5yn76")
 radius = 100.0
 speed = -0.3
-height = 20.0
 
 [node name="Duck" parent="." unique_id=649853383 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+item_id = 0
 
 [node name="Duck2" parent="." unique_id=327149374 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+item_id = 0
 
 [node name="Duck3" parent="." unique_id=770041289 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+item_id = 0
 
 [node name="Duck4" parent="." unique_id=1744490388 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+item_id = 0
 
 [node name="Duck5" parent="." unique_id=1947681368 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+item_id = 0
+
+[node name="goldfish2" parent="." unique_id=1240266281 instance=ExtResource("4_r3tio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5068767, 2.7580733, 18.56197)
+script = ExtResource("5_5yn76")
+
+[node name="goldfish3" parent="." unique_id=833160740 instance=ExtResource("4_r3tio")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.598349, 2.7580724, 15.585607)
+script = ExtResource("5_5yn76")
+center_position = Vector3(10, 0, 20)
+
+[node name="goldfish4" parent="." unique_id=734899118 instance=ExtResource("4_r3tio")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -9.701647, 2.7580714, 12.980206)
+script = ExtResource("5_5yn76")
+center_position = Vector3(-8, 0, 7)
+
+[node name="goldfish5" parent="." unique_id=1149708988 instance=ExtResource("4_r3tio")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -9.701647, 2.7580714, 12.980206)
+script = ExtResource("5_5yn76")
+center_position = Vector3(25, 0, 12)
+
+[node name="goldfish6" parent="." unique_id=450394936 instance=ExtResource("4_r3tio")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -9.701647, 2.7580714, 12.980206)
+script = ExtResource("5_5yn76")
+center_position = Vector3(30, 0, -20)
+
+[node name="goldfish7" parent="." unique_id=1808536065 instance=ExtResource("4_r3tio")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -9.701647, 2.7580714, 12.980206)
+script = ExtResource("5_5yn76")
+center_position = Vector3(-24, 0, 12)
+
+[node name="goldfish8" parent="." unique_id=1672728037 instance=ExtResource("4_r3tio")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -9.701647, 2.7580714, 12.980206)
+script = ExtResource("5_5yn76")
+center_position = Vector3(8, 0, -30)

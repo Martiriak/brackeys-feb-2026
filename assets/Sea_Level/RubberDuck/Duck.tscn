@@ -87,6 +87,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8wxqh")
 
 [node name="Duck" type="RigidBody3D" unique_id=649853383]
+physics_interpolation_mode = 2
+mass = 1000.0
+gravity_scale = 0.0
 script = ExtResource("1_osv48")
 item_id = 1
 metadata/_custom_type_script = "uid://cyijphl4xwu8k"
