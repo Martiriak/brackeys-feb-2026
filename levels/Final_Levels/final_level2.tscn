@@ -73,10 +73,10 @@ shape = SubResource("BoxShape3D_1f6yb")
 
 [node name="AquaLevel" parent="." unique_id=1265484883 instance=ExtResource("1_pcpin")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=323441204]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=613372504]
 environment = SubResource("Environment_y22u7")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1950320373]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=288118774]
 transform = Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 3.4244995, -106.276054, 373.4325)
 light_energy = 0.0
 light_indirect_energy = 0.0
