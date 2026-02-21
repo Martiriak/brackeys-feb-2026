@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b43vpswns7vc3"]
+
+[ext_resource type="Script" uid="uid://dkjatuj25du71" path="res://scripts/tv-hub/postit_code.gd" id="1_gyf61"]
+[ext_resource type="Resource" uid="uid://bx248p01xwq63" path="res://scenes/data/CodeLevels.tres" id="2_xox8a"]
+[ext_resource type="Texture2D" uid="uid://cv0n4v3a54t38" path="res://icon.svg" id="3_pugju"]
+
+[node name="PostitCode" type="Control" unique_id=1248234738]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -64.0
+offset_right = 328.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gyf61")
+code_levels_map = ExtResource("2_xox8a")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=149370301]
+layout_mode = 0
+offset_right = 656.0
+offset_bottom = 128.0
+
+[node name="Slots" type="HBoxContainer" parent="CenterContainer" unique_id=1930748404]
+layout_mode = 2
+alignment = 1
+
+[node name="Slot0" type="TextureRect" parent="CenterContainer/Slots" unique_id=1779901878]
+layout_mode = 2
+texture = ExtResource("3_pugju")
+
+[node name="Slot1" type="TextureRect" parent="CenterContainer/Slots" unique_id=1743220884]
+layout_mode = 2
+texture = ExtResource("3_pugju")
+
+[node name="Slot2" type="TextureRect" parent="CenterContainer/Slots" unique_id=1107259790]
+layout_mode = 2
+texture = ExtResource("3_pugju")
+
+[node name="Slot3" type="TextureRect" parent="CenterContainer/Slots" unique_id=1906329913]
+layout_mode = 2
+texture = ExtResource("3_pugju")
+
+[node name="Slot4" type="TextureRect" parent="CenterContainer/Slots" unique_id=1920506497]
+layout_mode = 2
+texture = ExtResource("3_pugju")
