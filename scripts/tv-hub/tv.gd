@@ -8,6 +8,7 @@ extends InteractableObject
 @onready var sub_viewport: SubViewport = $Sprite3D/SubViewport
 @onready var tv_screen: TvScreen = $Sprite3D/SubViewport/TvScreen
 @onready var tv_camera: Camera3D = $TvCamera
+@onready var tv_static_effect: MeshInstance3D = $ScreenStaticEffect
 
 var keepable_object = []
 
@@ -30,18 +31,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_code_accepted(code: String) -> void:
-
-	# TODO: check if code corresponds to one that can change the scene.
-	# USE tv_codes!
 	var level = GameManager.get_level(code)
 	print(code)
 	if level:
-		print("Code found")
 		GameManager.load_new_level(level)
-	else:
-		print("Error")
 	
-	tv_screen.animate_shader(true if level else false)
+	tv_screen.animate_shader(true if level else false, tv_static_effect)
 
 
 func _exit_terminal():

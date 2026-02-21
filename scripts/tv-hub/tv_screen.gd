@@ -45,7 +45,7 @@ func _animate_right_code(value: float):
 		reset_symbols()
 		toggle_show_symbol(false)
 
-func animate_shader(is_code_correct : bool):
+func animate_shader(is_code_correct : bool, static_effect_mesh : MeshInstance3D):
 	
 	var flash_color = Color.GREEN
 	var animate_fun = _animate_right_code
@@ -71,6 +71,10 @@ func animate_shader(is_code_correct : bool):
 	
 	# 3. Animate it back to 0.0 over 0.5 seconds (Fade effect OFF)
 	_flash_tween.tween_method(animate_fun, 1.0, min_value, max_duration) 
+	
+	if is_code_correct and static_effect_mesh:
+		var material = static_effect_mesh.get_active_material(0)
+		_flash_tween.parallel().tween_property(material, "shader_parameter/intensity", 0.0, max_duration).from(1.0)
 	
 	_flash_tween.set_trans(Tween.TRANS_CUBIC)
 	_flash_tween.set_ease(Tween.EASE_IN)
