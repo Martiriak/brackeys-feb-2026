@@ -1,137 +1,15 @@
 [gd_resource type="Resource" script_class="CodeLevelMap" format=3 uid="uid://bx248p01xwq63"]
 
-[ext_resource type="PackedScene" uid="uid://c4u8tle0rgstt" path="res://assets/Gas_Station_Level/GasStation.tscn" id="1_6dyiw"]
+[ext_resource type="PackedScene" uid="uid://cnsws4h4ccdgd" path="res://levels/Final_Levels/final_level1.tscn" id="1_rquve"]
 [ext_resource type="Script" uid="uid://3rxyo6r3rs0i" path="res://scripts/data/code_level.gd" id="1_vl75r"]
-[ext_resource type="PackedScene" uid="uid://bvlol1n83lo7d" path="res://assets/Gas_Station_Level/Floor.glb" id="2_nyj5f"]
-[ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="3_vna3p"]
-[ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://scripts/lights/shop_flickering_light.gd" id="4_dj80e"]
-[ext_resource type="PackedScene" uid="uid://c3s0u5ds8snn5" path="res://scenes/hub.tscn" id="5_g26q0"]
-[ext_resource type="PackedScene" uid="uid://dqorx6glhubr6" path="res://testDani/aquaLevel.tscn" id="6_grnqr"]
-[ext_resource type="PackedScene" uid="uid://be35g0j8glr1y" path="res://testDani/BoatScene.tscn" id="7_heqwe"]
-
-[sub_resource type="GDScript" id="GDScript_aqq0a"]
-script/source = "extends Node3D
-"
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]
-sky_top_color = Color(0.21800351, 0.26721764, 0.33278427, 1)
-sky_horizon_color = Color(0.30825487, 0.31470218, 0.32760945, 1)
-
-[sub_resource type="Sky" id="Sky_8oiou"]
-sky_material = SubResource("ProceduralSkyMaterial_is6vp")
-
-[sub_resource type="Environment" id="Environment_utcio"]
-background_mode = 2
-background_energy_multiplier = 0.2
-sky = SubResource("Sky_8oiou")
-tonemap_mode = 3
-fog_enabled = true
-fog_density = 0.025
-volumetric_fog_enabled = true
-volumetric_fog_emission = Color(0.60933006, 0.6093301, 0.60933006, 1)
-adjustment_enabled = true
-adjustment_brightness = 0.9
-adjustment_contrast = 1.05
-
-[sub_resource type="PackedScene" id="PackedScene_dtt51"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("FinalLevel1", "Node3D", "script", "WorldEnvironment", "WorldEnvironment", "environment", "DirectionalLight3D", "DirectionalLight3D", "transform", "light_energy", "shadow_enabled", "GasStation", "Floor", "Floor2", "transform", "Floor3", "transform", "Floor4", "transform", "Floor5", "transform", "Floor6", "transform", "Floor7", "transform", "Floor8", "transform", "Floor9", "transform", "Floor10", "transform", "Floor26", "transform", "Floor11", "transform", "Floor12", "transform", "Floor13", "transform", "Floor14", "transform", "Floor16", "transform", "Floor17", "transform", "Floor18", "transform", "Floor19", "transform", "Floor20", "transform", "Floor21", "transform", "Floor22", "transform", "Floor23", "transform", "Floor24", "transform", "Floor25", "transform", "Floor15", "transform", "VendingMachine", "transform", "SpotLight3D5", "SpotLight3D", "transform", "spot_range", "spot_angle", "spot_angle_attenuation", "SpotLight3D2", "SpotLight3D", "transform", "light_energy", "shadow_enabled", "spot_range", "spot_angle", "Shop_Light", "SpotLight3D", "transform", "light_color", "light_energy", "light_size", "shadow_enabled", "spot_range", "spot_angle", "script"),
-"node_count": 34,
-"node_ids": PackedInt32Array(1071886748, 1344723811, 1361810628, 1830225918, 225847350, 2123426383, 48840060, 1694597924, 1139192971, 1573702293, 1395353169, 1641827078, 1210560523, 1145662495, 1600585025, 252280592, 251830768, 952174274, 640630774, 1678574931, 1037341409, 1303954217, 1986038511, 869407736, 1097164122, 979796964, 1086017638, 638568102, 736970629, 1509723749, 1401058196, 1384081823, 2012637059, 205437086),
-"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("./GasStation"), NodePath("."), NodePath("./VendingMachine"), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 1, 5, 1, 0, 1073741825, 0, 7, 6, -1, 3, 8, 2, 9, 3, 10, 4, 0, 1073741826, 0, 2147483647, 11, 5, 0, 0, 1073741827, 0, 2147483647, 12, 6, 0, 0, 1073741828, 0, 2147483647, 13, 7, 1, 14, 8, 0, 1073741829, 0, 2147483647, 15, 9, 1, 16, 10, 0, 1073741830, 0, 2147483647, 17, 11, 1, 18, 12, 0, 1073741831, 0, 2147483647, 19, 13, 1, 20, 14, 0, 1073741832, 0, 2147483647, 21, 15, 1, 22, 16, 0, 1073741833, 0, 2147483647, 23, 17, 1, 24, 18, 0, 1073741834, 0, 2147483647, 25, 19, 1, 26, 20, 0, 1073741835, 0, 2147483647, 27, 21, 1, 28, 22, 0, 1073741836, 0, 2147483647, 29, 23, 1, 30, 24, 0, 1073741837, 0, 2147483647, 31, 25, 1, 32, 26, 0, 1073741838, 0, 2147483647, 33, 27, 1, 34, 28, 0, 1073741839, 0, 2147483647, 35, 29, 1, 36, 30, 0, 1073741840, 0, 2147483647, 37, 31, 1, 38, 32, 0, 1073741841, 0, 2147483647, 39, 33, 1, 40, 34, 0, 1073741842, 0, 2147483647, 41, 35, 1, 42, 36, 0, 1073741843, 0, 2147483647, 43, 37, 1, 44, 38, 0, 1073741844, 0, 2147483647, 45, 39, 1, 46, 40, 0, 1073741845, 0, 2147483647, 47, 41, 1, 48, 42, 0, 1073741846, 0, 2147483647, 49, 43, 1, 50, 44, 0, 1073741847, 0, 2147483647, 51, 45, 1, 52, 46, 0, 1073741848, 0, 2147483647, 53, 47, 1, 54, 48, 0, 1073741849, 0, 2147483647, 55, 49, 1, 56, 50, 0, 1073741850, 0, 2147483647, 57, 51, 1, 58, 52, 0, 1073741851, 0, 2147483647, 59, 53, 1, 60, 54, 0, 1073741852, 0, 2147483647, 61, 55, 1, 62, 56, 0, 1073741853, 0, 2147483647, 63, 57, 1, 64, 58, 0, 1073741854, 0, 66, 65, -1, 4, 67, 59, 68, 60, 69, 61, 70, 62, 0, 1073741855, 0, 72, 71, -1, 5, 73, 63, 74, 64, 75, 65, 76, 66, 77, 67, 0, 1073741856, 0, 79, 78, -1, 8, 80, 68, 81, 69, 82, 70, 83, 71, 84, 72, 85, 73, 86, 74, 87, 75, 0),
-"variants": [SubResource("GDScript_aqq0a"), SubResource("Environment_utcio"), Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 0, 7.4956665, 0), 0.05, true, ExtResource("1_6dyiw"), ExtResource("2_nyj5f"), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0), ExtResource("2_nyj5f"), Transform3D(89.474106, 0, 0, 0, 1.0000005, 0, 0, 0, 66.51959, 0, -0.15006399, 0), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 35), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 69), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 69), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 69), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 69), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -70), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -70), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -70), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -70), ExtResource("2_nyj5f"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -35), ExtResource("3_vna3p"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3535566, 2.3841858e-07, 3.5184212), Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.43887138, 1.9521232, 0.07758522), 1.161, 81.539856, 1.6245031, Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.819455, 4.410764, 0.24098587), 0.647, true, 7.4320974, 46.727894, Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.1714225, -0.34206486), Color(0.5649617, 0.5649616, 0.5649616, 1), 0.8, 0.5, true, 13.799706, 89.99, ExtResource("4_dj80e")],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hddnf"]
-resource_local_to_scene = true
-size = Vector3(0.07, 2.756897, 4.983)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4srok"]
-resource_local_to_scene = true
-size = Vector3(0.052890778, 2.7175598, 4.9416847)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_utus3"]
-resource_local_to_scene = true
-size = Vector3(4.977188, 2.7680664, 0.09144592)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jr57e"]
-resource_local_to_scene = true
-size = Vector3(4.7483253, 2.7041016, 0.091098785)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_opvql"]
-resource_local_to_scene = true
-size = Vector3(4.8489666, 0.086582005, 4.9349813)
-
-[sub_resource type="PackedScene" id="PackedScene_gaitx"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("FinalHub", "Node3D", "BoundaryCollisions", "Node3D", "transform", "StaticBodyL", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyR", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyF", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyB", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyT", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "Node", "transform", "SpotLight3D", "SpotLight3D", "transform", "light_energy", "spot_range", "spot_angle", "SpotLight3D2", "SpotLight3D", "transform", "light_energy", "spot_range", "spot_angle"),
-"node_count": 15,
-"node_ids": PackedInt32Array(1594104338, 1366651675, 42289980, 1985473224, 2056469143, 1685839771, 1440166705, 396096773, 34706892, 1487295462, 374402498, 896565495, 1315658809, 2144366733, 1083157216),
-"node_paths": [NodePath("."), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyL"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyR"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyF"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyB"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyT"), NodePath("."), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 1, 4, 0, 0, 1073741825, 0, 6, 5, -1, 1, 7, 1, 0, 1073741826, 0, 9, 8, -1, 2, 10, 2, 11, 3, 0, 1073741827, 0, 13, 12, -1, 1, 14, 4, 0, 1073741828, 0, 16, 15, -1, 2, 17, 5, 18, 6, 0, 1073741829, 0, 20, 19, -1, 1, 21, 7, 0, 1073741830, 0, 23, 22, -1, 2, 24, 8, 25, 9, 0, 1073741831, 0, 27, 26, -1, 1, 28, 10, 0, 1073741832, 0, 30, 29, -1, 2, 31, 11, 32, 12, 0, 1073741833, 0, 34, 33, -1, 1, 35, 13, 0, 1073741834, 0, 37, 36, -1, 2, 38, 14, 39, 15, 0, 1073741835, 0, 2147483647, 40, 16, 1, 41, 17, 0, 1073741836, 0, 43, 42, -1, 4, 44, 18, 45, 19, 46, 20, 47, 21, 0, 1073741837, 0, 49, 48, -1, 4, 50, 22, 51, 23, 52, 24, 53, 25, 0),
-"variants": [Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0), Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -2.4171379, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052000046, 1.4361267, 0.019), SubResource("BoxShape3D_hddnf"), Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 2.6636078, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006757498, 1.3722382, 0.0162525), SubResource("BoxShape3D_4srok"), Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, -2.4949698), Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.122871205, 1.3669432, 0.028183222), SubResource("BoxShape3D_utus3"), Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 2.5237243), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07728767, 1.3989258, -0.036481857), SubResource("BoxShape3D_jr57e"), Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.7679667, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13395593, -0.0006542206, 0.023643078), SubResource("BoxShape3D_opvql"), ExtResource("5_g26q0"), Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.00018060207, 0.0020091534, 0.0008249283), Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.05434698, -0.47109094, 0), 1.739, 7.3673234, 87.41741, Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, -0.05434698, 3.3422315, 0), 0.058, 7.3673234, 87.41741],
-"version": 3
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_aqq0a"]
-resource_local_to_scene = true
-size = Vector3(0.07, 4.019928, 29.225853)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8sgh0"]
-resource_local_to_scene = true
-size = Vector3(0.052890778, 4.0770416, 29.171822)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_enybr"]
-resource_local_to_scene = true
-size = Vector3(29.004917, 4.0560303, 0.09144592)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cwakm"]
-resource_local_to_scene = true
-size = Vector3(29.016426, 3.9447021, 0.091098785)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1f6yb"]
-resource_local_to_scene = true
-size = Vector3(29.002525, 0.086582005, 28.995535)
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pcpin"]
-
-[sub_resource type="Sky" id="Sky_6neer"]
-sky_material = SubResource("ProceduralSkyMaterial_pcpin")
-
-[sub_resource type="Environment" id="Environment_y22u7"]
-background_mode = 2
-sky = SubResource("Sky_6neer")
-
-[sub_resource type="PackedScene" id="PackedScene_bgpo7"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("FinalLevel2", "Node3D", "BoundaryCollisions", "Node3D", "transform", "StaticBodyL", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyR", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyF", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyB", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "StaticBodyT", "StaticBody3D", "transform", "CollisionShape3D", "CollisionShape3D", "transform", "shape", "AquaLevel", "WorldEnvironment", "WorldEnvironment", "environment", "DirectionalLight3D", "DirectionalLight3D", "transform", "light_energy", "light_indirect_energy", "light_cull_mask", "sky_mode", "BoatScene", "transform"),
-"node_count": 16,
-"node_ids": PackedInt32Array(1071886748, 644007141, 477783211, 658845553, 647918202, 673072816, 1100157455, 1912112564, 1528423805, 65014565, 1810364504, 777904297, 1265484883, 613372504, 288118774, 299400715),
-"node_paths": [NodePath("."), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyL"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyR"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyF"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyB"), NodePath("./BoundaryCollisions"), NodePath("./BoundaryCollisions/StaticBodyT"), NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 1, 4, 0, 0, 1073741825, 0, 6, 5, -1, 1, 7, 1, 0, 1073741826, 0, 9, 8, -1, 2, 10, 2, 11, 3, 0, 1073741827, 0, 13, 12, -1, 1, 14, 4, 0, 1073741828, 0, 16, 15, -1, 2, 17, 5, 18, 6, 0, 1073741829, 0, 20, 19, -1, 1, 21, 7, 0, 1073741830, 0, 23, 22, -1, 2, 24, 8, 25, 9, 0, 1073741831, 0, 27, 26, -1, 1, 28, 10, 0, 1073741832, 0, 30, 29, -1, 2, 31, 11, 32, 12, 0, 1073741833, 0, 34, 33, -1, 1, 35, 13, 0, 1073741834, 0, 37, 36, -1, 2, 38, 14, 39, 15, 0, 1073741835, 0, 2147483647, 40, 16, 0, 0, 1073741836, 0, 42, 41, -1, 1, 43, 17, 0, 1073741837, 0, 45, 44, -1, 5, 46, 18, 47, 19, 48, 20, 49, 21, 50, 22, 0, 1073741838, 0, 2147483647, 51, 23, 1, 52, 24, 0),
-"variants": [Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0), Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -14.609277, 0, 0), Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.052001, 2.067642, -0.040926144), SubResource("BoxShape3D_aqq0a"), Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 14.574391, 0, 0), Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.0067567825, 2.0519788, 0.002554655), SubResource("BoxShape3D_8sgh0"), Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, -14.61677), Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.002282858, 2.010925, 0.028182983), SubResource("BoxShape3D_enybr"), Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 14.55174), Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.0664576, 2.019226, -0.036481857), SubResource("BoxShape3D_cwakm"), Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.7679667, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04683892, 1.398617, -0.038300753), SubResource("BoxShape3D_1f6yb"), ExtResource("6_grnqr"), SubResource("Environment_y22u7"), Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 3.4244995, -106.276054, 373.4325), 0.0, 0.0, 4294966787, 1, ExtResource("7_heqwe"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7093887, 0)],
-"version": 3
-}
+[ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="2_rk7sk"]
+[ext_resource type="PackedScene" uid="uid://c016sx8i7wyhb" path="res://levels/Final_Levels/final_level2.tscn" id="3_31hl1"]
 
 [resource]
 script = ExtResource("1_vl75r")
 code_level_map = Dictionary[String, PackedScene]({
-"0-1-1-1-1": SubResource("PackedScene_dtt51"),
-"00000": SubResource("PackedScene_gaitx"),
-"1-1-1-1-1": SubResource("PackedScene_bgpo7")
+"-1-1-1-1-1": ExtResource("2_rk7sk"),
+"0-1-1-1-1": ExtResource("1_rquve"),
+"1-1-1-1-1": ExtResource("3_31hl1")
 })
 metadata/_custom_type_script = "uid://3rxyo6r3rs0i"
