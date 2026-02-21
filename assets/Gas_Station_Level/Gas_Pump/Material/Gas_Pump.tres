@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dkmqw3raj4aw5"]
 
-[ext_resource type="Texture2D" uid="uid://bb2puddjh0yn3" path="res://assets/Gas_Station_Level/Gas_Pump/Texture/GasStation_texture.png" id="1_x7qw3"]
+[ext_resource type="Texture2D" uid="uid://dqoqn0s3dsfws" path="res://assets/Gas_Station_Level/Texture/GasStation_texture.png" id="1_x7qw3"]
 
 [resource]
 resource_name = "Gas_Pump"

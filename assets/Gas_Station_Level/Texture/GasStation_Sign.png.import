@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb2puddjh0yn3"
-path.s3tc="res://.godot/imported/GasStation_texture.png-5356aa3b2777dd400e6b79657481392d.s3tc.ctex"
+uid="uid://cpqdb8ch28yt3"
+path.s3tc="res://.godot/imported/GasStation_Sign.png-a78637a89857835f260940b9c1c02c73.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Gas_Station_Level/Gas_Pump/Texture/GasStation_texture.png"
-dest_files=["res://.godot/imported/GasStation_texture.png-5356aa3b2777dd400e6b79657481392d.s3tc.ctex"]
+source_file="res://assets/Gas_Station_Level/Texture/GasStation_Sign.png"
+dest_files=["res://.godot/imported/GasStation_Sign.png-a78637a89857835f260940b9c1c02c73.s3tc.ctex"]
 
 [params]
 
