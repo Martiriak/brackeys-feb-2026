@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
 [ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://scripts/lights/shop_flickering_light.gd" id="4_enybr"]
 [ext_resource type="PackedScene" uid="uid://mbkdysknckn8" path="res://scenes/objects/coin.tscn" id="5_cwakm"]
+[ext_resource type="AudioStream" uid="uid://cnug4kyojo2le" path="res://SFX/sfx_light_flicker_0.wav" id="6_1f6yb"]
+[ext_resource type="AudioStream" uid="uid://b8csed5f3utjc" path="res://SFX/sfx_light_flicker_1.wav" id="6_dvvq3"]
+[ext_resource type="AudioStream" uid="uid://fljtim57pkro" path="res://SFX/sfx_light_constant.wav" id="7_v5ktp"]
+[ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
@@ -28,16 +32,22 @@ sky_material = SubResource("ProceduralSkyMaterial_is6vp")
 
 [sub_resource type="Environment" id="Environment_utcio"]
 background_mode = 2
-background_energy_multiplier = 0.2
 sky = SubResource("Sky_8oiou")
 tonemap_mode = 3
 fog_enabled = true
+fog_light_energy = 0.75
 fog_density = 0.025
 volumetric_fog_enabled = true
 volumetric_fog_emission = Color(0.60933006, 0.6093301, 0.60933006, 1)
 adjustment_enabled = true
-adjustment_brightness = 0.9
-adjustment_contrast = 1.05
+adjustment_brightness = 0.85
+adjustment_contrast = 1.025
+adjustment_saturation = 1.11
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5ktp"]
+streams_count = 2
+stream_0/stream = ExtResource("6_1f6yb")
+stream_1/stream = ExtResource("6_dvvq3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_enybr"]
 resource_local_to_scene = true
@@ -66,8 +76,10 @@ script = SubResource("GDScript_aqq0a")
 environment = SubResource("Environment_utcio")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1361810628]
-transform = Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 0, 7.4956665, 0)
-light_energy = 0.05
+transform = Transform3D(0.5540215, -0.05678001, 0.83056384, -0.11920989, 0.98197913, 0.1466493, -0.82392305, -0.18025829, 0.53726876, 0, 1.2831492, 0)
+light_color = Color(0.48315006, 0.5396357, 0.707111, 1)
+light_energy = 0.0
+light_angular_distance = 24.3
 shadow_enabled = true
 
 [node name="GasStation" parent="." unique_id=1830225918 instance=ExtResource("1_utcio")]
@@ -159,6 +171,14 @@ spot_range = 1.161
 spot_angle = 81.539856
 spot_angle_attenuation = 1.6245031
 
+[node name="SpotLight3D6" type="SpotLight3D" parent="VendingMachine" unique_id=489817202]
+transform = Transform3D(0.977922, 9.134371e-09, -0.2089701, 0.2089701, -4.2746322e-08, 0.977922, 0, -1, -4.3711378e-08, 1.2740314, 2.035176, -0.023000717)
+light_energy = 5.523
+shadow_enabled = true
+spot_range = 2.0708508
+spot_angle = 42.3748
+spot_angle_attenuation = 1.6245031
+
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=2012637059]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.819455, 4.410764, 0.24098587)
 light_energy = 0.647
@@ -167,14 +187,22 @@ spot_range = 7.4320974
 spot_angle = 46.727894
 
 [node name="Shop_Light" type="SpotLight3D" parent="." unique_id=205437086]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.1714225, -0.34206486)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.0705404, -0.34206486)
 light_color = Color(0.5649617, 0.5649616, 0.5649616, 1)
-light_energy = 0.8
+light_energy = 0.5
 light_size = 0.5
 shadow_enabled = true
 spot_range = 13.799706
 spot_angle = 89.99
 script = ExtResource("4_enybr")
+
+[node name="light_flicker_player" type="AudioStreamPlayer3D" parent="Shop_Light" unique_id=428903197]
+stream = SubResource("AudioStreamRandomizer_v5ktp")
+max_distance = 15.0
+
+[node name="light_constant_player" type="AudioStreamPlayer3D" parent="Shop_Light" unique_id=1943009178]
+stream = ExtResource("7_v5ktp")
+max_distance = 10.0
 
 [node name="BoundaryCollisions" type="Node3D" parent="." unique_id=1418717024]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
@@ -217,8 +245,23 @@ shape = SubResource("BoxShape3D_v5ktp")
 [node name="Coin" parent="." unique_id=2083441910 instance=ExtResource("5_cwakm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4002014, 0.031348586, 3.5895221)
 
+[node name="Coin4" parent="." unique_id=1601632531 instance=ExtResource("5_cwakm")]
+transform = Transform3D(0.49971274, 0, 0.8661912, 0, 1, 0, -0.8661912, 0, 0.49971274, 6.529271, 0.21558505, -1.0300328)
+
 [node name="Coin2" parent="." unique_id=1046404436 instance=ExtResource("5_cwakm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.240127, 0.010227144, 6.427264)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.553381, 0.010227144, 5.677369)
 
 [node name="Coin3" parent="." unique_id=1363178265 instance=ExtResource("5_cwakm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.881501, 0.966349, -3.6533866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.185042, 0.966349, -3.8604097)
+
+[node name="CardBoard_Box" parent="." unique_id=757132082 instance=ExtResource("6_1f6yb")]
+transform = Transform3D(0.8456999, 0, -0.5336588, 0, 1, 0, 0.5336588, 0, 0.8456999, -2.7360163, 0, -1.7572203)
+
+[node name="CardBoard_Box2" parent="." unique_id=1310132268 instance=ExtResource("6_1f6yb")]
+transform = Transform3D(0.26003262, 0, 0.9655999, 0, 1, 0, -0.9655999, 0, 0.26003262, -2.561365, 0, -2.5647957)
+
+[node name="CardBoard_Box3" parent="." unique_id=1910923071 instance=ExtResource("6_1f6yb")]
+transform = Transform3D(-0.5656581, 0, 0.8246399, 0, 1, 0, -0.8246399, 0, -0.5656581, -3.2731266, 0, -2.393879)
+
+[node name="CardBoard_Box4" parent="." unique_id=2136349196 instance=ExtResource("6_1f6yb")]
+transform = Transform3D(-0.96210855, 0, 0.27266642, 0, 1, 0, -0.27266642, 0, -0.96210855, -3.2731266, 0.49563617, -2.393879)

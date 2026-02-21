@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://htlr2hd5piqa"]
+
+[ext_resource type="PackedScene" uid="uid://brtcmky7vrcf1" path="res://scenes/objects/soda_can.tscn" id="1_c7htj"]
+
+[sub_resource type="Animation" id="Animation_51x25"]
+resource_name = "FallingCan"
+length = 3.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SodaCan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.0666667, 1.1333334, 1.2, 1.3666667, 1.5333333, 1.6333333, 1.7333335, 1.9000001, 2.2666667, 2.3666668, 2.4333334, 2.6333334, 2.7333336),
+"transitions": PackedFloat32Array(1, -2, 2, 0.5, 0.5, 0.5, -2, 0.5, 2, -2, -2, 0.5, 0.5, -2, 1),
+"update": 0,
+"values": [Vector3(0.28952098, 1.043442, -0.030798912), Vector3(0.33241183, 1.043442, -0.030798912), Vector3(0.33241183, 0.8950941, -0.09610039), Vector3(0.33241183, 0.9029276, -0.04015988), Vector3(0.33241183, 0.9264281, 0.027653133), Vector3(0.33241183, 0.7591411, 0.04385715), Vector3(0.33241183, 0.5879087, 0.021295946), Vector3(0.33241183, 0.61724794, 0.049658805), Vector3(0.33241183, 0.5698638, 0.07722437), Vector3(0.33241183, 0.4440658, 0.07722437), Vector3(0.8697562, 0.025801342, 0.07722437), Vector3(0.92173505, 0.04986916, 0.07719099), Vector3(0.978, 0.026, 0.077), Vector3(1.146, 0.026, 0.077), Vector3(1.1401641, 0.026000023, 0.07700001)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.9333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_open_animation"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SodaCan:quaternion")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8000001, 1.0666667, 1.1333334, 1.2, 1.3666668, 1.5333334, 1.6333334, 1.7333335, 1.9000001, 2.0666666, 2.2666667, 2.6333334, 2.7333336),
+"transitions": PackedFloat32Array(1, -2, 2, 0.5, 0.5, 0.5, -2, 0.5, 2, -2, 0.5, -2, -2, 1),
+"update": 0,
+"values": [Quaternion(0, 0, 0, 1), Quaternion(0, 0, -0.043270666, 0.99906343), Quaternion(-0.16130206, 0.00021523242, -0.026582433, 0.986547), Quaternion(0.048848, 0.006138611, -0.021503732, 0.9985559), Quaternion(-0.38311705, -0.002367845, -0.017792176, 0.9235254), Quaternion(-0.31833717, 0.0004247727, -0.009191022, 0.9479329), Quaternion(-0.4164658, 0.00055571645, 0.0023113338, 0.9091483), Quaternion(-0.47315967, 0.0006313848, 0.009208529, 0.88092834), Quaternion(-0.5279334, 0.0007045121, 0.016068442, 0.84913343), Quaternion(-0.61435616, 0.0008198426, 0.027342996, 0.7885545), Quaternion(-0.64703935, 0.00086342916, 0.031773556, 0.7617938), Quaternion(-0.72351676, 0.0009655041, 0.04258206, 0.68899155), Quaternion(-0.7009124, 0.17944168, -0.12872219, 0.67819846), Quaternion(-0.7159447, 0.10440621, -0.056369558, 0.68800074)]
+}
+
+[sub_resource type="Animation" id="Animation_v5k5w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SodaCan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.28952098, 1.043442, -0.030798912)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SodaCan:quaternion")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(0.3662871, 0.62394804, -0.6161471, -0.3112642)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6km4t"]
+_data = {
+&"FallingCan": SubResource("Animation_51x25"),
+&"RESET": SubResource("Animation_v5k5w")
+}
+
+[node name="Temp" type="Node3D" unique_id=2133500471]
+
+[node name="SodaCan" parent="." unique_id=972569640 instance=ExtResource("1_c7htj")]
+transform = Transform3D(-0.5378961, 0.07351912, -0.8397981, 0.8406564, -0.027606934, -0.540863, -0.06294804, -0.99691045, -0.046954595, 0.28952098, 1.043442, -0.030798912)
+
+[node name="FallingCanAnimationPlayer" type="AnimationPlayer" parent="." unique_id=251359215]
+libraries/ = SubResource("AnimationLibrary_6km4t")

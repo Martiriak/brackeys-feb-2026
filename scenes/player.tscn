@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://5x5t2c2p7anb" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Shader" uid="uid://dyx087rgrm816" path="res://assets/shaders/psx_camera_shader.gdshader" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://bq6bdtr7q5dm6" path="res://SFX/sfx_footstep_0.wav" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://c7362glooqeai" path="res://SFX/sfx_footstep_1.wav" id="4_fjrip"]
+[ext_resource type="AudioStream" uid="uid://b5dho0ba8f0r7" path="res://SFX/sfx_footstep_2.wav" id="5_smehm"]
+[ext_resource type="AudioStream" uid="uid://dgff60rgislu3" path="res://SFX/sfx_footstep_3.wav" id="6_ur7pv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -28,8 +32,18 @@ shader_parameter/dither_strength = 0.3
 material = SubResource("ShaderMaterial_qhqgy")
 size = Vector2(2, 2)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g2els"]
+streams_count = 4
+stream_0/stream = ExtResource("3_tuyoq")
+stream_1/stream = ExtResource("4_fjrip")
+stream_2/stream = ExtResource("5_smehm")
+stream_3/stream = ExtResource("6_ur7pv")
+
 [node name="player" type="CharacterBody3D" unique_id=375316983]
+collision_layer = 0
+floor_max_angle = 1.0471976
 script = ExtResource("1_4flbx")
+JUMP_VELOCITY = 4.3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1044853861]
 visible = false
@@ -58,4 +72,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4739387, -2.300301)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.557)
 mesh = SubResource("QuadMesh_dqkch")
 
+[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D" unique_id=1821306888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7639663, 0)
+visible = false
+shadow_enabled = true
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="." unique_id=203287718]
+[node name="sfx_footsteps" type="AudioStreamPlayer3D" parent="." unique_id=203287718]
+stream = SubResource("AudioStreamRandomizer_g2els")

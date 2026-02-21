@@ -8,6 +8,8 @@
 [ext_resource type="Material" uid="uid://cshybebhih3p" path="res://assets/Room_Hub/CRT_Television/Materials/Chip.tres" id="5_2x5y6"]
 [ext_resource type="Material" uid="uid://borgka02k53kq" path="res://assets/Room_Hub/CRT_Television/Materials/Display.tres" id="6_qoyvj"]
 [ext_resource type="Shader" uid="uid://cxvxtyrisomb5" path="res://assets/shaders/tv_static.gdshader" id="8_kcctm"]
+[ext_resource type="PackedScene" uid="uid://ddkhuql1uhscb" path="res://assets/Room_Hub/Post_It/Post_It.fbx" id="9_103ec"]
+[ext_resource type="PackedScene" uid="uid://b43vpswns7vc3" path="res://levels/tv-hub/postit_code.tscn" id="10_2x5y6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wh3ns"]
 
@@ -177,6 +179,9 @@ shader_parameter/hole_size = Vector2(0.33, 0.27)
 shader_parameter/edge_softness = 0.05
 shader_parameter/static_speed = 20.0
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_qoyvj"]
+viewport_path = NodePath("Post_It/Sprite3D/SubViewport")
+
 [node name="Tv" type="RigidBody3D" unique_id=1585059994]
 freeze = true
 script = ExtResource("1_wh3ns")
@@ -195,6 +200,7 @@ transform = Transform3D(0.125, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 0.07455951, 0.
 texture = SubResource("ViewportTexture_a2bd8")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=621390382]
+transparent_bg = true
 handle_input_locally = false
 size_2d_override = Vector2i(1229, 1024)
 size_2d_override_stretch = true
@@ -216,10 +222,29 @@ surface_material_override/0 = SubResource("ShaderMaterial_2x5y6")
 [node name="ambience_player" type="AudioStreamPlayer3D" parent="." unique_id=1565288994]
 attenuation_model = 2
 max_db = 6.0
-max_distance = 6.0
+max_distance = 4.5
 attenuation_filter_cutoff_hz = 1000.0
 
 [node name="RayCast3D" type="RayCast3D" parent="ambience_player" unique_id=1571331622]
 transform = Transform3D(1, 0, 0, 0, -0.021186717, -0.9997755, 0, 0.9997755, -0.021186717, 0, 0.67000854, 0)
+
+[node name="Post_It" parent="." unique_id=1760039133 instance=ExtResource("9_103ec")]
+transform = Transform3D(-9.1793915e-08, 1.435, 0, -2.1, -6.272584e-08, 0, 0, 0, 1.787, 0.3888635, 0.26455438, 0.21498963)
+
+[node name="Sprite3D" type="Sprite3D" parent="Post_It" unique_id=786913756]
+transform = Transform3D(-0.006317596, -0.010202353, 6.9722705e-10, -6.1519123e-10, -4.391335e-10, -0.012, 0.010202353, -0.0063175955, -2.9184424e-10, -0.0053831637, -0.011000007, 0)
+flip_h = true
+shaded = true
+texture = SubResource("ViewportTexture_qoyvj")
+
+[node name="SubViewport" type="SubViewport" parent="Post_It/Sprite3D" unique_id=871866694]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(640, 128)
+size_2d_override = Vector2i(656, 128)
+size_2d_override_stretch = true
+render_target_update_mode = 1
+
+[node name="PostitCode" parent="Post_It/Sprite3D/SubViewport" unique_id=982686716 instance=ExtResource("10_2x5y6")]
 
 [connection signal="code_accepted" from="Sprite3D/SubViewport/TvScreen" to="." method="_on_code_accepted"]

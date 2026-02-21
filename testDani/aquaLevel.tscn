@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dqorx6glhubr6"]
 
 [ext_resource type="Shader" uid="uid://dhvvjehcggtdg" path="res://testDani/waterPlane.gdshader" id="2_2n85q"]
+[ext_resource type="PackedScene" uid="uid://cxh7gtx7qoupu" path="res://assets/Sea_Level/RubberDuck/Duck.tscn" id="4_2n85q"]
 [ext_resource type="PackedScene" uid="uid://doccpmiy36g3p" path="res://assets/Sea_Level/Goldfish/goldfish.fbx" id="4_r3tio"]
 [ext_resource type="Script" uid="uid://87dp26xgf15n" path="res://assets/Sea_Level/Goldfish/goldfish.gd" id="5_5yn76"]
 
@@ -23,10 +24,10 @@ _surfaces = [{
 render_priority = 0
 shader = ExtResource("2_2n85q")
 shader_parameter/height_scale = 1.0
-shader_parameter/albedo_color = Color(0, 0, 5.1514587, 1)
+shader_parameter/albedo_color = Color(0, 0.9136858, 2.1344619, 1)
 shader_parameter/roughness = 0.2
 shader_parameter/specular_strength = 0.5
-shader_parameter/opacity = 0.5
+shader_parameter/opacity = 0.3070000145825
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qiwpe"]
 size = Vector3(193.35352, 1, 8.16748)
@@ -73,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.528546, -30.203125, -2.973724
 shape = SubResource("BoxShape3D_qiwpe")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=668805793]
-transform = Transform3D(1, 0, 0, 0, 0.9639005, 0.26626268, 0, -0.26626268, 0.9639005, -2.2696514, 36.184845, -8.170662)
+transform = Transform3D(1, 0, 0, 0, 0.9639005, 0.26626268, 0, -0.26626268, 0.9639005, -2.2696514, 49.46818, -8.170662)
 light_color = Color(0.943956, 0.71744794, 0, 1)
 light_energy = 16.0
 light_indirect_energy = 16.0
@@ -83,12 +84,12 @@ spot_range = 77.426765
 spot_angle = 28.758944
 
 [node name="Moon" type="MeshInstance3D" parent="." unique_id=166288550]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -1.5862799, 12.288989, -42.272377)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -1.5862799, 25.572327, -42.272377)
 material_override = SubResource("StandardMaterial3D_r3tio")
 mesh = SubResource("SphereMesh_5yn76")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1728024117]
-transform = Transform3D(1, 0, 0, 0, -0.9108998, 0.41262764, 0, -0.41262764, -0.9108998, -4.7279644, 19.203083, -47.152508)
+transform = Transform3D(1, 0, 0, 0, -0.9108998, 0.41262764, 0, -0.41262764, -0.9108998, -4.7279644, 32.48642, -47.152508)
 light_color = Color(0.943956, 0.71744794, 0, 1)
 light_energy = 16.0
 light_indirect_energy = 16.0
@@ -168,7 +169,7 @@ shape = SubResource("BoxShape3D_nmc7w")
 [node name="goldfish" parent="." unique_id=561417758 instance=ExtResource("4_r3tio")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.092857, 3.335947, 17.048107)
 script = ExtResource("5_5yn76")
-radius = 50.0
+radius = 30.0
 speed = -0.5
 height = 0.1
 
@@ -177,3 +178,25 @@ height = 0.1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="goldfish/RigidBody3D" unique_id=619631738]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 5.954395, 0, 0.20727539, 0)
 shape = SubResource("CapsuleShape3D_r3tio")
+
+[node name="goldfishGrosso" parent="." unique_id=1094190244 instance=ExtResource("4_r3tio")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 62.548244, 22.008615, 0)
+script = ExtResource("5_5yn76")
+radius = 100.0
+speed = -0.3
+height = 20.0
+
+[node name="Duck" parent="." unique_id=649853383 instance=ExtResource("4_2n85q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+
+[node name="Duck2" parent="." unique_id=327149374 instance=ExtResource("4_2n85q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+
+[node name="Duck3" parent="." unique_id=770041289 instance=ExtResource("4_2n85q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+
+[node name="Duck4" parent="." unique_id=1744490388 instance=ExtResource("4_2n85q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
+
+[node name="Duck5" parent="." unique_id=1947681368 instance=ExtResource("4_2n85q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)

@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c3jr17krotbor" path="res://assets/Sea_Level/Boat/boat.gd" id="1_4ceb7"]
 [ext_resource type="PackedScene" uid="uid://drlumnddjwus1" path="res://assets/Sea_Level/Boat/Boat.fbx" id="1_8qt8p"]
+[ext_resource type="PackedScene" uid="uid://dxovckq71a73q" path="res://assets/Sea_Level/Boat/Boat_Oar.glb" id="3_qmjlj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ceb7"]
 friction = 0.0
 bounce = 0.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ceb7"]
-size = Vector3(4.432541, 0.76538086, 11.093002)
+size = Vector3(3.2809868, 0.76538086, 11.093002)
 
 [node name="BoatScene" type="Node3D" unique_id=299400715]
 
@@ -20,7 +21,7 @@ script = ExtResource("1_4ceb7")
 [node name="Boat" parent="RigidBody3D" unique_id=476004110 instance=ExtResource("1_8qt8p")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=566846549]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14020538, 0.34509277, -0.14962006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2581005, -0.34843946, -0.14962006)
 shape = SubResource("BoxShape3D_4ceb7")
 
 [node name="PlayerSocket" type="Node3D" parent="RigidBody3D" unique_id=30049169]
@@ -28,3 +29,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.064088, 0)
 
 [node name="TVSocket" type="Node3D" parent="RigidBody3D" unique_id=465348587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4966328, -2.6613674)
+
+[node name="Paddle_R" parent="RigidBody3D" unique_id=2126669024 instance=ExtResource("3_qmjlj")]
+transform = Transform3D(0.5829538, -0.26680684, 0.4785173, -0.04417488, 0.6735624, 0.4293741, -0.54608905, -0.33930472, 0.4760871, -1.7739755, 1.0713265, 1.6919746)
+
+[node name="Paddle_L" parent="RigidBody3D" unique_id=2006013624 instance=ExtResource("3_qmjlj")]
+transform = Transform3D(0.2878503, 0.5054126, -0.54927266, -0.28544125, 0.61849016, 0.41951546, 0.6896851, 0.045034245, 0.40287268, 2.0193367, 1.4622824, 1.1520964)
