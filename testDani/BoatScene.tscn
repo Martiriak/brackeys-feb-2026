@@ -25,3 +25,6 @@ shape = SubResource("BoxShape3D_4ceb7")
 
 [node name="PlayerSocket" type="Node3D" parent="RigidBody3D" unique_id=30049169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.263269, 0)
+
+[node name="TVSocket" type="Node3D" parent="RigidBody3D" unique_id=465348587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4966328, -2.6613674)
