@@ -6,10 +6,19 @@ extends InteractableObject
 @onready var can_camera: Camera3D = $CanCamera
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var tv_screen: TvScreen = $Sprite3D/SubViewport/TvScreen
+@onready var spot_light_3d: SpotLight3D = $CanCamera/SpotLight3D
 
 var _locked_player: Player = null
 
 var bFirstTime : bool = true
+
+func enable_camera():
+	can_camera.current = true
+	spot_light_3d.show()
+	
+func disable_camera():
+	can_camera.current = false
+	spot_light_3d.hide()
 
 func get_string_to_print():
 	return '"E" to look at:' + self.name
@@ -18,9 +27,11 @@ func show_code():
 	sprite_3d.show()
 	tv_screen.hide_active_slot_indicator()
 
+func hide_code():
+	sprite_3d.hide()
+	
 func _ready() -> void:
 	tv_screen.set_code(levelCode)
-	show_code()
 
 func on_interaction(p: Player) -> void:
 	_locked_player = p
@@ -30,7 +41,7 @@ func on_interaction(p: Player) -> void:
 		var camera := children_cameras[0] as Camera3D
 		if is_instance_valid(camera):
 			camera.current = false
-	can_camera.current = true
+	enable_camera()
 	
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -45,7 +56,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					if is_instance_valid(camera):
 						camera.current = false
 			_locked_player = null
-			can_camera.current = false
+			disable_camera()
 			bFirstTime = true
 		else:
 			bFirstTime = false
