@@ -19,9 +19,9 @@ ObjNameUISceneParent = NodePath("../UI")
 OutlineCamSceneParent = NodePath("../UI")
 
 [node name="Tv" parent="." unique_id=1585059994 instance=ExtResource("1_m1504")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.04782796, 0.9594152, -2.1992583)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.04782796, 0.47086346, -2.1992583)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=106527051]
+[node name="WorlsBoundaryShapeSB" type="StaticBody3D" parent="." unique_id=106527051]
 
-[node name="WorlsBoundaryShape" type="CollisionShape3D" parent="StaticBody3D" unique_id=1231274918]
+[node name="WorlsBoundaryShape" type="CollisionShape3D" parent="WorlsBoundaryShapeSB" unique_id=1231274918]
 shape = SubResource("WorldBoundaryShape3D_m1504")
