@@ -229,6 +229,7 @@ func _physics_process(delta: float) -> void:
 		# Reset previous items
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
+
 		ObjNameUI.get_node("ObjName").text = ""
 		
 		var collider = look_at.get_collider()
