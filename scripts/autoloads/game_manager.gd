@@ -3,6 +3,7 @@ extends Node
 var player_ref:Player
 var tv_ref:TV
 var _current_level : Node3D
+var main_ref : Node3D
 
 
 var code_level_res:  = preload("res://scenes/data/CodeLevels.tres")
@@ -32,7 +33,12 @@ func _create_and_hide_level(scene: PackedScene) -> Node3D:
 		return spawned
 	return instantiated_levels[scene]
 
-func load_new_level(new_level: PackedScene):
+	
+func load_new_level(new_level : PackedScene):
+	tv_ref.reparent(main_ref)
+	player_ref.reparent(main_ref)
+	player_ref._isOnBoat = false
+	
 	if _current_level:
 		_current_level.process_mode = Node.PROCESS_MODE_DISABLED
 		_current_level.hide()

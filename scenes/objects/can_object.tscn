@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://de662papd6le4"]
+
+[ext_resource type="PackedScene" uid="uid://brtcmky7vrcf1" path="res://scenes/objects/soda_can.tscn" id="1_unkts"]
+[ext_resource type="Script" uid="uid://bfvqk24gvx5r3" path="res://scripts/objects/soda_can.gd" id="1_xyvtk"]
+[ext_resource type="PackedScene" uid="uid://drdmacdfrn1hm" path="res://levels/tv-hub/tv_screen.tscn" id="2_xyvtk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xyvtk"]
+radius = 0.6220703
+height = 2.3110962
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_32in8"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="CanObject" type="StaticBody3D" unique_id=1127642891]
+script = ExtResource("1_xyvtk")
+levelCode = Array[int]([2, 1, 0, 0, 2])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=100028414]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0.0037148148, 0.0005120039, 0.00028342125)
+shape = SubResource("CapsuleShape3D_xyvtk")
+
+[node name="SodaCan" parent="." unique_id=972569640 instance=ExtResource("1_unkts")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1843226381]
+transform = Transform3D(-1.7484555e-09, -0.016, 0, 0.04, -6.993822e-10, 0, 0, 0, 0.016, 0, 0.0017205961, 0.03537779)
+texture = SubResource("ViewportTexture_32in8")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1744947191]
+transparent_bg = true
+handle_input_locally = false
+size_2d_override = Vector2i(800, 256)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="TvScreen" parent="Sprite3D/SubViewport" unique_id=26968705 instance=ExtResource("2_xyvtk")]
+
+[node name="CanCamera" type="Camera3D" parent="." unique_id=1038551767]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.0044790655, 0.16611397)

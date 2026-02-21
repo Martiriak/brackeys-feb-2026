@@ -206,7 +206,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04683892, 1.398617, -0.0383
 shape = SubResource("BoxShape3D_v5ktp")
 
 [node name="Coin" parent="." unique_id=2083441910 instance=ExtResource("5_cwakm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7073517, 0.7324722, 4.9427176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5571042, 0.031348586, 3.2884605)
 
 [node name="Coin2" parent="." unique_id=1046404436 instance=ExtResource("5_cwakm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7073517, 0.7324722, 6.427264)

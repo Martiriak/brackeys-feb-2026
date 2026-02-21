@@ -1,28 +1,8 @@
 [gd_scene format=3 uid="uid://brtcmky7vrcf1"]
 
 [ext_resource type="PackedScene" uid="uid://cny34qslkxkks" path="res://assets/Gas_Station_Level/Soda_Can/SodaCan.glb" id="1_i56hr"]
-[ext_resource type="PackedScene" uid="uid://drdmacdfrn1hm" path="res://levels/tv-hub/tv_screen.tscn" id="2_fdbmw"]
-[ext_resource type="Script" uid="uid://bfvqk24gvx5r3" path="res://scripts/objects/soda_can.gd" id="2_y7xvm"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_fdbmw"]
-viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="SodaCan" unique_id=972569640 instance=ExtResource("1_i56hr")]
-script = ExtResource("2_y7xvm")
-levelCode = Array[int]([2, 1, 0, 0, 2])
 
-[node name="Cylinder" parent="." index="0" unique_id=1963530270]
+[node name="Cylinder" parent="." index="0" unique_id=332148613]
 transform = Transform3D(-0.035, 0, 0, 0, -0.05499994, 0, 0, 0, -0.035, 0, 0, 0)
-
-[node name="Sprite3D" type="Sprite3D" parent="." index="1" unique_id=1615666475]
-transform = Transform3D(-1.7484555e-09, -0.016, 0, 0.04, -6.993822e-10, 0, 0, 0, 0.016, 0, 0.0017205961, 0.03537779)
-texture = SubResource("ViewportTexture_fdbmw")
-
-[node name="SubViewport" type="SubViewport" parent="Sprite3D" index="0" unique_id=53194516]
-transparent_bg = true
-handle_input_locally = false
-size_2d_override = Vector2i(800, 256)
-size_2d_override_stretch = true
-render_target_update_mode = 4
-
-[node name="TvScreen" parent="Sprite3D/SubViewport" index="0" unique_id=26968705 instance=ExtResource("2_fdbmw")]
