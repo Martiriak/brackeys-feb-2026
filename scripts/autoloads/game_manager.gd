@@ -5,6 +5,7 @@ var tv_ref:TV
 var _current_level : Node3D
 var main_ref : Node3D
 
+var world_environment: WorldEnvironment
 
 var code_level_res:  = preload("res://scenes/data/CodeLevels.tres")
 
@@ -49,6 +50,8 @@ func load_new_level(new_level : PackedScene):
 	level_to_show.process_mode = Node.PROCESS_MODE_INHERIT
 	if level_to_show.has_method("on_level_load"):
 		level_to_show.on_level_load()
+		if level_to_show is BaseLevel:
+			(level_to_show as BaseLevel).configure_world_environment(world_environment)
 	_current_level = level_to_show
 
 func get_level(code: String) -> LevelEntry:

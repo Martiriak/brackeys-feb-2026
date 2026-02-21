@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://cv4xvuplvql0a" path="res://scripts/objects/locked_object.gd" id="1_rg8gw"]
 [ext_resource type="PackedScene" uid="uid://cw2idw1gulxi1" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine.glb" id="2_w77ry"]
 [ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="3_51x25"]
-[ext_resource type="PackedScene" path="res://scenes/objects/vending_machine_display.tscn" id="5_51x25"]
-[ext_resource type="PackedScene" path="res://scenes/objects/can_object.tscn" id="5_v5k5w"]
+[ext_resource type="AudioStream" uid="uid://bm64mvgqyd7n7" path="res://SFX/sfx_falling_can_01.wav" id="4_5kgah"]
+[ext_resource type="PackedScene" uid="uid://tskmkveqkwf8" path="res://scenes/objects/vending_machine_display.tscn" id="5_51x25"]
+[ext_resource type="AudioStream" uid="uid://dmggurkyell2q" path="res://SFX/sfx_falling_can_02.wav" id="5_uarrk"]
+[ext_resource type="PackedScene" uid="uid://de662papd6le4" path="res://scenes/objects/can_object.tscn" id="5_v5k5w"]
+[ext_resource type="AudioStream" uid="uid://44255tc7awlx" path="res://SFX/sfx_falling_can_03.wav" id="6_crb4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucgg"]
 size = Vector3(0.8659973, 2.1538086, 1.3684082)
@@ -64,6 +67,29 @@ tracks/3/keys = {
 "method": &"show_code"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../sfx_falling_can_player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_5kgah")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_uarrk")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_crb4k")
+}],
+"times": PackedFloat32Array(0.96666664, 1.4666667, 1.9666667)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_v5k5w"]
 length = 0.001
@@ -108,9 +134,7 @@ shape = SubResource("BoxShape3D_6ucgg")
 [node name="VendingMachine" parent="." unique_id=2044447561 instance=ExtResource("2_w77ry")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-
-[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=377142618]
-
+[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=192360335]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.381719, 0.49966082, 0.11802703)
 
 [node name="Duck" parent="VendingMachine" unique_id=943551404 instance=ExtResource("3_51x25")]
@@ -125,5 +149,8 @@ rotation_edit_mode = 1
 
 [node name="VendingMachineDisplay" parent="." unique_id=178363814 instance=ExtResource("5_51x25")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0.6058295, 1.6102169, -0.5313006)
+
+[node name="sfx_falling_can_player" type="AudioStreamPlayer3D" parent="." unique_id=1268566739]
+pitch_scale = 0.75
 
 [editable path="VendingMachine"]
