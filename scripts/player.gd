@@ -79,6 +79,17 @@ var inventoryItemsDict = {}
 
 var _locked: bool = false
 
+## AUDIO
+@onready var sfx_footsteps: AudioStreamPlayer3D = $sfx_footsteps
+var footstep_can_play := true
+var footstep_landed
+
+## HEADBOB
+@export_group("headbob")
+@export var headbob_frequency := 2.25
+@export var headbob_amplitude := 0.1
+@export var headbob_time := 0.0
+
 func lock_play() -> void:
 	if is_instance_valid(ActiveObj):
 		set_all_meshes_layer(ActiveObj, 20, false)
@@ -105,7 +116,6 @@ func _ready() -> void:
 	cannot_place_material.albedo_color = Color(1, 0, 0, 0.5)
 	ObjNameUI = get_node(NodePath(str(ObjNameUISceneParent) + "/AimPoint"))
 	outlineCam = get_node(NodePath(str(OutlineCamSceneParent) + "/OutlinerControl/OutlineContainer/SubViewport/OutlineCam")) as Camera3D
-
 
 func _process(delta: float) -> void:
 	if _locked:
@@ -225,8 +235,18 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 		move_and_slide()
-	
-	
+		
+		## FOOTSTEP SOUND
+		if not footstep_landed and is_on_floor():
+			sfx_footsteps.play()
+		elif footstep_landed and not is_on_floor():
+			sfx_footsteps.play()
+		footstep_landed = is_on_floor()
+		## FOOTSTEP SOUND
+
+		headbob_time += delta * velocity.length() * float(is_on_floor())
+		$head/Camera3D.transform.origin = headbob(headbob_time)
+		
 	#shows UI Prompt and recursively toggles rendering layer for Meshes (for outline)
 	if look_at.is_colliding():
 		# Reset previous items
@@ -405,3 +425,16 @@ func set_all_meshes_layer(parent_node: Node, layer_number: int, value: bool) -> 
 		var mesh_nodes: Array[Node] = parent_node.find_children("*", "MeshInstance3D", true)
 		for mesh in mesh_nodes:
 			mesh.set_layer_mask_value(layer_number, value)
+
+func headbob(headbob_time):
+	var headbob_position = Vector3.ZERO
+	headbob_position.y = sin(headbob_time * headbob_frequency) * headbob_amplitude
+	headbob_position.x = cos(headbob_time * headbob_frequency / 2) * headbob_amplitude
+	
+	var footstep_threshold = -headbob_amplitude + 0.002
+	if headbob_position.y > footstep_threshold:
+		footstep_can_play = true
+	elif headbob_position.y < footstep_threshold and footstep_can_play:
+		footstep_can_play = false
+		sfx_footsteps.play()
+	return headbob_position
