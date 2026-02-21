@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://3rxyo6r3rs0i" path="res://scripts/data/code_level.gd" id="1_vl75r"]
 [ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="2_rk7sk"]
 [ext_resource type="Script" path="res://scripts/data/level_entry.gd" id="3_6dyiw"]
-[ext_resource type="PackedScene" uid="uid://c016sx8i7wyhb" path="res://levels/Final_Levels/final_level2.tscn" id="3_31hl1"]
 [ext_resource type="Texture2D" uid="uid://bxyhao5wu1i70" path="res://assets/Images/Pesce_png.png" id="4_nyj5f"]
+[ext_resource type="PackedScene" uid="uid://c016sx8i7wyhb" path="res://levels/Final_Levels/final_level2.tscn" id="6_158k7"]
 
 [sub_resource type="Resource" id="Resource_k4t0h"]
 script = ExtResource("3_6dyiw")
@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://2x7fre16mmnh"
 
 [sub_resource type="Resource" id="Resource_nyj5f"]
 script = ExtResource("3_6dyiw")
-scene = ExtResource("3_31hl1")
+scene = ExtResource("6_158k7")
 preview_texture = ExtResource("4_nyj5f")
 metadata/_custom_type_script = "uid://2x7fre16mmnh"
 

@@ -3,8 +3,15 @@ extends RigidBody3D
 var player : Player
 var tv : TV
 
+# --- New Paddle Variables ---
+var paddle_l : Node3D
+var paddle_r : Node3D
+# ---------------------------
+
 @export var paddle_force := 100.0
-@export var boat_width := 1.5      # Distance from center to the "paddle" point
+@export var boat_width := 1.5
+@export var paddle_offset_y := 0.5    # Height relative to boat center
+@export var paddle_offset_z := 0.2    # Move forward/backward relative to center
 @export var linear_drag := 1.2
 @export var angular_drag := 2.5
 
@@ -16,6 +23,11 @@ func _ready() -> void:
 	tv = GameManager.tv_ref
 	tv.reparent(self)
 	tv.transform = $TVSocket.transform
+	
+	# --- Paddle Setup ---
+	# Assuming paddles are stored in GameManager or are children of this node
+	paddle_l = $Paddle_L
+	paddle_r = $Paddle_R
 	
 	player._isOnBoat = true # Tell the player to stop moving themselves
 	
@@ -40,7 +52,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("left"):
 		# apply_force takes (force_vector, offset_from_center)
 		apply_force(forward_dir * paddle_force * multiplier, left_side_offset)
+		# Visual Kick
+		paddle_l.rotation.x += deg_to_rad(20) 
 
 	# 2. Paddle Right Input (Turns boat LEFT)
 	if Input.is_action_just_released("right"):
 		apply_force(forward_dir * paddle_force * multiplier, right_side_offset)
+		# Visual Kick
+		paddle_r.rotation.x += deg_to_rad(20)
+
+	# --- Visual Paddle Reset ---
+	# Smoothly returns paddles to neutral rotation
+	paddle_l.rotation.x = lerp_angle(paddle_l.rotation.x, 0, delta * 2.0)
+	paddle_r.rotation.x = lerp_angle(paddle_r.rotation.x, 0, delta * 2.0)

@@ -23,10 +23,10 @@ _surfaces = [{
 render_priority = 0
 shader = ExtResource("2_2n85q")
 shader_parameter/height_scale = 1.0
-shader_parameter/albedo_color = Color(0, 0, 5.1514587, 1)
+shader_parameter/albedo_color = Color(0, 0.9136858, 2.1344619, 1)
 shader_parameter/roughness = 0.2
 shader_parameter/specular_strength = 0.5
-shader_parameter/opacity = 0.5
+shader_parameter/opacity = 0.3070000145825
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qiwpe"]
 size = Vector3(193.35352, 1, 8.16748)
@@ -168,7 +168,7 @@ shape = SubResource("BoxShape3D_nmc7w")
 [node name="goldfish" parent="." unique_id=561417758 instance=ExtResource("4_r3tio")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.092857, 3.335947, 17.048107)
 script = ExtResource("5_5yn76")
-radius = 50.0
+radius = 30.0
 speed = -0.5
 height = 0.1
 
@@ -177,3 +177,10 @@ height = 0.1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="goldfish/RigidBody3D" unique_id=619631738]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 5.954395, 0, 0.20727539, 0)
 shape = SubResource("CapsuleShape3D_r3tio")
+
+[node name="goldfishGrosso" parent="." unique_id=1094190244 instance=ExtResource("4_r3tio")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 62.548244, 22.008615, 0)
+script = ExtResource("5_5yn76")
+radius = 100.0
+speed = -0.3
+height = 20.0
