@@ -48,18 +48,19 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_code_accepted(code: String) -> void:
-	var level = GameManager.get_level(code)
-	print(code)
-	if level:
-		GameManager.load_new_level(level)
+	var level : LevelEntry = GameManager.get_level(code)
+	
+	if level and level.scene:
+		GameManager.load_new_level(level.scene)
 		sfx_player.stream = sound_accept
 		sfx_player.play()
+		tv_screen.set_hint_texture(level.preview_texture)
+		tv_screen.animate_shader(true, tv_static_effect)
 	else:
 		sfx_player.stream = sound_error
 		sfx_player.play()
-	
-	
-	tv_screen.animate_shader(true if level else false, tv_static_effect)
+		tv_screen.animate_shader(false, tv_static_effect)
+
 
 
 func _exit_terminal():

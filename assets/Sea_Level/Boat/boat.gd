@@ -1,6 +1,7 @@
 extends RigidBody3D
 
 var player : Player
+var tv : TV
 
 @export var paddle_force := 100.0
 @export var boat_width := 1.5      # Distance from center to the "paddle" point
@@ -11,6 +12,11 @@ func _ready() -> void:
 	player = GameManager.player_ref
 	player.reparent(self)
 	player.transform = $PlayerSocket.transform
+	
+	tv = GameManager.tv_ref
+	tv.reparent(self)
+	tv.transform = $TVSocket.transform
+	
 	player._isOnBoat = true # Tell the player to stop moving themselves
 	
 	linear_damp = linear_drag
