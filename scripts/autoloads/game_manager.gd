@@ -11,6 +11,10 @@ var code_level_res:  = preload("res://scenes/data/CodeLevels.tres")
 
 var instantiated_levels : Dictionary[PackedScene, Node3D] = {}
 
+
+signal on_game_resume
+
+
 func _ready() -> void:
 	# Pre-instantiate all levels in the background at start
 	pre_instantiate_all_levels()
@@ -63,5 +67,3 @@ func set_main_hub_level(main_hub_node : Node3D):
 		if entry.scene.resource_path.contains("final_hub.tscn"):
 			instantiated_levels[entry.scene] = main_hub_node
 	_current_level = main_hub_node
-	
-	
