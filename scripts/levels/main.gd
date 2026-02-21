@@ -4,4 +4,5 @@ extends Node3D
 
 func _ready():
 	GameManager.set_current_level(hub_node)
+	GameManager.main_ref = self
 	

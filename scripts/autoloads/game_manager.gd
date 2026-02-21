@@ -3,6 +3,7 @@ extends Node
 var player_ref:Player
 var tv_ref:TV
 var _current_level : Node3D
+var main_ref : Node3D
 
 
 var code_level_res:  = preload("res://scenes/data/CodeLevels.tres")
@@ -38,6 +39,10 @@ func set_current_level(current_node : Node):
 	_current_level = current_node
 	
 func load_new_level(new_level : PackedScene):
+	tv_ref.reparent(main_ref)
+	player_ref.reparent(main_ref)
+	player_ref._isOnBoat = false
+	
 	if _current_level:
 		_current_level.queue_free()
 		
