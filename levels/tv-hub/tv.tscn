@@ -219,4 +219,7 @@ max_db = 6.0
 max_distance = 6.0
 attenuation_filter_cutoff_hz = 1000.0
 
+[node name="RayCast3D" type="RayCast3D" parent="ambience_player" unique_id=1571331622]
+transform = Transform3D(1, 0, 0, 0, -0.021186717, -0.9997755, 0, 0.9997755, -0.021186717, 0, 0.67000854, 0)
+
 [connection signal="code_accepted" from="Sprite3D/SubViewport/TvScreen" to="." method="_on_code_accepted"]
