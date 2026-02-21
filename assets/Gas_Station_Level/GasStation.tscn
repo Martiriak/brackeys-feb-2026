@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4u8tle0rgstt"]
 
 [ext_resource type="PackedScene" uid="uid://b1vs2wixyvkon" path="res://assets/Gas_Station_Level/Gas_Station_PLACEHOLDER.fbx" id="1_6ecij"]
+[ext_resource type="Script" uid="uid://dhi7fmitrl6ey" path="res://scripts/levels/gas_station.gd" id="1_y1i4k"]
 [ext_resource type="PackedScene" uid="uid://dv2cdy2ngge1b" path="res://assets/Gas_Station_Level/Gas_Pump/Gas_Station_pump.fbx" id="2_6ygms"]
 [ext_resource type="PackedScene" uid="uid://ceftvv0u2eo4t" path="res://assets/Gas_Station_Level/Gas_Canopy/Gas_Station_canopy.fbx" id="3_m8340"]
 [ext_resource type="PackedScene" uid="uid://ducsbqe3q8n2q" path="res://assets/Gas_Station_Level/Gas_Sign/Gas_Station_sign.fbx" id="4_n0gbf"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bvlol1n83lo7d" path="res://assets/Gas_Station_Level/Floor.glb" id="7_y1i4k"]
 
 [node name="GasStation" type="Node3D" unique_id=1830225918]
+script = ExtResource("1_y1i4k")
 
 [node name="Gas_Station_PLACEHOLDER" parent="." unique_id=464157696 instance=ExtResource("1_6ecij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.16404, 0, 0)

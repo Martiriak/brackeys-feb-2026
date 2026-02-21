@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c4u8tle0rgstt" path="res://assets/Gas_Station_Level/GasStation.tscn" id="1_utcio"]
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
 
+[sub_resource type="GDScript" id="GDScript_aqq0a"]
+script/source = "extends Node3D
+"
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]
 
 [sub_resource type="Sky" id="Sky_8oiou"]
@@ -14,6 +18,7 @@ sky = SubResource("Sky_8oiou")
 fog_enabled = true
 
 [node name="FinalLevel1" type="Node3D" unique_id=1071886748]
+script = SubResource("GDScript_aqq0a")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1344723811]
 environment = SubResource("Environment_utcio")

@@ -13,6 +13,8 @@ var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png
 
 @onready var _shader_rect := $ColorRect as ColorRect
 @onready var _active_slot_indicator := $CenterContainer/ActiveSlotIndicator as Control
+@onready var _hint_image := $CenterContainer/Hint as TextureRect
+@onready var _symbol_container := $CenterContainer/Slots as HBoxContainer
 
 var _slots: Array[TextureRect]
 var _symbols_for_slots: Array[int]
@@ -39,8 +41,9 @@ func _animate_right_code(value: float):
 	_shader_rect.material.set_shader_parameter("color_progress", value)
 	_shader_timeline = value
 	
-	if _shader_timeline < 0.2 and not _is_empty:
+	if _shader_timeline < 0.7 and not _is_empty:
 		reset_symbols()
+		toggle_show_symbol(false)
 
 func animate_shader(is_code_correct : bool):
 	
@@ -71,6 +74,10 @@ func animate_shader(is_code_correct : bool):
 	
 	_flash_tween.set_trans(Tween.TRANS_CUBIC)
 	_flash_tween.set_ease(Tween.EASE_IN)
+
+func toggle_show_symbol(show_symbol : bool):
+	_symbol_container.visible = show_symbol
+	_hint_image.visible = !show_symbol
 
 func get_current_code() -> String:
 	var result: String = ""
