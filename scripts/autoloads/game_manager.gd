@@ -11,6 +11,7 @@ var code_level_res:  = preload("res://scenes/data/CodeLevels.tres")
 
 var instantiated_levels : Dictionary[PackedScene, Node3D] = {}
 
+var game_completed : bool = false
 
 signal on_game_resume
 
@@ -18,6 +19,8 @@ signal on_game_resume
 func _ready() -> void:
 	# Pre-instantiate all levels in the background at start
 	pre_instantiate_all_levels()
+
+
 
 
 func pre_instantiate_all_levels():

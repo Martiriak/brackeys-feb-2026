@@ -43,6 +43,7 @@ func on_interaction(p: Player):
 			if p.inventoryItemsDict[requested_id] < 0:
 				p.inventoryItemsDict[requested_id] = 0
 			show_code()
+			GameManager.game_completed = true
 			bLocked = false
 
 func can_interact(p: Player):
