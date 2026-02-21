@@ -234,6 +234,7 @@ transform = Transform3D(-9.1793915e-08, 1.435, 0, -2.1, -6.272584e-08, 0, 0, 0, 
 [node name="Sprite3D" type="Sprite3D" parent="Post_It" unique_id=786913756]
 transform = Transform3D(-0.006317596, -0.010202353, 6.9722705e-10, -6.1519123e-10, -4.391335e-10, -0.012, 0.010202353, -0.0063175955, -2.9184424e-10, -0.0053831637, -0.011000007, 0)
 flip_h = true
+shaded = true
 texture = SubResource("ViewportTexture_qoyvj")
 
 [node name="SubViewport" type="SubViewport" parent="Post_It/Sprite3D" unique_id=871866694]
@@ -242,6 +243,7 @@ handle_input_locally = false
 size = Vector2i(640, 128)
 size_2d_override = Vector2i(656, 128)
 size_2d_override_stretch = true
+render_target_update_mode = 1
 
 [node name="PostitCode" parent="Post_It/Sprite3D/SubViewport" unique_id=982686716 instance=ExtResource("10_2x5y6")]
 
