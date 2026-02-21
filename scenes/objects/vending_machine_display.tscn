@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tskmkveqkwf8"]
+
+[ext_resource type="Script" uid="uid://c1ev0m1ushgdm" path="res://scripts/objects/vending_machine_display.gd" id="1_qxjwx"]
+
+[node name="VendingMachineDisplay" type="Node3D" unique_id=178363814]
+script = ExtResource("1_qxjwx")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1314603913]
+text = "0/3"

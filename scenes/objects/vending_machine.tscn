@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cw2idw1gulxi1" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine.glb" id="2_w77ry"]
 [ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="3_51x25"]
 [ext_resource type="PackedScene" uid="uid://cny34qslkxkks" path="res://assets/Gas_Station_Level/Soda_Can/SodaCan.glb" id="4_v5k5w"]
+[ext_resource type="PackedScene" uid="uid://tskmkveqkwf8" path="res://scenes/objects/vending_machine_display.tscn" id="5_51x25"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucgg"]
 size = Vector3(0.8659973, 2.1538086, 1.3684082)
@@ -26,5 +27,8 @@ transform = Transform3D(0.07919879, 0, 0.025922878, 0, 0.083333336, 0, -0.025922
 
 [node name="SodaCan" parent="VendingMachine" unique_id=972569640 instance=ExtResource("4_v5k5w")]
 transform = Transform3D(1.1666667, 0, 0, 0, 1.1666667, 0, 0, 0, 1.1666667, 0.28952098, 1.0273181, -0.030798912)
+
+[node name="VendingMachineDisplay" parent="." unique_id=178363814 instance=ExtResource("5_51x25")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0.6058295, 1.6102169, -0.5313006)
 
 [editable path="VendingMachine"]
