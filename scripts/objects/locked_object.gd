@@ -1,3 +1,4 @@
+class_name LockedObject
 extends InteractableObject
 
 @export var requested_id : int = 0
