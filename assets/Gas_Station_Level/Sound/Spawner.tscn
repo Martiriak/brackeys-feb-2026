@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://corr042pvu3es"]
 
-[ext_resource type="Script" uid="uid://b8xl5nluxaj4j" path="res://scripts/spawner/spanwer.gd" id="1_7ywxg"]
+[ext_resource type="Script" uid="uid://b8xl5nluxaj4j" path="res://scripts/spawner/spawner.gd" id="1_7ywxg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_knhve"]
 
