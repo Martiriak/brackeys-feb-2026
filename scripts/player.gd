@@ -103,10 +103,12 @@ func lock_play() -> void:
 		set_all_meshes_layer(ActiveObj, 20, false)
 		ActiveObj = null
 	ObjNameUI.get_node("ObjName").text = ""
+	ObjNameUI.visible = false
 	_locked = true
 
 
 func unlock_play() -> void:
+	ObjNameUI.visible = true
 	_locked = false
 
 func update_look_at_distance(d : int):
@@ -291,6 +293,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if _locked:
+		return
+	
 	# Web builds wont capture mouse automatically
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
@@ -301,8 +306,6 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x) * 0.1)
 		var new_rotation_x = head.rotation.x + deg_to_rad(-event.relative.y) * 0.1
 		head.rotation.x = clamp(new_rotation_x, deg_to_rad(-90), deg_to_rad(90))
-	if _locked:
-		return
 	if Input.is_action_just_pressed("interact"):
 		if pickObj == null:
 			#Disable collisions, freezes physics, reparent pickedobj to placePos

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://qv1fb52ii30s"]
+
+[ext_resource type="PackedScene" uid="uid://ddkhuql1uhscb" path="res://assets/Room_Hub/Post_It/Post_It.fbx" id="1_yv381"]
+
+[node name="PostIt" unique_id=1760039133 instance=ExtResource("1_yv381")]
+
+[node name="SM_post_it_notes" parent="." index="0" unique_id=1602805482]
+transform = Transform3D(-4.371139e-06, 99.99999, 0, -100, -4.3711384e-06, 0, 0, 0, 99.99999, -6.4286654e-10, 0.0006479798, -6.4286654e-10)
+
+[node name="Label3D" type="Label3D" parent="." index="1" unique_id=1298585940]
+transform = Transform3D(0.07607084, 0, 0, 0, 0.1215701, 0, 0, 0, 1, 0, 0, 0.0022082627)
+shaded = true
+double_sided = false
+modulate = Color(0.1273, 0.16387501, 0.19, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Thanks for
+playing!"
