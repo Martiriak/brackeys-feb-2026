@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://v1nn3fps1fla"]
+
+[ext_resource type="Script" uid="uid://d334phj4jhnnh" path="res://scripts/spawner/FixSpawn.gd" id="1_yduaf"]
+
+[node name="FixSpawn" type="Node3D" unique_id=174693622]
+script = ExtResource("1_yduaf")
+
+[connection signal="child_order_changed" from="." to="." method="on_obj_to_spawn_is_remove"]
