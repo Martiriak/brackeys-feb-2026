@@ -79,3 +79,25 @@ transform = Transform3D(0.11879819, 0, 0.038884316, 0, 0.125, 0, -0.038884316, 0
 
 [node name="SodaCan" parent="." unique_id=372374183 instance=ExtResource("10_4nwg3")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -2.7424035, 1.5409771, 3.985847)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=586761048]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.923755, 4.410764, 0)
+spot_range = 7.4320974
+spot_angle = 51.693436
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=187101265]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.7727556, 4.410764, 0)
+spot_range = 7.183748
+spot_angle = 51.693436
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1338925505]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.6795979, 0)
+light_energy = 0.664
+spot_range = 12.449687
+spot_angle = 85.063835
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="." unique_id=1569914682]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.6875615, 1.9641778, 4.0518513)
+spot_range = 1.161
+spot_angle = 61.039814
+spot_angle_attenuation = 1.6245031

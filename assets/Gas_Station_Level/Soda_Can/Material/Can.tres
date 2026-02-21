@@ -4,5 +4,4 @@
 resource_name = "Can"
 cull_mode = 2
 albedo_color = Color(0.79850936, 0.17158848, 0.16771552, 1)
-metallic_specular = 0.8
 roughness = 0.35
