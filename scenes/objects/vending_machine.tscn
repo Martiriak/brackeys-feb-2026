@@ -53,23 +53,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CanObject:quaternion")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8000001, 1.0666667, 1.1333334, 1.1999999, 1.3666669, 1.5333334, 1.6333333, 1.7333335, 1.9000002, 2.0666666, 2.2666664, 2.6333332, 2.7333336),
-"transitions": PackedFloat32Array(1, -2, 2, 0.5, 0.5, 0.5, -2, 0.5, 2, -2, 0.5, -2, -2, 1),
-"update": 0,
-"values": [Quaternion(0, 0, 0, 1), Quaternion(0, 0, -0.043270666, 0.99906343), Quaternion(-0.16130206, 0.00021523242, -0.026582433, 0.986547), Quaternion(0.048848, 0.006138611, -0.021503732, 0.9985559), Quaternion(-0.38311705, -0.002367845, -0.017792176, 0.9235254), Quaternion(-0.31833717, 0.0004247727, -0.009191022, 0.9479329), Quaternion(-0.4164658, 0.00055571645, 0.0023113338, 0.9091483), Quaternion(-0.47315967, 0.0006313848, 0.009208529, 0.88092834), Quaternion(-0.5279334, 0.0007045121, 0.016068442, 0.84913343), Quaternion(-0.61435616, 0.0008198426, 0.027342996, 0.7885545), Quaternion(-0.64703935, 0.00086342916, 0.031773556, 0.7617938), Quaternion(-0.72351676, 0.0009655041, 0.04258206, 0.68899155), Quaternion(-0.7009124, 0.17944168, -0.12872219, 0.67819846), Quaternion(-0.7159447, 0.10440621, -0.056369558, 0.68800074)]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/path = NodePath("CanObject")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [{
+"args": [],
+"method": &"show_code"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanObject")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.9333333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -120,7 +123,7 @@ shape = SubResource("BoxShape3D_6ucgg")
 [node name="VendingMachine" parent="." unique_id=2044447561 instance=ExtResource("2_w77ry")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=377142618]
+[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=1802454106]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.381719, 0.49966082, 0.11802703)
 
 [node name="Duck" parent="VendingMachine" unique_id=943551404 instance=ExtResource("3_51x25")]
