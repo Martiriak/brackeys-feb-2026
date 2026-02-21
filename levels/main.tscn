@@ -3,55 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://b8e8o08gbt1a8" path="res://levels/tv-hub/tv.tscn" id="1_m1504"]
 [ext_resource type="PackedScene" uid="uid://ddlafp7346rpu" path="res://scenes/player.tscn" id="2_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://dx0qjbubxt7y8" path="res://scenes/UI.tscn" id="3_5k4jt"]
-[ext_resource type="PackedScene" uid="uid://c3s0u5ds8snn5" path="res://scenes/hub.tscn" id="4_qy63d"]
+[ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="4_m1504"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1fput"]
-
-[sub_resource type="Sky" id="Sky_8oiou"]
-sky_material = SubResource("ProceduralSkyMaterial_1fput")
-
-[sub_resource type="Environment" id="Environment_6yxbg"]
-background_mode = 2
-sky = SubResource("Sky_8oiou")
-
-[sub_resource type="BoxMesh" id="BoxMesh_m1504"]
-size = Vector3(20, 3, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifaiv"]
-albedo_color = Color(0.14044744, 0.14044744, 0.14044744, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5k4jt"]
-size = Vector3(20, 3, 20)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m1504"]
 
 [node name="Main" type="Node3D" unique_id=246290369]
+
+[node name="FinalHub" parent="." unique_id=1594104338 instance=ExtResource("4_m1504")]
 
 [node name="UI" parent="." unique_id=1635865898 instance=ExtResource("3_5k4jt")]
 
 [node name="player" parent="." unique_id=375316983 instance=ExtResource("2_ifaiv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1772032, 2.5392108, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087926626, 0.5559664, 2.008092)
 ObjNameUISceneParent = NodePath("../UI")
 OutlineCamSceneParent = NodePath("../UI")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=889451560]
-environment = SubResource("Environment_6yxbg")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=467278465]
-transform = Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 0, 4.2686343, 0)
-light_energy = 0.5
-shadow_enabled = true
-
 [node name="Tv" parent="." unique_id=1585059994 instance=ExtResource("1_m1504")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.2173018, 2.9426596, -7.2027354)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.04782796, 0.9594152, -2.1992583)
 
-[node name="Hub" parent="." unique_id=1315658809 instance=ExtResource("4_qy63d")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.180835, -1.5655911, 4.5486097)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=106527051]
 
-[node name="Ground" type="MeshInstance3D" parent="." unique_id=1212982435]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022290468, -0.0043742657, -0.0071456432)
-mesh = SubResource("BoxMesh_m1504")
-surface_material_override/0 = SubResource("StandardMaterial3D_ifaiv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=164652656]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=357461176]
-shape = SubResource("BoxShape3D_5k4jt")
+[node name="WorlsBoundaryShape" type="CollisionShape3D" parent="StaticBody3D" unique_id=1231274918]
+shape = SubResource("WorldBoundaryShape3D_m1504")

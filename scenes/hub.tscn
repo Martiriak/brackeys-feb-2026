@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dy0jfhuynky8s" path="res://assets/Room_Hub/Liminal_Room/Walls/Floor.fbx" id="2_7wvbm"]
 [ext_resource type="PackedScene" uid="uid://ivid32vjqv3r" path="res://assets/Room_Hub/Liminal_Room/Walls/Wall.fbx" id="3_bfqb0"]
 
-[node name="Node" type="Node3D" unique_id=1315658809]
+[node name="Hub" type="Node3D" unique_id=1315658809]
 
 [node name="Door" parent="." unique_id=1533708439 instance=ExtResource("1_w6xti")]
 transform = Transform3D(1.08, 1.509958e-07, -1.509958e-07, -1.6307547e-07, 1, 0, -1.6307547e-07, -2.2799733e-14, -1, 0.65519345, 0.015029371, 2.542404)
