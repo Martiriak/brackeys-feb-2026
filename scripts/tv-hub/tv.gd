@@ -26,8 +26,14 @@ var _locked_player: Player = null
 var first_time: bool = true
 
 
+func _on_game_resume() -> void:
+	if GameManager.player_ref and GameManager.player_ref._locked:
+		tv_screen.grab_focus()
+
+
 func _ready() -> void:
 	GameManager.tv_ref = self
+	GameManager.on_game_resume.connect(_on_game_resume)
 	ambience_player.stream = sound_tv_ambience
 	ambience_player.play()
 	# Creates a slow, eerie pitch wobble
