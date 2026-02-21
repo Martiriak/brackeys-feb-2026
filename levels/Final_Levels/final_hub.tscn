@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://com7yj6gya1e7"]
 
+[ext_resource type="Script" uid="uid://cey2ord0yrd8j" path="res://scripts/levels/final_hub.gd" id="1_hddnf"]
 [ext_resource type="PackedScene" uid="uid://c3s0u5ds8snn5" path="res://scenes/hub.tscn" id="1_opvql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hddnf"]
@@ -23,6 +24,7 @@ resource_local_to_scene = true
 size = Vector3(4.8489666, 0.086582005, 4.9349813)
 
 [node name="FinalHub" type="Node3D" unique_id=1594104338]
+script = ExtResource("1_hddnf")
 
 [node name="BoundaryCollisions" type="Node3D" parent="." unique_id=1366651675]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
@@ -76,3 +78,9 @@ transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, -0.0
 light_energy = 0.058
 spot_range = 7.3673234
 spot_angle = 87.41741
+
+[node name="PlayerSocket" type="Node3D" parent="." unique_id=1135947347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087926626, 0.5559664, 2.008092)
+
+[node name="TVSocket" type="Node3D" parent="." unique_id=1203470933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04782796, 0.47086346, -2.1992583)

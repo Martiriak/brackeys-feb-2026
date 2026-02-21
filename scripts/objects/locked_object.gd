@@ -8,7 +8,10 @@ extends InteractableObject
 @onready var falling_can_animation_player: AnimationPlayer = $VendingMachine/FallingCanAnimationPlayer
 @onready var animation_player: AnimationPlayer = $VendingMachine/AnimationPlayer
 
+@onready var can_object := $VendingMachine/CanObject as SodaCan
 
+func on_level_unload():
+	can_object.can_camera.current = false
 
 var bLocked : bool = true
 

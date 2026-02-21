@@ -13,6 +13,7 @@ var instantiated_levels : Dictionary[PackedScene, Node3D] = {}
 func _ready() -> void:
 	# Pre-instantiate all levels in the background at start
 	pre_instantiate_all_levels()
+	
 
 func pre_instantiate_all_levels():
 	for code in code_level_res.code_level_map:
@@ -35,11 +36,9 @@ func _create_and_hide_level(scene: PackedScene) -> Node3D:
 
 	
 func load_new_level(new_level : PackedScene):
-	tv_ref.reparent(main_ref)
-	player_ref.reparent(main_ref)
-	player_ref._isOnBoat = false
-	
 	if _current_level:
+		if _current_level.has_method("on_level_unload"):
+			_current_level.on_level_unload()
 		_current_level.process_mode = Node.PROCESS_MODE_DISABLED
 		_current_level.hide()
 	
@@ -48,6 +47,8 @@ func load_new_level(new_level : PackedScene):
 	
 	level_to_show.show()
 	level_to_show.process_mode = Node.PROCESS_MODE_INHERIT
+	if level_to_show.has_method("on_level_load"):
+		level_to_show.on_level_load()
 	_current_level = level_to_show
 
 func get_level(code: String) -> LevelEntry:

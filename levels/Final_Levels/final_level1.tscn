@@ -8,6 +8,15 @@
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
+@onready var _vending_machine := $VendingMachine as LockedObject
+@onready var _gas_station := $GasStation as GasStation
+
+func on_level_load():
+	_gas_station.on_level_load()
+	
+	
+func on_level_unload():
+	_vending_machine.on_level_unload()
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]

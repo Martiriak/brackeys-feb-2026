@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cv4xvuplvql0a" path="res://scripts/objects/locked_object.gd" id="1_rg8gw"]
 [ext_resource type="PackedScene" uid="uid://cw2idw1gulxi1" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine.glb" id="2_w77ry"]
 [ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="3_51x25"]
-[ext_resource type="PackedScene" uid="uid://tskmkveqkwf8" path="res://scenes/objects/vending_machine_display.tscn" id="5_51x25"]
-[ext_resource type="PackedScene" uid="uid://de662papd6le4" path="res://scenes/objects/can_object.tscn" id="5_v5k5w"]
+[ext_resource type="PackedScene" path="res://scenes/objects/vending_machine_display.tscn" id="5_51x25"]
+[ext_resource type="PackedScene" path="res://scenes/objects/can_object.tscn" id="5_v5k5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucgg"]
 size = Vector3(0.8659973, 2.1538086, 1.3684082)
@@ -82,7 +82,7 @@ shape = SubResource("BoxShape3D_6ucgg")
 [node name="VendingMachine" parent="." unique_id=2044447561 instance=ExtResource("2_w77ry")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=1802454106]
+[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=1273618000]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.381719, 0.49966082, 0.11802703)
 
 [node name="Duck" parent="VendingMachine" unique_id=943551404 instance=ExtResource("3_51x25")]

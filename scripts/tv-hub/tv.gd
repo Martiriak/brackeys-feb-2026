@@ -38,11 +38,13 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	sub_viewport.push_input(event)
 	
+	var is_tv_screen_animating: bool = tv_screen and tv_screen.is_animating_screen()
+	
 	#logic to avoid to detect the interact soon but only after the release
 	if tv_camera.current and Input.is_action_just_released("interact"):
 		first_time = false
 	if tv_camera.current and Input.is_action_just_pressed("interact"):
-		if !first_time:
+		if !first_time and !is_tv_screen_animating:
 			_exit_terminal()
 			first_time = true
 
@@ -72,7 +74,7 @@ func _exit_terminal():
 		if not children_cameras.is_empty():
 			var camera := children_cameras[0] as Camera3D
 			if is_instance_valid(camera):
-				camera.current = false
+				camera.current = true
 	_locked_player = null
 	tv_camera.current = false
 	tv_screen.toggle_show_symbol(true)

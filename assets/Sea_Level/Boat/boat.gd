@@ -1,4 +1,5 @@
 extends RigidBody3D
+class_name Boat
 
 var player : Player
 var tv : TV
@@ -8,15 +9,16 @@ var tv : TV
 @export var linear_drag := 1.2
 @export var angular_drag := 2.5
 
-func _ready() -> void:
+func on_level_load() -> void:
 	player = GameManager.player_ref
-	player.reparent(self)
+	
+	player.reparent(self, false)
 	player.transform = $PlayerSocket.transform
+
 	
 	tv = GameManager.tv_ref
-	tv.reparent(self)
 	tv.transform = $TVSocket.transform
-	
+	tv.reparent(self, false)
 	player._isOnBoat = true # Tell the player to stop moving themselves
 	
 	linear_damp = linear_drag

@@ -32,6 +32,9 @@ var _is_empty: bool = true
 
 signal code_accepted(code: String)
 
+func is_animating_screen():
+	return _flash_tween and _flash_tween.is_running()
+
 func set_hint_texture(new_texture : Texture2D):
 	_hint_image.texture = new_texture
 
@@ -127,9 +130,7 @@ func set_active_slot(new_active_slot: int) -> void:
 	_active_slot_indicator.position = Vector2(0.0, 72.0)
 
 func _gui_input(event: InputEvent) -> void:
-	var is_tween_playing = _flash_tween and _flash_tween.is_running()
-	
-	if GameManager.player_ref and GameManager.player_ref._locked and not is_tween_playing:
+	if GameManager.player_ref and GameManager.player_ref._locked and not is_animating_screen():
 		if event.is_action_pressed("ui_accept"):
 			accept_current_code()
 		

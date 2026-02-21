@@ -27,3 +27,9 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.04782796, 0.47086346,
 
 [node name="WorlsBoundaryShape" type="CollisionShape3D" parent="WorlsBoundaryShapeSB" unique_id=1231274918]
 shape = SubResource("WorldBoundaryShape3D_m1504")
+
+[node name="PlayerSocket" type="Node3D" parent="." unique_id=326946286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087926626, 0.5559664, 2.008092)
+
+[node name="TVSocket" type="Node3D" parent="." unique_id=1247484571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04782796, 0.47086346, -2.1992583)

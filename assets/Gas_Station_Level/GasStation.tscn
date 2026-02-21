@@ -49,7 +49,7 @@ transform = Transform3D(-0.7145215, 0, 0.69961345, 0, 1, 0, -0.69961345, 0, -0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6259818, 0, -0.6027193)
 
 [node name="PlayerSocket" type="Node3D" parent="." unique_id=940723644]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.311838, 0.25160122, -2.6375828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2821474, 0.25160122, -2.6375828)
 
 [node name="TVSocket" type="Node3D" parent="." unique_id=4961372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.39027, 1.1647198, -3.4366684)

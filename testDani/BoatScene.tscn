@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://be35g0j8glr1y"]
+[gd_scene format=3 uid="uid://bdfarylmhgwhx"]
 
 [ext_resource type="Script" uid="uid://c3jr17krotbor" path="res://assets/Sea_Level/Boat/boat.gd" id="1_4ceb7"]
 [ext_resource type="PackedScene" uid="uid://drlumnddjwus1" path="res://assets/Sea_Level/Boat/Boat.fbx" id="1_8qt8p"]
@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14020538, 0.34509277, -0.14
 shape = SubResource("BoxShape3D_4ceb7")
 
 [node name="PlayerSocket" type="Node3D" parent="RigidBody3D" unique_id=30049169]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.263269, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.064088, 0)
 
 [node name="TVSocket" type="Node3D" parent="RigidBody3D" unique_id=465348587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4966328, -2.6613674)
