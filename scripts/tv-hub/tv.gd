@@ -65,6 +65,7 @@ func _on_code_accepted(code: String) -> void:
 
 func _exit_terminal():
 	if is_instance_valid(_locked_player):
+		tv_screen.set_enter_key_visibility(false)
 		_locked_player.unlock_play()
 		sfx_player.stream = null
 		ambience_player.play()
@@ -79,6 +80,7 @@ func _exit_terminal():
 	
 func on_interaction(p: Player) -> void:
 	tv_screen.grab_focus()
+	tv_screen.set_enter_key_visibility(true)
 	_locked_player = p
 	p.lock_play()
 	ambience_player.stop()
