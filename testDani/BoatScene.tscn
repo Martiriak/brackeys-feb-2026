@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3jr17krotbor" path="res://assets/Sea_Level/Boat/boat.gd" id="1_4ceb7"]
 [ext_resource type="PackedScene" uid="uid://drlumnddjwus1" path="res://assets/Sea_Level/Boat/Boat.fbx" id="1_8qt8p"]
+[ext_resource type="PackedScene" uid="uid://0muenxmiq5kd" path="res://scenes/objects/duck_static.tscn" id="2_aosc7"]
 [ext_resource type="PackedScene" uid="uid://dxovckq71a73q" path="res://assets/Sea_Level/Boat/Boat_Oar.glb" id="3_qmjlj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ceb7"]
@@ -17,6 +18,8 @@ size = Vector3(3.2809868, 0.76538086, 11.093002)
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_4ceb7")
 script = ExtResource("1_4ceb7")
+duck_static_scene = ExtResource("2_aosc7")
+duck_inventory_id = 1
 
 [node name="Boat" parent="RigidBody3D" unique_id=476004110 instance=ExtResource("1_8qt8p")]
 
@@ -35,3 +38,6 @@ transform = Transform3D(0.5829538, -0.26680684, 0.4785173, -0.04417488, 0.673562
 
 [node name="Paddle_L" parent="RigidBody3D" unique_id=2006013624 instance=ExtResource("3_qmjlj")]
 transform = Transform3D(0.2878503, 0.5054126, -0.54927266, -0.28544125, 0.61849016, 0.41951546, 0.6896851, 0.045034245, 0.40287268, 2.0193367, 1.4622824, 1.1520964)
+
+[node name="DuckCollector" type="Marker3D" parent="RigidBody3D" unique_id=1617250426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123655915, 1.4313722, 1.8976655)

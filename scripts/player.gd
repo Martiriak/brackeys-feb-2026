@@ -342,11 +342,6 @@ func PickObj():
 		pickObj.collision_mask = 0
 		pickObj.freeze = true
 		
-		var duck := pickObj as Duck
-		if is_instance_valid(duck):
-			duck.is_pick_up = true
-		
-		
 		# Scale held item (NOT USED)
 		#original_object_scale = pickObj.scale
 		#var visual_node = find_node_in_group(pickObj, "Pickable Items (Mesh)")
@@ -409,11 +404,6 @@ func RemoveObj():
 		if mesh_instance:
 			mesh_instance.set_surface_override_material(0, null)
 			mesh_instance.set_transparency(0)
-		
-		var duck := pickObj as Duck
-		if is_instance_valid(duck):
-			duck.is_pick_up = false
-		
 		pickObj = null
 
 

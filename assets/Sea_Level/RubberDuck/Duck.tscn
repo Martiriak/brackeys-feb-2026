@@ -88,6 +88,7 @@ shadow_mesh = SubResource("ArrayMesh_8wxqh")
 
 [node name="Duck" type="RigidBody3D" unique_id=649853383]
 script = ExtResource("1_osv48")
+item_id = 1
 metadata/_custom_type_script = "uid://cyijphl4xwu8k"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1330452191]
