@@ -25,16 +25,16 @@ var _locked_player: Player = null
 var first_time: bool = true
 
 
-func _ready():
+func _ready() -> void:
+	GameManager.tv_ref = self
 	ambience_player.stream = sound_tv_ambience
 	ambience_player.play()
-	
 	# Creates a slow, eerie pitch wobble
 	var tween = create_tween().set_loops()
 	tween.tween_property(ambience_player, "pitch_scale", 0.75, 3.0).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(ambience_player, "pitch_scale", 0.85, 3.0).set_trans(Tween.TRANS_SINE)
-
-
+	
+	
 func _unhandled_input(event: InputEvent) -> void:
 	sub_viewport.push_input(event)
 	
@@ -77,6 +77,7 @@ func _exit_terminal():
 	tv_screen.toggle_show_symbol(true)
 	
 func on_interaction(p: Player) -> void:
+	tv_screen.grab_focus()
 	_locked_player = p
 	p.lock_play()
 	ambience_player.stop()

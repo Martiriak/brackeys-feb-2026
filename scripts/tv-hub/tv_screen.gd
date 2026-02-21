@@ -16,6 +16,7 @@ var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png
 @onready var _hint_image := $CenterContainer/Hint as TextureRect
 @onready var _symbol_container := $CenterContainer/Slots as HBoxContainer
 
+
 var _slots: Array[TextureRect]
 var _symbols_for_slots: Array[int]
 var _active_slot: int = 0
@@ -25,6 +26,9 @@ var _flash_tween: Tween
 var _is_empty: bool = true
 
 signal code_accepted(code: String)
+
+func set_hint_texture(new_texture : Texture2D):
+	_hint_image.texture = new_texture
 
 func hide_active_slot_indicator():
 	_active_slot_indicator.hide()
@@ -120,6 +124,7 @@ func set_active_slot(new_active_slot: int) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	var is_tween_playing = _flash_tween and _flash_tween.is_running()
+	
 	if GameManager.player_ref and GameManager.player_ref._locked and not is_tween_playing:
 		if event.is_action_pressed("ui_accept"):
 			accept_current_code()
@@ -143,7 +148,6 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-	grab_focus() # TESTING!
 	for widget in $CenterContainer/Slots.get_children():
 		var slot := widget as TextureRect
 		if is_instance_valid(slot):
