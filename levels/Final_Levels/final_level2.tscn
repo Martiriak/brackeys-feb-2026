@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c016sx8i7wyhb"]
 
+[ext_resource type="Script" uid="uid://t2hepisxjam0" path="res://scripts/levels/final_level_2.gd" id="1_fb7pq"]
 [ext_resource type="PackedScene" uid="uid://dqorx6glhubr6" path="res://testDani/aquaLevel.tscn" id="1_pcpin"]
-[ext_resource type="PackedScene" uid="uid://be35g0j8glr1y" path="res://testDani/BoatScene.tscn" id="2_y22u7"]
+[ext_resource type="PackedScene" uid="uid://bdfarylmhgwhx" path="res://testDani/BoatScene.tscn" id="2_y22u7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aqq0a"]
 resource_local_to_scene = true
@@ -33,6 +34,7 @@ background_mode = 2
 sky = SubResource("Sky_6neer")
 
 [node name="FinalLevel2" type="Node3D" unique_id=1071886748]
+script = ExtResource("1_fb7pq")
 
 [node name="BoundaryCollisions" type="Node3D" parent="." unique_id=644007141]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
@@ -85,4 +87,4 @@ light_cull_mask = 4294966787
 sky_mode = 1
 
 [node name="BoatScene" parent="." unique_id=299400715 instance=ExtResource("2_y22u7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7093887, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1499507, 0)

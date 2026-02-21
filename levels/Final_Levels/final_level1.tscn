@@ -12,6 +12,15 @@
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
+@onready var _vending_machine := $VendingMachine as LockedObject
+@onready var _gas_station := $GasStation as GasStation
+
+func on_level_load():
+	_gas_station.on_level_load()
+	
+	
+func on_level_unload():
+	_vending_machine.on_level_unload()
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]
@@ -71,10 +80,12 @@ environment = SubResource("Environment_utcio")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1361810628]
 transform = Transform3D(0.5540215, -0.05678001, 0.83056384, -0.11920989, 0.98197913, 0.1466493, -0.82392305, -0.18025829, 0.53726876, 0, 1.2831492, 0)
-light_color = Color(0.48315006, 0.5396357, 0.707111, 1)
+light_color = Color(0, 0, 0, 1)
 light_energy = 0.0
-light_angular_distance = 24.3
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
+sky_mode = 1
 
 [node name="GasStation" parent="." unique_id=1830225918 instance=ExtResource("1_utcio")]
 
@@ -237,16 +248,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04683892, 1.398617, -0.0383
 shape = SubResource("BoxShape3D_v5ktp")
 
 [node name="Coin" parent="." unique_id=2083441910 instance=ExtResource("5_cwakm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4002014, 0.031348586, 3.5895221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2379553, 0.031348586, 2.745677)
 
 [node name="Coin4" parent="." unique_id=1601632531 instance=ExtResource("5_cwakm")]
-transform = Transform3D(0.49971274, 0, 0.8661912, 0, 1, 0, -0.8661912, 0, 0.49971274, 6.529271, 0.21558505, -1.0300328)
+transform = Transform3D(0.49971274, 0, 0.8661912, 0, 1, 0, -0.8661912, 0, 0.49971274, 6.641728, 2.1838953, -1.9599391)
 
 [node name="Coin2" parent="." unique_id=1046404436 instance=ExtResource("5_cwakm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.553381, 0.010227144, 5.677369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9149804, 0.010227144, 6.6062965)
 
 [node name="Coin3" parent="." unique_id=1363178265 instance=ExtResource("5_cwakm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.185042, 0.966349, -3.8604097)
+transform = Transform3D(0.9850644, 0.17218694, 0, -0.17218694, 0.9850644, 0, 0, 0, 1, -10.522667, 1.0217454, -3.7640707)
 
 [node name="CardBoard_Box" parent="." unique_id=757132082 instance=ExtResource("6_1f6yb")]
 transform = Transform3D(0.8456999, 0, -0.5336588, 0, 1, 0, 0.5336588, 0, 0.8456999, -2.7360163, 0, -1.7572203)

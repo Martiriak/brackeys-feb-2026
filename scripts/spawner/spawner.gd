@@ -4,7 +4,6 @@ var box : BoxShape3D
 
 @onready var whisper = preload("res://assets/Gas_Station_Level/Sound/Whisper.tscn")
 var whisper_ini = null
-
 var min_wait : float = 5.0
 var max_wait : float = 10.0
 

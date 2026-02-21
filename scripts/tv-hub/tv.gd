@@ -39,11 +39,13 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	sub_viewport.push_input(event)
 	
+	var is_tv_screen_animating: bool = tv_screen and tv_screen.is_animating_screen()
+	
 	#logic to avoid to detect the interact soon but only after the release
 	if tv_camera.current and Input.is_action_just_released("interact"):
 		first_time = false
 	if tv_camera.current and Input.is_action_just_pressed("interact"):
-		if !first_time:
+		if !first_time and !is_tv_screen_animating:
 			_exit_terminal()
 			first_time = true
 
@@ -66,6 +68,7 @@ func _on_code_accepted(code: String) -> void:
 
 func _exit_terminal():
 	if is_instance_valid(_locked_player):
+		tv_screen.set_ui_tutorial_visibility(false)
 		_locked_player.unlock_play()
 		sfx_player.stream = null
 		ambience_player.play()
@@ -73,13 +76,14 @@ func _exit_terminal():
 		if not children_cameras.is_empty():
 			var camera := children_cameras[0] as Camera3D
 			if is_instance_valid(camera):
-				camera.current = false
+				camera.current = true
 	_locked_player = null
 	tv_camera.current = false
 	tv_screen.toggle_show_symbol(true)
 	
 func on_interaction(p: Player) -> void:
 	tv_screen.grab_focus()
+	tv_screen.set_ui_tutorial_visibility(true)
 	_locked_player = p
 	p.lock_play()
 	ambience_player.stop()
