@@ -44,6 +44,11 @@ _subresources={
 "use_external/fallback_path": "res://assets/Gas_Station_Level/Gas_Shop/Material/Gas_Station_Shop.tres",
 "use_external/path": "uid://h1qn31axnskf"
 }
+},
+"nodes": {
+"PATH: Gas_Statio_Shop": {
+"generate/physics": true
+}
 }
 }
 gltf/naming_version=2
