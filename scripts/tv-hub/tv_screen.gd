@@ -21,6 +21,8 @@ var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png
 @onready var _hint_image := $CenterContainer/Hint as TextureRect
 @onready var _symbol_container := $CenterContainer/Slots as HBoxContainer
 @onready var sfx_player: AudioStreamPlayer3D = $sfx_player
+@onready var _enter_key: TextureRect = $EnterKey
+
 
 var _slots: Array[TextureRect]
 var _symbols_for_slots: Array[int]
@@ -32,8 +34,14 @@ var _is_empty: bool = true
 
 signal code_accepted(code: String)
 
+
 func is_animating_screen():
 	return _flash_tween and _flash_tween.is_running()
+
+
+func set_enter_key_visibility(is_visible: bool) -> void:
+	_enter_key.visible = is_visible
+
 
 func set_hint_texture(new_texture : Texture2D):
 	_hint_image.texture = new_texture
@@ -105,6 +113,7 @@ func toggle_show_symbol(show_symbol : bool):
 	_symbol_container.visible = show_symbol
 	_hint_image.visible = !show_symbol
 
+
 func get_current_code() -> String:
 	var result: String = ""
 	for symbol_id in _symbols_for_slots:
@@ -128,6 +137,7 @@ func set_active_slot(new_active_slot: int) -> void:
 	_active_slot_indicator.get_parent().remove_child(_active_slot_indicator)
 	_slots[_active_slot].add_child(_active_slot_indicator)
 	_active_slot_indicator.position = Vector2(0.0, 72.0)
+
 
 func _gui_input(event: InputEvent) -> void:
 	if GameManager.player_ref and GameManager.player_ref._locked and not is_animating_screen():
