@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://corr042pvu3es"]
+
+[ext_resource type="Script" uid="uid://b8xl5nluxaj4j" path="res://scripts/spawner/FixSpawnerManager.gd" id="1_veusu"]
+
+[node name="WhisperSpawnerManager" type="Node3D" unique_id=106007613]
+script = ExtResource("1_veusu")
+
+[connection signal="child_order_changed" from="." to="." method="_on_childs_change"]
