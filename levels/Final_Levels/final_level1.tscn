@@ -5,10 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
 [ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://scripts/lights/shop_flickering_light.gd" id="4_enybr"]
 [ext_resource type="PackedScene" uid="uid://mbkdysknckn8" path="res://scenes/objects/coin.tscn" id="5_cwakm"]
-[ext_resource type="AudioStream" uid="uid://cnug4kyojo2le" path="res://SFX/sfx_light_flicker_0.wav" id="6_1f6yb"]
+[ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
 [ext_resource type="AudioStream" uid="uid://b8csed5f3utjc" path="res://SFX/sfx_light_flicker_1.wav" id="6_dvvq3"]
 [ext_resource type="AudioStream" uid="uid://fljtim57pkro" path="res://SFX/sfx_light_constant.wav" id="7_v5ktp"]
-[ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
@@ -37,7 +36,6 @@ adjustment_saturation = 1.11
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5ktp"]
 streams_count = 2
-stream_0/stream = ExtResource("6_1f6yb")
 stream_1/stream = ExtResource("6_dvvq3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_enybr"]
@@ -68,10 +66,12 @@ environment = SubResource("Environment_utcio")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1361810628]
 transform = Transform3D(0.5540215, -0.05678001, 0.83056384, -0.11920989, 0.98197913, 0.1466493, -0.82392305, -0.18025829, 0.53726876, 0, 1.2831492, 0)
-light_color = Color(0.48315006, 0.5396357, 0.707111, 1)
+light_color = Color(0, 0, 0, 1)
 light_energy = 0.0
-light_angular_distance = 24.3
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
+sky_mode = 1
 
 [node name="GasStation" parent="." unique_id=1830225918 instance=ExtResource("1_utcio")]
 
