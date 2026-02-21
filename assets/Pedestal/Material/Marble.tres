@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://v40w3ixei37q"]
+
+[ext_resource type="Texture2D" uid="uid://dlh7ehkd4fsne" path="res://assets/Pedestal/Texture/pedestal_texture.png" id="1_75o45"]
+
+[resource]
+resource_name = "Marble"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_75o45")
+roughness = 0.73
