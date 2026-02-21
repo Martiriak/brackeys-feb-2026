@@ -10,6 +10,6 @@ script = ExtResource("1_vl75r")
 code_level_map = Dictionary[String, PackedScene]({
 "0-1-1-1-1": ExtResource("1_rquve"),
 "00000": ExtResource("2_rk7sk"),
-"1-1-1-1-1": ExtResource("3_31hl1")
+"21002": ExtResource("3_31hl1")
 })
 metadata/_custom_type_script = "uid://3rxyo6r3rs0i"

@@ -24,6 +24,16 @@ var _is_empty: bool = true
 
 signal code_accepted(code: String)
 
+func hide_active_slot_indicator():
+	_active_slot_indicator.hide()
+
+func set_code(code: Array[int]):
+	assert(code.size() == _symbols_for_slots.size())
+	for i in code.size():
+		_symbols_for_slots[i] = code[i]
+		_slots[i].texture = symbols[_symbols_for_slots[i]]
+
+
 func _animate_wrong_code(value: float):
 	_shader_rect.material.set_shader_parameter("target_res", 64.0)
 	_shader_rect.material.set_shader_parameter("pixel_progress", value)
