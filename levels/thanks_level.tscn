@@ -57,13 +57,6 @@ transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 2.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13395593, -0.0006542206, 0.023643078)
 shape = SubResource("BoxShape3D_opvql")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1083157216]
-transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, 2.542, 0)
-light_energy = 3.263
-spot_range = 2.621
-spot_attenuation = 1.12
-spot_angle = 5.34
-
 [node name="FloorBlack" parent="." unique_id=894055037 instance=ExtResource("2_tp5pd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
 
@@ -80,10 +73,17 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.65
 transform = Transform3D(-4.371139e-08, -2, -4.371139e-08, 0, -8.742278e-08, 1, -1, 8.742278e-08, 1.9106855e-15, 2.7500002, 2.65, 9.685755e-08)
 
 [node name="pedestal" parent="." unique_id=172797308 instance=ExtResource("4_ovlap")]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.05, 0)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.09728513, 0.05, -0.020199195)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1083157216]
+transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0.09728513, 2.542, -0.020199195)
+light_energy = 3.263
+spot_range = 2.621
+spot_attenuation = 1.12
+spot_angle = 5.34
 
 [node name="PostIt" parent="." unique_id=1760039133 instance=ExtResource("5_ovlap")]
-transform = Transform3D(-1.0692079, 0.27239436, -0.47180092, -0.009507925, 1.029742, 0.6160689, 0.5447056, 0.55265963, -0.9153487, -0.02, 0.74999994, -0.02000002)
+transform = Transform3D(-1.0692079, 0.27239436, -0.47180092, -0.009507925, 1.029742, 0.6160689, 0.5447056, 0.55265963, -0.9153487, 0.077285126, 0.74999994, -0.040199213)
 
 [node name="StaticBody3D" parent="." unique_id=1810680453 instance=ExtResource("6_2cs2o")]
-transform = Transform3D(-0.08818269, -0.0018218495, 0.17950067, 0.00072592637, 0.19998442, 0.0023863844, -0.17950842, 0.0017037122, -0.08816923, 0, 0.7, 0.05)
+transform = Transform3D(-0.08818269, -0.0018218495, 0.17950067, 0.00072592637, 0.19998442, 0.0023863844, -0.17950842, 0.0017037122, -0.08816923, 0.09728513, 0.7, 0.029800806)
