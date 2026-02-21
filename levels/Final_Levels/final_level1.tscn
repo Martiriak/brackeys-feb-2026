@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
 [ext_resource type="AudioStream" uid="uid://b8csed5f3utjc" path="res://SFX/sfx_light_flicker_1.wav" id="6_dvvq3"]
 [ext_resource type="AudioStream" uid="uid://fljtim57pkro" path="res://SFX/sfx_light_constant.wav" id="7_v5ktp"]
-[ext_resource type="Script" uid="uid://17bwgr66uevm" path="res://scripts/spawner/spawner.gd" id="9_nivqb"]
+[ext_resource type="Script" path="res://scripts/spawner/spawner.gd" id="9_nivqb"]
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
@@ -168,7 +168,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -35)
 
 [node name="VendingMachine" parent="." unique_id=1401058196 instance=ExtResource("2_aqq0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3535566, 2.3841858e-07, 3.5184212)
-requested_items_to_unlock = 3
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="VendingMachine" unique_id=1384081823]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.43887138, 1.9521232, 0.07758522)
