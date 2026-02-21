@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cchgj2pvut2k3"]
 
+[ext_resource type="Script" uid="uid://b2bgm4gmsj60u" path="res://scripts/levels/main.gd" id="1_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://b8e8o08gbt1a8" path="res://levels/tv-hub/tv.tscn" id="1_m1504"]
 [ext_resource type="PackedScene" uid="uid://ddlafp7346rpu" path="res://scenes/player.tscn" id="2_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://dx0qjbubxt7y8" path="res://scenes/UI.tscn" id="3_5k4jt"]
@@ -8,6 +9,7 @@
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m1504"]
 
 [node name="Main" type="Node3D" unique_id=246290369]
+script = ExtResource("1_ifaiv")
 
 [node name="FinalHub" parent="." unique_id=1594104338 instance=ExtResource("4_m1504")]
 

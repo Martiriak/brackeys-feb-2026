@@ -25,6 +25,7 @@ var _is_empty: bool = true
 signal code_accepted(code: String)
 
 func _animate_wrong_code(value: float):
+	_shader_rect.material.set_shader_parameter("target_res", 64.0)
 	_shader_rect.material.set_shader_parameter("pixel_progress", value)
 	_shader_rect.material.set_shader_parameter("color_progress", value)
 	_shader_timeline = value
@@ -32,10 +33,32 @@ func _animate_wrong_code(value: float):
 	if _shader_timeline < 0.8 and not _is_empty:
 		reset_symbols()
 
+func _animate_right_code(value: float):
+	_shader_rect.material.set_shader_parameter("extreme_res", 2.0)
+	_shader_rect.material.set_shader_parameter("pixel_progress", value)
+	_shader_rect.material.set_shader_parameter("color_progress", value)
+	_shader_timeline = value
+	
+	if _shader_timeline < 0.2 and not _is_empty:
+		reset_symbols()
+
 func animate_shader(is_code_correct : bool):
+	
+	var flash_color = Color.GREEN
+	var animate_fun = _animate_right_code
+	var max_duration = 2.0
+	var min_value = 0.0
+	
+	if not is_code_correct:
+		flash_color = Color.RED
+		animate_fun = _animate_wrong_code
+		max_duration = 1.0
+		min_value = 0.0
+	
 	_shader_rect.material.set_shader_parameter("pixel_progress", 1.0)
 	_shader_rect.material.set_shader_parameter("color_progress", 1.0)
-	
+	_shader_rect.material.set_shader_parameter("flash_color", flash_color)
+
 	
 	
 	if _flash_tween:
@@ -44,7 +67,7 @@ func animate_shader(is_code_correct : bool):
 	_flash_tween = create_tween()
 	
 	# 3. Animate it back to 0.0 over 0.5 seconds (Fade effect OFF)
-	_flash_tween.tween_method(_animate_wrong_code, 1.0, 0.0, 1.0) 
+	_flash_tween.tween_method(animate_fun, 1.0, min_value, max_duration) 
 	
 	_flash_tween.set_trans(Tween.TRANS_CUBIC)
 	_flash_tween.set_ease(Tween.EASE_IN)
