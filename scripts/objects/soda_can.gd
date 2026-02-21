@@ -6,7 +6,6 @@ extends InteractableObject
 @onready var can_camera: Camera3D = $CanCamera
 @onready var sprite_3d: Sprite3D = $Sprite3D
 @onready var tv_screen: TvScreen = $Sprite3D/SubViewport/TvScreen
-@onready var spot_light_3d: SpotLight3D = $CanCamera/SpotLight3D
 
 var _locked_player: Player = null
 
@@ -14,11 +13,9 @@ var bFirstTime : bool = true
 
 func enable_camera():
 	can_camera.current = true
-	spot_light_3d.show()
 	
 func disable_camera():
 	can_camera.current = false
-	spot_light_3d.hide()
 
 func get_string_to_print():
 	return '"E" to look at:' + self.name

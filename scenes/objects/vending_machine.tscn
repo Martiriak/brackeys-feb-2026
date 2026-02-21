@@ -50,6 +50,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.9856308, 0.006768567, -0.009379319), Vector3(-0.88858336, 1.5590872, -1.5617077)]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanObject")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_code"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_v5k5w"]
 length = 0.001
@@ -92,7 +106,7 @@ transform = Transform3D(0.07919879, 0, 0.025922878, 0, 0.083333336, 0, -0.025922
 libraries/ = SubResource("AnimationLibrary_a6vwg")
 
 [node name="CanObject" parent="VendingMachine" unique_id=1127642891 instance=ExtResource("5_v5k5w")]
-transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0.28952098, 1.0223085, -0.030798912)
+transform = Transform3D(0.51746696, 0.0031030818, 0.4203127, -0.42032415, 0.0038202598, 0.5174529, -7.450581e-09, -0.6666485, 0.0049217376, 0.28952098, 1.0223085, -0.030798912)
 
 [node name="VendingMachineDisplay" parent="." unique_id=178363814 instance=ExtResource("5_51x25")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0.6058295, 1.6102169, -0.5313006)

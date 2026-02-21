@@ -57,3 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4739387, -2.300301)
 [node name="PSXMesh" type="MeshInstance3D" parent="head/Camera3D" unique_id=1116041367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.557)
 mesh = SubResource("QuadMesh_dqkch")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D" unique_id=1821306888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7639663, 0)
+visible = false
+shadow_enabled = true

@@ -36,6 +36,7 @@ var max_horizontal_area = 0.0
 @onready var cannot_place_material = StandardMaterial3D.new()
 @onready var look_at := $head/Camera3D/lookat as RayCast3D
 
+@onready var spot_light_3d: SpotLight3D = $head/Camera3D/SpotLight3D
 
 
 
@@ -78,6 +79,14 @@ var _isOnBoat : bool = false
 var inventoryItemsDict = {}
 
 var _locked: bool = false
+
+
+
+func activate_light():
+	spot_light_3d.show()
+	
+func deactivate_light():
+	spot_light_3d.hide()
 
 func lock_play() -> void:
 	if is_instance_valid(ActiveObj):
