@@ -1,6 +1,7 @@
 extends Node
 
 var player_ref:Player
+var tv_ref:TV
 var _current_level : Node3D
 
 

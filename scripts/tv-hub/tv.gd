@@ -18,6 +18,9 @@ var _locked_player: Player = null
 #logic to avoid to detect the interact soon but only after the release
 var first_time: bool = true
 	
+func _ready() -> void:
+	GameManager.tv_ref = self
+	
 func _unhandled_input(event: InputEvent) -> void:
 	sub_viewport.push_input(event)
 	
