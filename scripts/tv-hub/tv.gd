@@ -55,6 +55,7 @@ func _exit_terminal():
 	tv_screen.toggle_show_symbol(true)
 	
 func on_interaction(p: Player) -> void:
+	tv_screen.grab_focus()
 	_locked_player = p
 	p.lock_play()
 	var children_cameras: Array[Node] = p.find_children("*", "Camera3D")
