@@ -10,7 +10,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_4flbx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("2_g2els")
 shader_parameter/enable_fog = true
 shader_parameter/fog_color = Color(0, 0, 0, 1)

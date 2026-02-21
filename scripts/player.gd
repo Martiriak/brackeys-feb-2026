@@ -229,7 +229,7 @@ func _physics_process(delta: float) -> void:
 		# Reset previous items
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
-		get_node(ObjNameUI).get_node("ObjName").text = ""
+		#get_node(ObjNameUI).get_node("ObjName").text = ""
 		
 		var collider = look_at.get_collider()
 		# If I have a pick object do not highlight or show UI
@@ -248,7 +248,7 @@ func _physics_process(delta: float) -> void:
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
 			ActiveObj = null
-		get_node(ObjNameUI).get_node("ObjName").text = ""
+		#get_node(ObjNameUI).get_node("ObjName").text = ""
 	
 	#reset player if falls
 	if self.global_position.y <= -10:
