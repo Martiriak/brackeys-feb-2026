@@ -18,13 +18,15 @@ var paddle_r : Node3D
 @export var duck_static_scene: PackedScene
 @export var duck_inventory_id : int
 
-@onready var duck_collector: Marker3D = $DuckCollector
+@export var duck_collectors: Array[Marker3D]
+var spawned_ducks : int
 
 func on_level_load() -> void:
 	player = GameManager.player_ref
 	
 	player.reparent(self, false)
 	player.transform = $PlayerSocket.transform
+	player.update_look_at_distance(-10)
 
 	
 	tv = GameManager.tv_ref
@@ -75,15 +77,22 @@ func _physics_process(delta: float) -> void:
 	paddle_l.rotation.x = lerp_angle(paddle_l.rotation.x, 0, delta * 2.0)
 	paddle_r.rotation.x = lerp_angle(paddle_r.rotation.x, 0, delta * 2.0)
 
-func spawn_duck():
-	var duck = duck_static_scene.instantiate()
-	duck.position = duck_collector.position
-	duck_collector.add_child(duck)
+func spawn_ducks(count : int):
+	if spawned_ducks < count:
+		for marker in duck_collectors:
+			if spawned_ducks >= count:
+				return
+			if marker.get_child_count() <= 0:
+				var duck = duck_static_scene.instantiate()
+				duck.position = marker.position
+				marker.add_child(duck)
+				spawned_ducks += 1
+
 	
 
 func	 _process(delta: float) -> void:
 	var current : int = 0
 	if GameManager.player_ref and GameManager.player_ref.inventoryItemsDict.has(duck_inventory_id):
 		current = GameManager.player_ref.inventoryItemsDict.get(duck_inventory_id)
-		while duck_collector.get_child_count() < current:
-			spawn_duck()
+		spawn_ducks(current)
+		
