@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ddcb05sb3vskt"]
+
+[resource]
+resource_name = "feet"
+cull_mode = 2
+albedo_color = Color(0.18670599, 0.18670599, 0.18670599, 1)
+roughness = 0.35

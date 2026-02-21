@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qf4e8cctieip"]
+
+[ext_resource type="Texture2D" uid="uid://d0pcm2rm8yt4n" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine_Ucupaint Vending_Machine panel Color.jpg" id="1_lf1lg"]
+[ext_resource type="Texture2D" uid="uid://baenk3ts2xya7" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine_Ucupaint Vending_Machine panel Metallic-Ucupaint Vending_Machin.jpg" id="2_rc6gl"]
+[ext_resource type="Texture2D" uid="uid://c66trqmcgwqki" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine_Ucupaint Vending_Machine panel Normal.jpg" id="3_vo8ha"]
+
+[resource]
+resource_name = "Vending_Machine panel"
+cull_mode = 2
+albedo_texture = ExtResource("1_lf1lg")
+metallic = 1.0
+metallic_texture = ExtResource("2_rc6gl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_rc6gl")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_vo8ha")

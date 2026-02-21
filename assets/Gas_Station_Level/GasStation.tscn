@@ -7,11 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="5_ib125"]
 [ext_resource type="PackedScene" uid="uid://cqwggrqay2syl" path="res://assets/Gas_Station_Level/Gas_Shop/Gas_Station_Shop.glb" id="6_o0f8f"]
 [ext_resource type="PackedScene" uid="uid://bvlol1n83lo7d" path="res://assets/Gas_Station_Level/Floor.glb" id="7_y1i4k"]
+[ext_resource type="PackedScene" uid="uid://cw2idw1gulxi1" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine.glb" id="8_y1i4k"]
+[ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="9_csd5i"]
+[ext_resource type="PackedScene" uid="uid://cny34qslkxkks" path="res://assets/Gas_Station_Level/Soda_Can/SodaCan.glb" id="10_4nwg3"]
+
+[sub_resource type="Animation" id="Animation_6lnag"]
+resource_name = "Vending Machine_002Action"
+length = 1.1666666
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Vending Machine_002")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.033333335, 1, 0, 0, 0, 1, 0.06666667, 1, 0, 0, 0.011838202, 0.99993, 0.1, 1, 0, 0, 0.041311465, 0.99914634, 0.13333334, 1, 0, 0, 0.08970333, 0.9959685, 0.16666667, 1, 0, 0, 0.15366158, 0.98812354, 0.2, 1, 0, 0, 0.23060021, 0.97304857, 0.23333333, 1, 0, 0, 0.30964243, 0.9508531, 0.26666668, 1, 0, 0, 0.3854596, 0.9227247, 0.3, 1, 0, 0, 0.4534518, 0.89128083, 0.33333334, 1, 0, 0, 0.50991255, 0.8602263, 0.36666667, 1, 0, 0, 0.54657423, 0.83741075, 0.4, 1, 0, 0, 0.56538707, 0.8248257, 0.43333334, 1, 0, 0, 0.54971033, 0.83535534, 0.46666667, 1, 0, 0, 0.48645532, 0.8737055, 0.5, 1, 0, 0, 0.36416343, 0.9313351, 0.53333336, 1, 0, 0, 0.20406544, 0.97895736, 0.56666666, 1, 0, 0, 0.062192224, 0.99806416, 0.6, 1, 0, 0, -0.03218629, 0.999482, 0.6333333, 1, 0, 0, -0.06499753, 0.99788547, 0.6666667, 1, 0, 0, -0.035778053, 0.9993598, 0.7, 1, 0, 0, 0.035078056, 0.9993846, 0.73333335, 1, 0, 0, 0.1165695, 0.99318254, 0.76666665, 1, 0, 0, 0.19372588, 0.98105574, 0.8, 1, 0, 0, 0.25265783, 0.96755576, 0.8333333, 1, 0, 0, 0.28085408, 0.9597505, 0.8666667, 1, 0, 0, 0.23040159, 0.97309566, 0.9, 1, 0, 0, 0.14564678, 0.98933667, 0.93333334, 1, 0, 0, 0.07115939, 0.997465, 0.96666664, 1, 0, 0, 0.042121045, 0.99911255, 1.0333333, 1, 0, 0, 0.12229927, 0.9924933, 1.0666667, 1, 0, 0, 0.11446193, 0.99342763, 1.125, 1, 0, 0, 0.07276122, 0.99734944)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsrik"]
+_data = {
+&"Vending Machine_002Action": SubResource("Animation_6lnag")
+}
 
 [node name="GasStation" type="Node3D" unique_id=1830225918]
 
 [node name="Gas_Station_PLACEHOLDER" parent="." unique_id=464157696 instance=ExtResource("1_6ecij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.16404, 0, 0)
+visible = false
 
 [node name="Gas_Station_pump" parent="." unique_id=778893594 instance=ExtResource("2_6ygms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0067945, 0.21047336, -1.6692848)
@@ -47,3 +67,15 @@ transform = Transform3D(-0.7145215, 0, 0.69961345, 0, 1, 0, -0.69961345, 0, -0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6259818, 0, -0.6027193)
 
 [node name="Floor" parent="." unique_id=225847350 instance=ExtResource("7_y1i4k")]
+
+[node name="VendingMachine" parent="." unique_id=126188127 instance=ExtResource("8_y1i4k")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.1766849, 0, 4.0320454)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="VendingMachine" unique_id=578197684]
+libraries/ = SubResource("AnimationLibrary_nsrik")
+
+[node name="Duck" parent="." unique_id=227196903 instance=ExtResource("9_csd5i")]
+transform = Transform3D(0.11879819, 0, 0.038884316, 0, 0.125, 0, -0.038884316, 0, 0.11879819, -2.7359524, 1.7347789, 4.1580687)
+
+[node name="SodaCan" parent="." unique_id=372374183 instance=ExtResource("10_4nwg3")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, -2.7424035, 1.5409771, 3.985847)

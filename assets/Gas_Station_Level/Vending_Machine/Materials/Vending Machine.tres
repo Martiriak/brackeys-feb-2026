@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cl41hyke2ljs"]
+
+[ext_resource type="Texture2D" uid="uid://dlpcdvjcuu21b" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine_Ucupaint Vending Machine Color.jpg" id="1_viqai"]
+[ext_resource type="Texture2D" uid="uid://ctolqy50yem5q" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine_Ucupaint Vending Machine Metallic-Ucupaint Vending Machine Roug.jpg" id="2_eulje"]
+[ext_resource type="Texture2D" uid="uid://cwwwlxip7k4pg" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine_Ucupaint Vending Machine Normal.jpg" id="3_2lebr"]
+
+[resource]
+resource_name = "Vending Machine"
+cull_mode = 2
+albedo_texture = ExtResource("1_viqai")
+metallic = 1.0
+metallic_texture = ExtResource("2_eulje")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_eulje")
+roughness_texture_channel = 1
+normal_texture = ExtResource("3_2lebr")
