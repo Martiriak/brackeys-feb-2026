@@ -270,12 +270,22 @@ transform = Transform3D(-0.5656581, 0, 0.8246399, 0, 1, 0, -0.8246399, 0, -0.565
 transform = Transform3D(-0.96210855, 0, 0.27266642, 0, 1, 0, -0.27266642, 0, -0.96210855, -3.2731266, 0.49563617, -2.393879)
 
 [node name="WhisperSpawnerManager" parent="." unique_id=106007613 instance=ExtResource("9_th83f")]
+cycle_after_end = true
 
 [node name="FixSpawn_0" type="Node3D" parent="WhisperSpawnerManager" unique_id=174693622 instance=ExtResource("10_j2ias")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.898675, 0, 0)
 script = ExtResource("11_b8xrc")
 
-[node name="FixSpawn_1" type="Node3D" parent="WhisperSpawnerManager" unique_id=533766585 instance=ExtResource("10_j2ias")]
+[node name="FixSpawn_1" type="Node3D" parent="WhisperSpawnerManager" unique_id=1004472735 instance=ExtResource("10_j2ias")]
+script = ExtResource("11_b8xrc")
+
+[node name="FixSpawn_2" type="Node3D" parent="WhisperSpawnerManager" unique_id=275725315 instance=ExtResource("10_j2ias")]
+script = ExtResource("11_b8xrc")
+
+[node name="FixSpawn_3" type="Node3D" parent="WhisperSpawnerManager" unique_id=1886898911 instance=ExtResource("10_j2ias")]
 script = ExtResource("11_b8xrc")
 
 [connection signal="child_order_changed" from="WhisperSpawnerManager/FixSpawn_0" to="WhisperSpawnerManager/FixSpawn_0" method="on_obj_to_spawn_is_remove"]
 [connection signal="child_order_changed" from="WhisperSpawnerManager/FixSpawn_1" to="WhisperSpawnerManager/FixSpawn_1" method="on_obj_to_spawn_is_remove"]
+[connection signal="child_order_changed" from="WhisperSpawnerManager/FixSpawn_2" to="WhisperSpawnerManager/FixSpawn_2" method="on_obj_to_spawn_is_remove"]
+[connection signal="child_order_changed" from="WhisperSpawnerManager/FixSpawn_3" to="WhisperSpawnerManager/FixSpawn_3" method="on_obj_to_spawn_is_remove"]
