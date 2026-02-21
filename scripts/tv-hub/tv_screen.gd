@@ -16,6 +16,7 @@ var no_symbol: CompressedTexture2D = preload("res://assets/symbols/no_symbol.png
 @onready var _hint_image := $CenterContainer/Hint as TextureRect
 @onready var _symbol_container := $CenterContainer/Slots as HBoxContainer
 
+
 var _slots: Array[TextureRect]
 var _symbols_for_slots: Array[int]
 var _active_slot: int = 0
@@ -25,6 +26,9 @@ var _flash_tween: Tween
 var _is_empty: bool = true
 
 signal code_accepted(code: String)
+
+func set_hint_texture(new_texture : Texture2D):
+	_hint_image.texture = new_texture
 
 func hide_active_slot_indicator():
 	_active_slot_indicator.hide()
@@ -55,7 +59,7 @@ func _animate_right_code(value: float):
 		reset_symbols()
 		toggle_show_symbol(false)
 
-func animate_shader(is_code_correct : bool):
+func animate_shader(is_code_correct : bool, static_effect_mesh : MeshInstance3D):
 	
 	var flash_color = Color.GREEN
 	var animate_fun = _animate_right_code
@@ -81,6 +85,10 @@ func animate_shader(is_code_correct : bool):
 	
 	# 3. Animate it back to 0.0 over 0.5 seconds (Fade effect OFF)
 	_flash_tween.tween_method(animate_fun, 1.0, min_value, max_duration) 
+	
+	if is_code_correct and static_effect_mesh:
+		var material = static_effect_mesh.get_active_material(0)
+		_flash_tween.parallel().tween_property(material, "shader_parameter/intensity", 0.0, max_duration).from(1.0)
 	
 	_flash_tween.set_trans(Tween.TRANS_CUBIC)
 	_flash_tween.set_ease(Tween.EASE_IN)
@@ -116,6 +124,7 @@ func set_active_slot(new_active_slot: int) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	var is_tween_playing = _flash_tween and _flash_tween.is_running()
+	
 	if GameManager.player_ref and GameManager.player_ref._locked and not is_tween_playing:
 		if event.is_action_pressed("ui_accept"):
 			accept_current_code()
@@ -139,7 +148,6 @@ func _gui_input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-	grab_focus() # TESTING!
 	for widget in $CenterContainer/Slots.get_children():
 		var slot := widget as TextureRect
 		if is_instance_valid(slot):

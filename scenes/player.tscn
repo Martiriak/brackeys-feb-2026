@@ -18,11 +18,11 @@ shader_parameter/noise_color = Color(0.12225237, 0.1222522, 0.12225228, 1)
 shader_parameter/fog_distance = 100.0
 shader_parameter/fog_fade_range = 50.0
 shader_parameter/enable_noise = true
-shader_parameter/noise_time_fac = 4.0
+shader_parameter/noise_time_fac = 6.000000281740119
 shader_parameter/enable_color_limitation = true
 shader_parameter/color_levels = 64
 shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 0.150000007125
+shader_parameter/dither_strength = 0.3
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqkch"]
 material = SubResource("ShaderMaterial_qhqgy")

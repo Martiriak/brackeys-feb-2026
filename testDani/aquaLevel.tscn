@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://dhvvjehcggtdg" path="res://testDani/waterPlane.gdshader" id="2_2n85q"]
 [ext_resource type="PackedScene" uid="uid://doccpmiy36g3p" path="res://assets/Sea_Level/Goldfish/goldfish.fbx" id="4_r3tio"]
-[ext_resource type="Script" path="res://assets/Sea_Level/Goldfish/goldfish.gd" id="5_5yn76"]
+[ext_resource type="Script" uid="uid://87dp26xgf15n" path="res://assets/Sea_Level/Goldfish/goldfish.gd" id="5_5yn76"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2n85q"]
 vertex_color_use_as_albedo = true
@@ -168,6 +168,7 @@ shape = SubResource("BoxShape3D_nmc7w")
 [node name="goldfish" parent="." unique_id=561417758 instance=ExtResource("4_r3tio")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.092857, 3.335947, 17.048107)
 script = ExtResource("5_5yn76")
+radius = 50.0
 speed = -0.5
 height = 0.1
 
