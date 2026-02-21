@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
 [ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://scripts/lights/shop_flickering_light.gd" id="4_enybr"]
 [ext_resource type="PackedScene" uid="uid://mbkdysknckn8" path="res://scenes/objects/coin.tscn" id="5_cwakm"]
-[ext_resource type="AudioStream" uid="uid://cnug4kyojo2le" path="res://SFX/sfx_light_flicker_0.wav" id="6_1f6yb"]
+[ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
 [ext_resource type="AudioStream" uid="uid://b8csed5f3utjc" path="res://SFX/sfx_light_flicker_1.wav" id="6_dvvq3"]
 [ext_resource type="AudioStream" uid="uid://fljtim57pkro" path="res://SFX/sfx_light_constant.wav" id="7_v5ktp"]
-[ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
+[ext_resource type="Script" uid="uid://17bwgr66uevm" path="res://scripts/spawner/spawner.gd" id="9_nivqb"]
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
@@ -23,6 +23,7 @@ sky_material = SubResource("ProceduralSkyMaterial_is6vp")
 
 [sub_resource type="Environment" id="Environment_utcio"]
 background_mode = 2
+background_energy_multiplier = 0.2
 sky = SubResource("Sky_8oiou")
 tonemap_mode = 3
 fog_enabled = true
@@ -37,7 +38,6 @@ adjustment_saturation = 1.11
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5ktp"]
 streams_count = 2
-stream_0/stream = ExtResource("6_1f6yb")
 stream_1/stream = ExtResource("6_dvvq3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_enybr"]
@@ -59,6 +59,9 @@ size = Vector3(82.246414, 82.40875, 0.091098785)
 [sub_resource type="BoxShape3D" id="BoxShape3D_v5ktp"]
 resource_local_to_scene = true
 size = Vector3(29.002525, 0.086582005, 28.995535)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knhve"]
+size = Vector3(22.9104, 1, 18.427124)
 
 [node name="FinalLevel1" type="Node3D" unique_id=1071886748]
 script = SubResource("GDScript_aqq0a")
@@ -256,3 +259,14 @@ transform = Transform3D(-0.5656581, 0, 0.8246399, 0, 1, 0, -0.8246399, 0, -0.565
 
 [node name="CardBoard_Box4" parent="." unique_id=2136349196 instance=ExtResource("6_1f6yb")]
 transform = Transform3D(-0.96210855, 0, 0.27266642, 0, 1, 0, -0.27266642, 0, -0.96210855, -3.2731266, 0.49563617, -2.393879)
+
+[node name="Spawner" type="Node3D" parent="." unique_id=106007613]
+script = ExtResource("9_nivqb")
+
+[node name="Area3D" type="Area3D" parent="Spawner" unique_id=1390770481]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Area3D" unique_id=1440069923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_knhve")

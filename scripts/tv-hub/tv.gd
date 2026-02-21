@@ -8,6 +8,7 @@ extends InteractableObject
 @export var sound_tv_ambience: AudioStream  = preload("res://SFX/TV_Ambience.wav")
 @export var sound_tv_interact: AudioStream  = preload("res://SFX/TV_Interact.wav")
 
+
 @onready var sub_viewport: SubViewport = $Sprite3D/SubViewport
 @onready var tv_screen: TvScreen = $Sprite3D/SubViewport/TvScreen
 @onready var tv_camera: Camera3D = $TvCamera
