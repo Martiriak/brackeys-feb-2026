@@ -69,7 +69,7 @@ var max_horizontal_area = 0.0
 ## The node path of the scene containing the outòone camera
 @export var OutlineCamSceneParent : NodePath
 
-var ObjNameUI : NodePath
+var ObjNameUI : Control
 var outlineCam : Camera3D
 
 ## TODO: do we need a struct for the inventory?
@@ -81,7 +81,7 @@ func lock_play() -> void:
 	if is_instance_valid(ActiveObj):
 		set_all_meshes_layer(ActiveObj, 20, false)
 		ActiveObj = null
-	get_node(ObjNameUI).get_node("ObjName").text = ""
+	ObjNameUI.get_node("ObjName").text = ""
 	_locked = true
 
 
@@ -101,7 +101,7 @@ func _ready() -> void:
 	GameManager.player_ref = self
 	can_place_material.albedo_color = Color(0, 1, 0, 0.5)
 	cannot_place_material.albedo_color = Color(1, 0, 0, 0.5)
-	ObjNameUI = NodePath(str(ObjNameUISceneParent) + "/AimPoint")
+	ObjNameUI = get_node(NodePath(str(ObjNameUISceneParent) + "/AimPoint"))
 	outlineCam = get_node(NodePath(str(OutlineCamSceneParent) + "/OutlinerControl/OutlineContainer/SubViewport/OutlineCam")) as Camera3D
 
 
@@ -229,26 +229,27 @@ func _physics_process(delta: float) -> void:
 		# Reset previous items
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
-		#get_node(ObjNameUI).get_node("ObjName").text = ""
+
+		ObjNameUI.get_node("ObjName").text = ""
 		
 		var collider = look_at.get_collider()
 		# If I have a pick object do not highlight or show UI
 		if !pickObj:
 			ActiveObj = collider
 			if ActiveObj is PickableObject:
-				get_node(ObjNameUI).get_node("ObjName").text = '“E" to pick up: ' + ActiveObj.name
+				ObjNameUI.get_node("ObjName").text = '“E" to pick up: ' + ActiveObj.name
 				set_all_meshes_layer(ActiveObj, 20, true)
 			elif ActiveObj is InteractableObject and (ActiveObj as InteractableObject).can_interact(self):
 				set_all_meshes_layer(ActiveObj, 20, true)
-				get_node(ObjNameUI).get_node("ObjName").text = (ActiveObj as InteractableObject).get_string_to_print()
+				ObjNameUI.get_node("ObjName").text = (ActiveObj as InteractableObject).get_string_to_print()
 			else:
-				get_node(ObjNameUI).get_node("ObjName").text = ""
+				ObjNameUI.get_node("ObjName").text = ""
 
 	else:
 		if ActiveObj != null:
 			set_all_meshes_layer(ActiveObj, 20, false)
 			ActiveObj = null
-		#get_node(ObjNameUI).get_node("ObjName").text = ""
+		ObjNameUI.get_node("ObjName").text = ""
 	
 	#reset player if falls
 	if self.global_position.y <= -10:
