@@ -3,46 +3,22 @@
 [ext_resource type="Script" uid="uid://cv4xvuplvql0a" path="res://scripts/objects/locked_object.gd" id="1_rg8gw"]
 [ext_resource type="PackedScene" uid="uid://cw2idw1gulxi1" path="res://assets/Gas_Station_Level/Vending_Machine/VendingMachine.glb" id="2_w77ry"]
 [ext_resource type="PackedScene" uid="uid://3sxw7045h1rv" path="res://assets/Sea_Level/RubberDuck/Duck.fbx" id="3_51x25"]
-[ext_resource type="PackedScene" uid="uid://brtcmky7vrcf1" path="res://scenes/objects/soda_can.tscn" id="4_51x25"]
 [ext_resource type="PackedScene" uid="uid://tskmkveqkwf8" path="res://scenes/objects/vending_machine_display.tscn" id="5_51x25"]
+[ext_resource type="PackedScene" uid="uid://de662papd6le4" path="res://scenes/objects/can_object.tscn" id="5_v5k5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ucgg"]
 size = Vector3(0.8659973, 2.1538086, 1.3684082)
 
 [sub_resource type="Animation" id="Animation_51x25"]
 resource_name = "FallingCan"
-length = 1.1
-tracks/0/type = "value"
+length = 1.0666667
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SodaCan:position")
+tracks/0/path = NodePath("..")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 0.43333334, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.28952098, 1.043442, -0.030798912), Vector3(0.33204925, 0.43080485, -0.030798912), Vector3(1.0641233, 0.028607607, -0.030798912)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SodaCan:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 0.43333334, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.9856308, 0.006768567, -0.009379319), Vector3(-0.88858336, 1.5590872, -1.5617077)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0.43333334),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -50,32 +26,44 @@ tracks/2/keys = {
 "method": &"play_open_animation"
 }]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanObject:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.28952098, 1.0223085, -0.030798912), Vector3(0.33204925, 0.43080485, -0.030798912), Vector3(1.0641233, 0.028607607, -0.030798912)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanObject:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.9856308, 0.006768567, -0.009379319), Vector3(-0.88858336, 1.5590872, -1.5617077)]
+}
 
 [sub_resource type="Animation" id="Animation_v5k5w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SodaCan:position")
+tracks/0/path = NodePath("CanObject:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.28952098, 1.043442, -0.030798912)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SodaCan:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0.28952098, 1.0223085, -0.030798912)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a6vwg"]
@@ -100,11 +88,11 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.381719, 0
 [node name="Duck" parent="VendingMachine" unique_id=943551404 instance=ExtResource("3_51x25")]
 transform = Transform3D(0.07919879, 0, 0.025922878, 0, 0.083333336, 0, -0.025922878, 0, 0.07919879, 0.2938217, 1.1565193, 0.08401561)
 
-[node name="SodaCan" parent="VendingMachine" unique_id=972569640 instance=ExtResource("4_51x25")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.28952098, 1.043442, -0.030798912)
-
 [node name="FallingCanAnimationPlayer" type="AnimationPlayer" parent="VendingMachine" unique_id=1724138659]
 libraries/ = SubResource("AnimationLibrary_a6vwg")
+
+[node name="CanObject" parent="VendingMachine" unique_id=1127642891 instance=ExtResource("5_v5k5w")]
+transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0.28952098, 1.0223085, -0.030798912)
 
 [node name="VendingMachineDisplay" parent="." unique_id=178363814 instance=ExtResource("5_51x25")]
 transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0.6058295, 1.6102169, -0.5313006)
