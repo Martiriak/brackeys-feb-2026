@@ -5,5 +5,6 @@
 [resource]
 resource_name = "coin"
 cull_mode = 2
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_color = Color(0.99999994, 0.91645885, 0.5288912, 1)
 albedo_texture = ExtResource("1_pc5do")
+metallic_specular = 1.0

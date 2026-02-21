@@ -27,7 +27,7 @@ func _ready() -> void:
 			code_digits.append(int(digit))
 	
 	# Assign the symbols.
-	var children := $CenterContainer/Slots.get_children()
+	var children := $Slots.get_children()
 	for node_index: int in range(children.size()):
 		var slot := children[node_index] as TextureRect
 		if is_instance_valid(slot):

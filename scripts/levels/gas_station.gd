@@ -7,6 +7,6 @@ var tv : TV
 func _ready() -> void:
 	player = GameManager.player_ref
 	player.transform = $PlayerSocket.transform	
-	
+	player.activate_light()
 	tv = GameManager.tv_ref
 	tv.transform = $TVSocket.transform

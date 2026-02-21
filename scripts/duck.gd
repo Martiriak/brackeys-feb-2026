@@ -30,7 +30,7 @@ func _on_timer_timeout():
 	var new_x = randf_range(right_top_edge.x, right_bottom_edge.x)
 	var new_z = randf_range(right_top_edge.y, right_bottom_edge.y)
 	
-	goto = Vector3(new_x, 0.0, new_z )
+	goto = Vector3(new_x, position.y, new_z )
 	
 	
 
