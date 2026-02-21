@@ -11,6 +11,12 @@ var _locked_player: Player = null
 
 var bFirstTime : bool = true
 
+func enable_camera():
+	can_camera.current = true
+	
+func disable_camera():
+	can_camera.current = false
+
 func get_string_to_print():
 	return '"E" to look at:' + self.name
 
@@ -18,9 +24,11 @@ func show_code():
 	sprite_3d.show()
 	tv_screen.hide_active_slot_indicator()
 
+func hide_code():
+	sprite_3d.hide()
+	
 func _ready() -> void:
 	tv_screen.set_code(levelCode)
-	show_code()
 
 func on_interaction(p: Player) -> void:
 	_locked_player = p
@@ -30,7 +38,7 @@ func on_interaction(p: Player) -> void:
 		var camera := children_cameras[0] as Camera3D
 		if is_instance_valid(camera):
 			camera.current = false
-	can_camera.current = true
+	enable_camera()
 	
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -45,7 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					if is_instance_valid(camera):
 						camera.current = false
 			_locked_player = null
-			can_camera.current = false
+			disable_camera()
 			bFirstTime = true
 		else:
 			bFirstTime = false

@@ -62,6 +62,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [Quaternion(0, 0, 0, 1), Quaternion(0, 0, -0.043270666, 0.99906343), Quaternion(-0.16130206, 0.00021523242, -0.026582433, 0.986547), Quaternion(0.048848, 0.006138611, -0.021503732, 0.9985559), Quaternion(-0.38311705, -0.002367845, -0.017792176, 0.9235254), Quaternion(-0.31833717, 0.0004247727, -0.009191022, 0.9479329), Quaternion(-0.4164658, 0.00055571645, 0.0023113338, 0.9091483), Quaternion(-0.47315967, 0.0006313848, 0.009208529, 0.88092834), Quaternion(-0.5279334, 0.0007045121, 0.016068442, 0.84913343), Quaternion(-0.61435616, 0.0008198426, 0.027342996, 0.7885545), Quaternion(-0.64703935, 0.00086342916, 0.031773556, 0.7617938), Quaternion(-0.72351676, 0.0009655041, 0.04258206, 0.68899155), Quaternion(-0.7009124, 0.17944168, -0.12872219, 0.67819846), Quaternion(-0.7159447, 0.10440621, -0.056369558, 0.68800074)]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanObject")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_code"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_v5k5w"]
 length = 0.001

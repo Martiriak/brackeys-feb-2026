@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
 [ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://scripts/lights/shop_flickering_light.gd" id="4_enybr"]
 [ext_resource type="PackedScene" uid="uid://mbkdysknckn8" path="res://scenes/objects/coin.tscn" id="5_cwakm"]
+[ext_resource type="AudioStream" uid="uid://cnug4kyojo2le" path="res://SFX/sfx_light_flicker_0.wav" id="6_1f6yb"]
+[ext_resource type="AudioStream" uid="uid://b8csed5f3utjc" path="res://SFX/sfx_light_flicker_1.wav" id="6_dvvq3"]
+[ext_resource type="AudioStream" uid="uid://fljtim57pkro" path="res://SFX/sfx_light_constant.wav" id="7_v5ktp"]
 [ext_resource type="PackedScene" uid="uid://xqx73jfsrn1e" path="res://assets/Gas_Station_Level/Box/CardBoard_Box.fbx" id="6_1f6yb"]
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
@@ -25,11 +28,17 @@ tonemap_mode = 3
 fog_enabled = true
 fog_light_energy = 0.75
 fog_density = 0.025
+volumetric_fog_enabled = true
 volumetric_fog_emission = Color(0.60933006, 0.6093301, 0.60933006, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.85
 adjustment_contrast = 1.025
 adjustment_saturation = 1.11
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5ktp"]
+streams_count = 2
+stream_0/stream = ExtResource("6_1f6yb")
+stream_1/stream = ExtResource("6_dvvq3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_enybr"]
 resource_local_to_scene = true
@@ -177,6 +186,14 @@ shadow_enabled = true
 spot_range = 13.799706
 spot_angle = 89.99
 script = ExtResource("4_enybr")
+
+[node name="light_flicker_player" type="AudioStreamPlayer3D" parent="Shop_Light" unique_id=428903197]
+stream = SubResource("AudioStreamRandomizer_v5ktp")
+max_distance = 15.0
+
+[node name="light_constant_player" type="AudioStreamPlayer3D" parent="Shop_Light" unique_id=1943009178]
+stream = ExtResource("7_v5ktp")
+max_distance = 10.0
 
 [node name="BoundaryCollisions" type="Node3D" parent="." unique_id=1418717024]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
