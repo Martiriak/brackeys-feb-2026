@@ -270,6 +270,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# Web builds wont capture mouse automatically
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x) * 0.1)
 		var new_rotation_x = head.rotation.x + deg_to_rad(-event.relative.y) * 0.1
@@ -316,6 +322,11 @@ func PickObj():
 		pickObj.collision_layer = 0
 		pickObj.collision_mask = 0
 		pickObj.freeze = true
+		
+		var duck := pickObj as Duck
+		if is_instance_valid(duck):
+			duck.is_pick_up = true
+		
 		
 		# Scale held item (NOT USED)
 		#original_object_scale = pickObj.scale
@@ -379,6 +390,10 @@ func RemoveObj():
 		if mesh_instance:
 			mesh_instance.set_surface_override_material(0, null)
 			mesh_instance.set_transparency(0)
+		
+		var duck := pickObj as Duck
+		if is_instance_valid(duck):
+			duck.is_pick_up = false
 		
 		pickObj = null
 
