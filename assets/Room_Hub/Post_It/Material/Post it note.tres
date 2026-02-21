@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cyf4yuvkmftck"]
+
+[ext_resource type="Texture2D" uid="uid://de72eashwbmdd" path="res://assets/Room_Hub/Post_It/Texture/postitnotesbatch_T_Postitnote_BaseColor_pixel.png" id="1_v4jnc"]
+
+[resource]
+resource_name = "Post it note"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_v4jnc")
+emission_enabled = true
+normal_enabled = true
+normal_scale = 0.0
