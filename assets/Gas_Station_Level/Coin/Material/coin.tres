@@ -8,3 +8,6 @@ cull_mode = 2
 albedo_color = Color(0.99999994, 0.91645885, 0.5288912, 1)
 albedo_texture = ExtResource("1_pc5do")
 metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.22961049, 0.20751339, 0, 1)
+emission_energy_multiplier = 0.76
