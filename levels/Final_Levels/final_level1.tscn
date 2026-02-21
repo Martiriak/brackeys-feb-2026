@@ -1,21 +1,33 @@
 [gd_scene format=3 uid="uid://cnsws4h4ccdgd"]
 
 [ext_resource type="PackedScene" uid="uid://c4u8tle0rgstt" path="res://assets/Gas_Station_Level/GasStation.tscn" id="1_utcio"]
+[ext_resource type="PackedScene" uid="uid://bvlol1n83lo7d" path="res://assets/Gas_Station_Level/Floor.glb" id="2_8sgh0"]
 [ext_resource type="PackedScene" uid="uid://byx5jik4b5u6a" path="res://scenes/objects/vending_machine.tscn" id="2_aqq0a"]
+[ext_resource type="Script" uid="uid://di7fefqsklgm" path="res://assets/Gas_Station_Level/Script/shop_light.gd" id="4_enybr"]
 
 [sub_resource type="GDScript" id="GDScript_aqq0a"]
 script/source = "extends Node3D
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]
+sky_top_color = Color(0.21800351, 0.26721764, 0.33278427, 1)
+sky_horizon_color = Color(0.30825487, 0.31470218, 0.32760945, 1)
 
 [sub_resource type="Sky" id="Sky_8oiou"]
 sky_material = SubResource("ProceduralSkyMaterial_is6vp")
 
 [sub_resource type="Environment" id="Environment_utcio"]
 background_mode = 2
+background_energy_multiplier = 0.2
 sky = SubResource("Sky_8oiou")
+tonemap_mode = 3
 fog_enabled = true
+fog_density = 0.025
+volumetric_fog_enabled = true
+volumetric_fog_emission = Color(0.60933006, 0.6093301, 0.60933006, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.05
 
 [node name="FinalLevel1" type="Node3D" unique_id=1071886748]
 script = SubResource("GDScript_aqq0a")
@@ -24,11 +36,110 @@ script = SubResource("GDScript_aqq0a")
 environment = SubResource("Environment_utcio")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1361810628]
-transform = Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 0, 4.2686343, 0)
-light_energy = 0.5
+transform = Transform3D(0.8094565, 0.39658567, -0.4330127, -0.15038374, 0.85286856, 0.5, 0.5675958, -0.3396102, 0.75, 0, 7.4956665, 0)
+light_energy = 0.05
 shadow_enabled = true
 
 [node name="GasStation" parent="." unique_id=1830225918 instance=ExtResource("1_utcio")]
 
+[node name="Floor" parent="GasStation" unique_id=225847350 instance=ExtResource("2_8sgh0")]
+
+[node name="Floor2" parent="GasStation" unique_id=2123426383 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
+
+[node name="Floor3" parent="GasStation" unique_id=48840060 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35)
+
+[node name="Floor4" parent="GasStation" unique_id=1694597924 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
+
+[node name="Floor5" parent="GasStation" unique_id=1139192971 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 35)
+
+[node name="Floor6" parent="GasStation" unique_id=1573702293 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -35)
+
+[node name="Floor7" parent="GasStation" unique_id=1395353169 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0)
+
+[node name="Floor8" parent="GasStation" unique_id=1641827078 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 35)
+
+[node name="Floor9" parent="GasStation" unique_id=1210560523 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -35)
+
+[node name="Floor10" parent="GasStation" unique_id=1145662495 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0)
+
+[node name="Floor26" parent="GasStation" unique_id=1600585025 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(89.474106, 0, 0, 0, 1.0000005, 0, 0, 0, 66.51959, 0, -0.15006399, 0)
+
+[node name="Floor11" parent="GasStation" unique_id=252280592 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 35)
+
+[node name="Floor12" parent="GasStation" unique_id=251830768 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -35)
+
+[node name="Floor13" parent="GasStation" unique_id=952174274 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
+
+[node name="Floor14" parent="GasStation" unique_id=640630774 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 35)
+
+[node name="Floor16" parent="GasStation" unique_id=1678574931 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69)
+
+[node name="Floor17" parent="GasStation" unique_id=1037341409 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 69)
+
+[node name="Floor18" parent="GasStation" unique_id=1303954217 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 69)
+
+[node name="Floor19" parent="GasStation" unique_id=1986038511 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 69)
+
+[node name="Floor20" parent="GasStation" unique_id=869407736 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 69)
+
+[node name="Floor21" parent="GasStation" unique_id=1097164122 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70)
+
+[node name="Floor22" parent="GasStation" unique_id=979796964 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -70)
+
+[node name="Floor23" parent="GasStation" unique_id=1086017638 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -70)
+
+[node name="Floor24" parent="GasStation" unique_id=638568102 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -70)
+
+[node name="Floor25" parent="GasStation" unique_id=736970629 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -70)
+
+[node name="Floor15" parent="GasStation" unique_id=1509723749 instance=ExtResource("2_8sgh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -35)
+
 [node name="VendingMachine" parent="." unique_id=1401058196 instance=ExtResource("2_aqq0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3535566, 0, 3.5184212)
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="VendingMachine" unique_id=1384081823]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.43887138, 1.9521232, 0.07758522)
+spot_range = 1.161
+spot_angle = 81.539856
+spot_angle_attenuation = 1.6245031
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=2012637059]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.819455, 4.410764, 0.24098587)
+light_energy = 0.647
+shadow_enabled = true
+spot_range = 7.4320974
+spot_angle = 46.727894
+
+[node name="Shop_Light" type="SpotLight3D" parent="." unique_id=205437086]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -7.7428966, 3.232037, 0)
+light_color = Color(0.5649617, 0.5649616, 0.5649616, 1)
+light_energy = 0.723
+shadow_enabled = true
+spot_range = 12.449687
+spot_angle = 85.063835
+script = ExtResource("4_enybr")
