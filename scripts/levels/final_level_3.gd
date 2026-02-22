@@ -1,8 +1,13 @@
-extends Node3D
+extends BaseLevel
 
 @onready var _plane_container := $PlaneContainer as Node3D
 @onready var _fall_area = $FallArea as Area3D
 @onready var _endArea = $StartAndEnd/EndArea as Area3D
+
+const WORLD_ENV_LEVEL_3 = preload("uid://b0keyl85g5pfm")
+
+func configure_world_environment(world_environment : WorldEnvironment):
+	world_environment.environment = WORLD_ENV_LEVEL_3
 
 func reset_player_pos():
 	GameManager.tv_ref.global_position = $StartAndEnd/Plane/TVSocket.global_position

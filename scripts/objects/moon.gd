@@ -15,6 +15,7 @@ extends InteractableObject
 @onready var tv_screen: TvScreen = $Sprite3D/SubViewport/TvScreen
 
 var bLocked : bool = true
+var arrived : bool = false
 
 	
 func _ready() -> void:
@@ -28,12 +29,16 @@ func hide_code():
 	sprite_3d.hide()
 
 func _process(delta: float) -> void:
+	if(arrived):
+		pass
 	if GameManager.player_ref.inventoryItemsDict.has(requested_id):
 		var counter = GameManager.player_ref.inventoryItemsDict.get(requested_id)
 		if counter >= requested_items_to_unlock:
-			position = moon_position_2.position
-		elif counter >= requested_items_to_half:
-			position = moon_position_1.position
+			var tween = create_tween()
+			tween.tween_property(self, "position", moon_position_2.position, 3)\
+				.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+			arrived = true
+			
 
 
 func on_interaction(p: Player):
