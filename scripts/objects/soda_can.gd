@@ -51,7 +51,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if not children_cameras.is_empty():
 					var camera := children_cameras[0] as Camera3D
 					if is_instance_valid(camera):
-						camera.current = false
+						camera.current = true
 			_locked_player = null
 			disable_camera()
 			bFirstTime = true
