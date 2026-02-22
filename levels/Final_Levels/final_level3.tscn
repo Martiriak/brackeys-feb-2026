@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://yse6g4b4p1a0"]
 
-[ext_resource type="Script" uid="uid://bbw4g0v8r8blh" path="res://scripts/levels/final_level_3.gd" id="1_0uncg"]
+[ext_resource type="Script" path="res://scripts/levels/final_level_3.gd" id="1_0uncg"]
 [ext_resource type="Material" uid="uid://sioh1ofp7imu" path="res://assets/Gas_Station_Level/Vending_Machine/Materials/Generic Glass.tres" id="2_tcoq1"]
 [ext_resource type="Material" uid="uid://oa8cc5igtqx1" path="res://assets/Material/Floor.tres" id="3_faa1s"]
-[ext_resource type="Script" uid="uid://bweel44o121ob" path="res://scripts/objects/platform_reset_area.gd" id="4_0kmol"]
+[ext_resource type="Script" path="res://scripts/objects/platform_reset_area.gd" id="4_0kmol"]
 [ext_resource type="Texture2D" uid="uid://ct34xlwuadwb3" path="res://assets/symbols/symbol_3.png" id="4_cfdut"]
 [ext_resource type="Texture2D" uid="uid://tx7mvwb8jpj4" path="res://assets/symbols/symbol_1.png" id="4_hhonv"]
 [ext_resource type="Texture2D" uid="uid://cxsnydsr1gtgx" path="res://assets/symbols/symbol_2.png" id="5_2p3ii"]

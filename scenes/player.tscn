@@ -81,6 +81,7 @@ visible = false
 shadow_enabled = true
 
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="." unique_id=203287718]
+
 [node name="sfx_footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1751892812]
 stream = SubResource("AudioStreamRandomizer_g2els")
 

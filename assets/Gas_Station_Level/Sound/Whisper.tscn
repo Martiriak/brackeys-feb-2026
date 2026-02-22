@@ -3,25 +3,21 @@
 [ext_resource type="Script" uid="uid://dkt81t5s38hiw" path="res://scripts/spawner/whisper.gd" id="1_bu14k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bu14k"]
-size = Vector3(0.90670776, 3.6453552, 0.8583374)
-
-[sub_resource type="BoxMesh" id="BoxMesh_qqdu6"]
+size = Vector3(3.0253296, 1.7740479, 2.8780518)
 
 [node name="Whisper" type="Node3D" unique_id=629229930]
 script = ExtResource("1_bu14k")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=185254099]
+[node name="Area3D" type="Area3D" parent="." unique_id=2091607733]
+unique_name_in_owner = true
 collision_layer = 3
-collision_mask = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1096207286]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038784385, 1.8746332, 0.019012451)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1448231281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09561157, 0.38702393, -0.11224365)
 shape = SubResource("BoxShape3D_bu14k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=190202932]
-mesh = SubResource("BoxMesh_qqdu6")
 
 [node name="whisper_player" type="AudioStreamPlayer3D" parent="." unique_id=1168499294]
-max_distance = 10.0
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+max_distance = 20.0

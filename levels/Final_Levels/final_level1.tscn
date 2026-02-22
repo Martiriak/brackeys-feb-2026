@@ -21,6 +21,7 @@ const WORLD_ENV_LEVEL_1 = preload(\"uid://6pvn5mhttvok\")
 
 func on_level_load():
 	_gas_station.on_level_load()
+
 	
 func on_level_unload():
 	_vending_machine.on_level_unload()
@@ -250,15 +251,13 @@ transform = Transform3D(-0.96210855, 0, 0.27266642, 0, 1, 0, -0.27266642, 0, -0.
 
 [node name="WhisperSpawnerManager" parent="." unique_id=106007613 instance=ExtResource("9_th83f")]
 cycle_after_end = true
+coin_to_spawn = null
 
 [node name="FixSpawn_0" parent="WhisperSpawnerManager" unique_id=174693622 instance=ExtResource("10_j2ias")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.898675, 0, 0)
 
 [node name="FixSpawn_1" parent="WhisperSpawnerManager" unique_id=1004472735 instance=ExtResource("10_j2ias")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.934259, 0.28508472, -1.5787915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.894802, 0.28508472, -0.20371282)
 
 [node name="FixSpawn_2" parent="WhisperSpawnerManager" unique_id=275725315 instance=ExtResource("10_j2ias")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.098072, 0, 0.18801355)
-
-[node name="FixSpawn_3" parent="WhisperSpawnerManager" unique_id=1886898911 instance=ExtResource("10_j2ias")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14183, 0, 12.200417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.264092, 0, 0.18801355)
