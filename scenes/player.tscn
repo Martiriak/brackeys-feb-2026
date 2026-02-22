@@ -76,6 +76,8 @@ mesh = SubResource("QuadMesh_dqkch")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7639663, 0)
 visible = false
 shadow_enabled = true
+
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="." unique_id=203287718]
-[node name="sfx_footsteps" type="AudioStreamPlayer3D" parent="." unique_id=203287718]
+
+[node name="sfx_footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1751892812]
 stream = SubResource("AudioStreamRandomizer_g2els")
