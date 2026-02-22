@@ -16,35 +16,18 @@ script/source = "extends Node3D
 @onready var _vending_machine := $VendingMachine as LockedObject
 @onready var _gas_station := $GasStation as GasStation
 
+const WORLD_ENV_LEVEL_1 = preload(\"uid://6pvn5mhttvok\")
+
+
 func on_level_load():
 	_gas_station.on_level_load()
 	
-	
 func on_level_unload():
 	_vending_machine.on_level_unload()
+
+func configure_world_environment(world_environment : WorldEnvironment):
+	world_environment.environment = WORLD_ENV_LEVEL_1
 "
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is6vp"]
-sky_top_color = Color(0.21800351, 0.26721764, 0.33278427, 1)
-sky_horizon_color = Color(0.30825487, 0.31470218, 0.32760945, 1)
-
-[sub_resource type="Sky" id="Sky_8oiou"]
-sky_material = SubResource("ProceduralSkyMaterial_is6vp")
-
-[sub_resource type="Environment" id="Environment_utcio"]
-background_mode = 2
-background_energy_multiplier = 0.2
-sky = SubResource("Sky_8oiou")
-tonemap_mode = 3
-fog_enabled = true
-fog_light_energy = 0.75
-fog_density = 0.025
-volumetric_fog_enabled = true
-volumetric_fog_emission = Color(0.60933006, 0.6093301, 0.60933006, 1)
-adjustment_enabled = true
-adjustment_brightness = 0.85
-adjustment_contrast = 1.025
-adjustment_saturation = 1.11
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v5ktp"]
 streams_count = 2
@@ -72,9 +55,6 @@ size = Vector3(29.002525, 0.086582005, 28.995535)
 
 [node name="FinalLevel1" type="Node3D" unique_id=1071886748]
 script = SubResource("GDScript_aqq0a")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1344723811]
-environment = SubResource("Environment_utcio")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1361810628]
 transform = Transform3D(0.5540215, -0.05678001, 0.83056384, -0.11920989, 0.98197913, 0.1466493, -0.82392305, -0.18025829, 0.53726876, 0, 1.2831492, 0)

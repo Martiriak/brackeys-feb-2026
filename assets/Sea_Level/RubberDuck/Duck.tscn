@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyijphl4xwu8k" path="res://scripts/duck.gd" id="1_osv48"]
 [ext_resource type="Material" uid="uid://fnavey1slfu2" path="res://assets/Sea_Level/RubberDuck/Materials/Duck_Yellow.tres" id="2_1j38r"]
+[ext_resource type="AudioStream" uid="uid://uxfytxdkkry2" path="res://SFX/DuckQuack.mp3" id="2_slla7"]
 [ext_resource type="Material" uid="uid://c0xlvqtxb1w5s" path="res://assets/Sea_Level/RubberDuck/Materials/Duck_Orange.tres" id="3_slla7"]
 [ext_resource type="Material" uid="uid://cq3k57m47rkwh" path="res://assets/Sea_Level/RubberDuck/Materials/Duck_Eyes.tres" id="4_pu5k5"]
 
@@ -87,7 +88,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8wxqh")
 
 [node name="Duck" type="RigidBody3D" unique_id=649853383]
+physics_interpolation_mode = 2
+mass = 1000.0
+gravity_scale = 0.0
 script = ExtResource("1_osv48")
+sfx_pickup_coin = ExtResource("2_slla7")
 item_id = 1
 metadata/_custom_type_script = "uid://cyijphl4xwu8k"
 

@@ -21,7 +21,7 @@ var aabb = null
 var max_horizontal_area = 0.0
 
 #Camera pivot for vertical look.
-@onready var head = $head
+@onready var head: Node3D = $head
 #Marker where held objects are positioned.
 @onready var placePos = $head/Camera3D/Placer
 #Player collision nodes.
@@ -303,9 +303,10 @@ func _input(event: InputEvent) -> void:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x) * 0.1)
-		var new_rotation_x = head.rotation.x + deg_to_rad(-event.relative.y) * 0.1
+		rotate_y(deg_to_rad(-event.screen_relative.x) * 0.1)
+		var new_rotation_x: float = head.rotation.x + deg_to_rad(-event.screen_relative.y) * 0.1
 		head.rotation.x = clamp(new_rotation_x, deg_to_rad(-90), deg_to_rad(90))
+	
 	if Input.is_action_just_pressed("interact"):
 		if pickObj == null:
 			#Disable collisions, freezes physics, reparent pickedobj to placePos
