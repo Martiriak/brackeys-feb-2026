@@ -22,8 +22,6 @@ func on_level_load():
 	_endArea.body_entered.connect(_on_player_win)
 	reset_player_pos()
 
-	
-	
 func fade_out_planes():
 	var tween = create_tween()
 	tween.set_parallel(true) # Fade all planes simultaneously

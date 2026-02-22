@@ -19,6 +19,9 @@ var paddle_r : Node3D
 @export var duck_collectors: Array[Marker3D]
 var spawned_ducks : int
 
+@onready var sfx_oar_player = $"../sfx_oar_player"
+
+
 func on_level_load() -> void:
 	player = GameManager.player_ref
 	
@@ -53,12 +56,14 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_released("left"):
 		apply_force(forward_dir * paddle_force * multiplier, left_side_offset)
-		paddle_l.rotation.x += deg_to_rad(20) 
+		paddle_l.rotation.x += deg_to_rad(20)
+		sfx_oar_player.play()
 
 	if Input.is_action_just_released("right"):
 		apply_force(forward_dir * paddle_force * multiplier, right_side_offset)
 		# Visual Kick
 		paddle_r.rotation.x += deg_to_rad(20)
+		sfx_oar_player.play()
 
 	paddle_l.rotation.x = lerp_angle(paddle_l.rotation.x, 0, delta * 2.0)
 	paddle_r.rotation.x = lerp_angle(paddle_r.rotation.x, 0, delta * 2.0)

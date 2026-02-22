@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://drlumnddjwus1" path="res://assets/Sea_Level/Boat/Boat.fbx" id="1_8qt8p"]
 [ext_resource type="PackedScene" uid="uid://0muenxmiq5kd" path="res://scenes/objects/duck_static.tscn" id="2_aosc7"]
 [ext_resource type="PackedScene" uid="uid://dxovckq71a73q" path="res://assets/Sea_Level/Boat/Boat_Oar.glb" id="3_qmjlj"]
+[ext_resource type="AudioStream" uid="uid://q4px0etxhlhp" path="res://SFX/sfx_water_oars_01.wav" id="5_t6f3v"]
+[ext_resource type="AudioStream" uid="uid://d3kgndvx0ipl3" path="res://SFX/sfx_water_oars_02.wav" id="6_i2tj8"]
+[ext_resource type="AudioStream" uid="uid://ce8imolu8brnk" path="res://SFX/sfx_water_oars_03.wav" id="7_qhdnx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ceb7"]
 friction = 0.0
@@ -11,6 +14,12 @@ bounce = 0.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ceb7"]
 size = Vector3(3.2809868, 0.76538086, 11.093002)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_aosc7"]
+streams_count = 3
+stream_0/stream = ExtResource("5_t6f3v")
+stream_1/stream = ExtResource("6_i2tj8")
+stream_2/stream = ExtResource("7_qhdnx")
 
 [node name="BoatScene" type="Node3D" unique_id=299400715]
 
@@ -46,3 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49070525, 0.9523988, 1.507)
 
 [node name="DuckCollector2" type="Marker3D" parent="RigidBody3D" unique_id=733822147]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609, 0.95116925, 1.898)
+
+[node name="sfx_oar_player" type="AudioStreamPlayer3D" parent="." unique_id=2092397076]
+stream = SubResource("AudioStreamRandomizer_aosc7")
