@@ -14,11 +14,14 @@ var clear_childs_button = _clear_childs
 
 @export var cycle_after_end : bool = false
 
-@onready var obj_to_spawn = preload("res://assets/Gas_Station_Level/Sound/Whisper.tscn")
+@export var obj_to_spawn = "res://assets/Gas_Station_Level/Sound/Whisper.tscn"
 @onready var fix_spawn = preload("res://assets/Gas_Station_Level/Sound/FixSpawn.tscn")
+@onready  var obj_to_spawn_loaded = load(obj_to_spawn)
+
 
 var fix_spawns: Array[Node3D] = []
 var current_fix_spawn = 0
+
 
 
 func _add_spawn() -> void:
@@ -63,8 +66,13 @@ func _ready() -> void:
 	_spawn_next()
 
 func _spawn_next() -> void:
+	if current_fix_spawn > fix_spawns.size() - 1 :
+		if cycle_after_end:
+			current_fix_spawn = 0
+		else:
+			return
 	_spawn_object()
 	current_fix_spawn += 1
 
 func _spawn_object() -> void:
-	fix_spawns[current_fix_spawn].spawn(obj_to_spawn)
+	fix_spawns[current_fix_spawn].spawn(obj_to_spawn_loaded)
