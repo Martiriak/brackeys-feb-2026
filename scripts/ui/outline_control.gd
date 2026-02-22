@@ -2,16 +2,16 @@
 # To prevent the outline from deviating from the object
 extends Control
 
-@onready var sub_viewport = $OutlineContainer/SubViewport
-@onready var sub_viewport_container = $OutlineContainer
+@onready var sub_viewport: SubViewport = $OutlineContainer/SubViewport
+@onready var sub_viewport_container: SubViewportContainer = $OutlineContainer
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var parent_viewport_size = get_viewport().size
+
+func update_viewport_size() -> void:
+	var parent_viewport_size: Vector2 = get_viewport().get_visible_rect().size
 	sub_viewport_container.size = parent_viewport_size
 	sub_viewport.size = parent_viewport_size
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func _ready() -> void:
+	update_viewport_size()
+	GameManager.on_window_resized.connect(update_viewport_size)
