@@ -39,8 +39,11 @@ stream_1/stream = ExtResource("4_fjrip")
 stream_2/stream = ExtResource("5_smehm")
 stream_3/stream = ExtResource("6_ur7pv")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tuyoq"]
+
 [node name="player" type="CharacterBody3D" unique_id=375316983]
-collision_layer = 0
+collision_layer = 3
+collision_mask = 3
 floor_max_angle = 1.0471976
 script = ExtResource("1_4flbx")
 JUMP_VELOCITY = 4.3
@@ -78,6 +81,9 @@ visible = false
 shadow_enabled = true
 
 [node name="sfx_player" type="AudioStreamPlayer3D" parent="." unique_id=203287718]
-
 [node name="sfx_footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1751892812]
 stream = SubResource("AudioStreamRandomizer_g2els")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=427643461]
+physics_interpolation_mode = 2
+shape = SubResource("CapsuleShape3D_tuyoq")

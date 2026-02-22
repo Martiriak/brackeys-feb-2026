@@ -20,4 +20,3 @@ func on_interaction(p: Player):
 	temp_audio.bus = "Master"
 	temp_audio.play()
 	temp_audio.finished.connect(temp_audio.queue_free)
-	queue_free()
