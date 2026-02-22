@@ -1,7 +1,6 @@
 class_name Duck
 extends InventoryItem
 
-
 var goto = Vector3(randf()*50 - 25, 3.0, randf()*50 - 25)
 
 var right_top_edge = Vector2(40, 40)
@@ -9,9 +8,6 @@ var right_bottom_edge = Vector2(-40, -40)
 var is_pick_up = false
 var speed = 4.0
 var update_direction_seconds = 5.0
-
-var _launch = false;
-var _launch_speed = 4.0
 
 @onready var ray : RayCast3D = $RayCast3D
 

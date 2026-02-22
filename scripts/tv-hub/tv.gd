@@ -8,6 +8,7 @@ extends InteractableObject
 @export var sound_tv_ambience: AudioStream  = preload("res://SFX/TV_Ambience.wav")
 @export var sound_tv_interact: AudioStream  = preload("res://SFX/TV_Interact.wav")
 
+
 @onready var sub_viewport: SubViewport = $Sprite3D/SubViewport
 @onready var tv_screen: TvScreen = $Sprite3D/SubViewport/TvScreen
 @onready var tv_camera: Camera3D = $TvCamera
@@ -25,8 +26,14 @@ var _locked_player: Player = null
 var first_time: bool = true
 
 
+func _on_game_resume() -> void:
+	if GameManager.player_ref and GameManager.player_ref._locked:
+		tv_screen.grab_focus()
+
+
 func _ready() -> void:
 	GameManager.tv_ref = self
+	GameManager.on_game_resume.connect(_on_game_resume)
 	ambience_player.stream = sound_tv_ambience
 	ambience_player.play()
 	# Creates a slow, eerie pitch wobble

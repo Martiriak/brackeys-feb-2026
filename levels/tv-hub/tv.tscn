@@ -7,6 +7,8 @@
 [ext_resource type="Material" uid="uid://dky1lqb2mpb0f" path="res://assets/Room_Hub/CRT_Television/Materials/Tube.tres" id="4_103ec"]
 [ext_resource type="Material" uid="uid://cshybebhih3p" path="res://assets/Room_Hub/CRT_Television/Materials/Chip.tres" id="5_2x5y6"]
 [ext_resource type="Material" uid="uid://borgka02k53kq" path="res://assets/Room_Hub/CRT_Television/Materials/Display.tres" id="6_qoyvj"]
+[ext_resource type="Shader" uid="uid://c3r6rnunox2a3" path="res://shaders/tv.gdshader" id="7_qoyvj"]
+[ext_resource type="Script" uid="uid://37cf0n0l8rd8" path="res://levels/tv-hub/tv_screen_sprite.gd" id="8_a8qxm"]
 [ext_resource type="Shader" uid="uid://cxvxtyrisomb5" path="res://assets/shaders/tv_static.gdshader" id="8_kcctm"]
 [ext_resource type="PackedScene" uid="uid://ddkhuql1uhscb" path="res://assets/Room_Hub/Post_It/Post_It.fbx" id="9_103ec"]
 [ext_resource type="PackedScene" uid="uid://b43vpswns7vc3" path="res://levels/tv-hub/postit_code.tscn" id="10_2x5y6"]
@@ -165,6 +167,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o4wcl")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_a8qxm"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8qxm"]
+render_priority = 0
+shader = ExtResource("7_qoyvj")
+shader_parameter/sprite_texture = SubResource("ViewportTexture_a8qxm")
+shader_parameter/r_displacement = Vector2(8, 0)
+shader_parameter/g_displacement = Vector2(0, 2)
+shader_parameter/b_displacement = Vector2(-8, 0)
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_a2bd8"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
@@ -197,7 +210,9 @@ skeleton = NodePath("")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2075459143]
 transform = Transform3D(0.125, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 0.07455951, 0.29698658)
+material_override = SubResource("ShaderMaterial_a8qxm")
 texture = SubResource("ViewportTexture_a2bd8")
+script = ExtResource("8_a8qxm")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=621390382]
 transparent_bg = true

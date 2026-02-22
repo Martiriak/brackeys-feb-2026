@@ -2,4 +2,7 @@ extends Node
 
 
 func on_enter(body: Node3D) -> void:
-	pass
+	if body is Player:
+		print("stampi qualcosa")
+		pass
+		#do something

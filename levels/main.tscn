@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddlafp7346rpu" path="res://scenes/player.tscn" id="2_ifaiv"]
 [ext_resource type="PackedScene" uid="uid://dx0qjbubxt7y8" path="res://scenes/UI.tscn" id="3_5k4jt"]
 [ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="4_m1504"]
+[ext_resource type="Environment" uid="uid://6pvn5mhttvok" path="res://WorldEnv/world_env_level_1.tres" id="6_5k4jt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m1504"]
 
@@ -30,3 +31,13 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.04782796, 0.47086346,
 
 [node name="WorlsBoundaryShape" type="CollisionShape3D" parent="WorlsBoundaryShapeSB" unique_id=1231274918]
 shape = SubResource("WorldBoundaryShape3D_m1504")
+
+[node name="PlayerSocket" type="Node3D" parent="." unique_id=326946286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087926626, 0.5559664, 2.008092)
+
+[node name="TVSocket" type="Node3D" parent="." unique_id=1247484571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04782796, 0.47086346, -2.1992583)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1036145401]
+environment = ExtResource("6_5k4jt")
+

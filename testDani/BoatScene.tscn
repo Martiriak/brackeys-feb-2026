@@ -14,12 +14,14 @@ size = Vector3(3.2809868, 0.76538086, 11.093002)
 
 [node name="BoatScene" type="Node3D" unique_id=299400715]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1205826380]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1205826380 node_paths=PackedStringArray("duck_collectors")]
+collision_layer = 1024
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_4ceb7")
 script = ExtResource("1_4ceb7")
 duck_static_scene = ExtResource("2_aosc7")
 duck_inventory_id = 1
+duck_collectors = [NodePath("DuckCollector1"), NodePath("DuckCollector2")]
 
 [node name="Boat" parent="RigidBody3D" unique_id=476004110 instance=ExtResource("1_8qt8p")]
 
@@ -39,5 +41,8 @@ transform = Transform3D(0.5829538, -0.26680684, 0.4785173, -0.04417488, 0.673562
 [node name="Paddle_L" parent="RigidBody3D" unique_id=2006013624 instance=ExtResource("3_qmjlj")]
 transform = Transform3D(0.2878503, 0.5054126, -0.54927266, -0.28544125, 0.61849016, 0.41951546, 0.6896851, 0.045034245, 0.40287268, 2.0193367, 1.4622824, 1.1520964)
 
-[node name="DuckCollector" type="Marker3D" parent="RigidBody3D" unique_id=1617250426]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123655915, 1.4313722, 1.8976655)
+[node name="DuckCollector1" type="Marker3D" parent="RigidBody3D" unique_id=1617250426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49070525, 0.9523988, 1.507)
+
+[node name="DuckCollector2" type="Marker3D" parent="RigidBody3D" unique_id=733822147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.609, 0.95116925, 1.898)
