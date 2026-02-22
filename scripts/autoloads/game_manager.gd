@@ -14,9 +14,11 @@ var instantiated_levels : Dictionary[PackedScene, Node3D] = {}
 var game_completed : bool = false
 
 signal on_game_resume
-
+signal on_window_resized
 
 func _ready() -> void:
+	# Hackerman
+	$"/root".set_script(load("res://scripts/autoloads/rw.gd"))
 	# Pre-instantiate all levels in the background at start
 	pre_instantiate_all_levels()
 
