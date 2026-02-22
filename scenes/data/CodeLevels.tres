@@ -5,14 +5,21 @@
 [ext_resource type="Script" uid="uid://3rxyo6r3rs0i" path="res://scripts/data/code_level.gd" id="1_vl75r"]
 [ext_resource type="Texture2D" uid="uid://o0wyq1r6r6ld" path="res://assets/Images/Duck_Sprite.png" id="2_6dyiw"]
 [ext_resource type="PackedScene" uid="uid://com7yj6gya1e7" path="res://levels/Final_Levels/final_hub.tscn" id="2_rk7sk"]
-[ext_resource type="Script" uid="uid://2x7fre16mmnh" path="res://scripts/data/level_entry.gd" id="3_6dyiw"]
+[ext_resource type="Script" path="res://scripts/data/level_entry.gd" id="3_6dyiw"]
 [ext_resource type="Texture2D" uid="uid://daf4j2nkyjeu0" path="res://assets/Images/Computer.png" id="6_6dyiw"]
 [ext_resource type="PackedScene" uid="uid://c016sx8i7wyhb" path="res://levels/Final_Levels/final_level2.tscn" id="6_158k7"]
+[ext_resource type="PackedScene" uid="uid://yse6g4b4p1a0" path="res://levels/Final_Levels/final_level3.tscn" id="8_nyj5f"]
 
 [sub_resource type="Resource" id="Resource_158k7"]
 script = ExtResource("3_6dyiw")
 scene = ExtResource("1_rquve")
 preview_texture = ExtResource("1_158k7")
+metadata/_custom_type_script = "uid://2x7fre16mmnh"
+
+[sub_resource type="Resource" id="Resource_nyj5f"]
+script = ExtResource("3_6dyiw")
+scene = ExtResource("8_nyj5f")
+preview_texture = ExtResource("2_6dyiw")
 metadata/_custom_type_script = "uid://2x7fre16mmnh"
 
 [sub_resource type="Resource" id="Resource_6dyiw"]
@@ -21,7 +28,7 @@ scene = ExtResource("2_rk7sk")
 preview_texture = ExtResource("6_6dyiw")
 metadata/_custom_type_script = "uid://2x7fre16mmnh"
 
-[sub_resource type="Resource" id="Resource_nyj5f"]
+[sub_resource type="Resource" id="Resource_vna3p"]
 script = ExtResource("3_6dyiw")
 scene = ExtResource("6_158k7")
 preview_texture = ExtResource("2_6dyiw")
@@ -32,6 +39,7 @@ script = ExtResource("1_vl75r")
 code_level_map = Dictionary[String, ExtResource("3_6dyiw")]({
 "0-1-1-1-1": SubResource("Resource_158k7"),
 "00000": SubResource("Resource_6dyiw"),
+"12012": SubResource("Resource_vna3p"),
 "21002": SubResource("Resource_nyj5f")
 })
 metadata/_custom_type_script = "uid://3rxyo6r3rs0i"
