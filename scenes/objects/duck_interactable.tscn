@@ -8,7 +8,6 @@
 radius = 0.59309036
 
 [node name="StaticBody3D" type="StaticBody3D" unique_id=1810680453]
-collision_layer = 0
 script = ExtResource("1_7dxna")
 
 [node name="Duck" parent="." unique_id=943551404 instance=ExtResource("1_sscf2")]

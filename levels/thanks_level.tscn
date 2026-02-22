@@ -9,7 +9,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hddnf"]
 resource_local_to_scene = true
-size = Vector3(0.07, 2.756897, 4.983)
+size = Vector3(0.335, 0.5198086, 0.353)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4srok"]
 resource_local_to_scene = true
@@ -74,6 +74,13 @@ transform = Transform3D(-4.371139e-08, -2, -4.371139e-08, 0, -8.742278e-08, 1, -
 
 [node name="pedestal" parent="." unique_id=172797308 instance=ExtResource("4_ovlap")]
 transform = Transform3D(1.2, 0, 0, 0, 1.8, 0, 0, 0, 1.2, 0.09728513, 0.0636379, -0.020199195)
+
+[node name="StaticBodyPedestal" type="StaticBody3D" parent="pedestal" unique_id=1504281626]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pedestal/StaticBodyPedestal" unique_id=1599605806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2062025, 0)
+shape = SubResource("BoxShape3D_hddnf")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1083157216]
 transform = Transform3D(1, 0, 0, 0, 1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0.09728513, 2.542, -0.020199195)
