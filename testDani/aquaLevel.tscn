@@ -160,7 +160,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.092857, 3.335947, 17.0481
 script = ExtResource("5_5yn76")
 radius = 30.0
 speed = -0.5
-height = 0.1
 
 [node name="RigidBody3D" type="RigidBody3D" parent="goldfish" unique_id=285029630]
 
@@ -173,7 +172,6 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 62.548244, 22.008615, 0)
 script = ExtResource("5_5yn76")
 radius = 100.0
 speed = -0.3
-height = 20.0
 
 [node name="Duck" parent="." unique_id=649853383 instance=ExtResource("4_2n85q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3600843, 0)
