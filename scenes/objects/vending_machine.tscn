@@ -126,6 +126,7 @@ _data = {
 
 [node name="VendingMachine" type="StaticBody3D" unique_id=1401058196]
 script = ExtResource("1_rg8gw")
+requested_items_to_unlock = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=3257229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14448547, 1.0742519, -0.018432617)
@@ -134,7 +135,7 @@ shape = SubResource("BoxShape3D_6ucgg")
 [node name="VendingMachine" parent="." unique_id=2044447561 instance=ExtResource("2_w77ry")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
-[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=1273618000]
+[node name="Vending Machine_002" parent="VendingMachine" index="1" unique_id=756227613]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.381719, 0.49966082, 0.11802703)
 
 [node name="Duck" parent="VendingMachine" unique_id=943551404 instance=ExtResource("3_51x25")]
