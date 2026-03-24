@@ -128,6 +128,9 @@ func _ready() -> void:
 	cannot_place_material.albedo_color = Color(1, 0, 0, 0.5)
 	ObjNameUI = get_node(NodePath(str(ObjNameUISceneParent) + "/AimPoint"))
 	outlineCam = get_node(NodePath(str(OutlineCamSceneParent) + "/OutlinerControl/OutlineContainer/SubViewport/OutlineCam")) as Camera3D
+	
+	#exclude this node for raycast
+	look_at.add_exception(self)
 
 func _process(delta: float) -> void:
 	if _locked:
