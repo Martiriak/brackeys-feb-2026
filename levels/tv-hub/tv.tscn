@@ -8,8 +8,8 @@
 [ext_resource type="Material" uid="uid://cshybebhih3p" path="res://assets/Room_Hub/CRT_Television/Materials/Chip.tres" id="5_2x5y6"]
 [ext_resource type="Material" uid="uid://borgka02k53kq" path="res://assets/Room_Hub/CRT_Television/Materials/Display.tres" id="6_qoyvj"]
 [ext_resource type="Shader" uid="uid://c3r6rnunox2a3" path="res://shaders/tv.gdshader" id="7_qoyvj"]
-[ext_resource type="Script" uid="uid://37cf0n0l8rd8" path="res://levels/tv-hub/tv_screen_sprite.gd" id="8_a8qxm"]
-[ext_resource type="Shader" uid="uid://cxvxtyrisomb5" path="res://assets/shaders/tv_static.gdshader" id="8_kcctm"]
+[ext_resource type="Script" path="res://levels/tv-hub/tv_screen_sprite.gd" id="8_a8qxm"]
+[ext_resource type="Shader" path="res://assets/shaders/tv_static.gdshader" id="8_kcctm"]
 [ext_resource type="PackedScene" uid="uid://ddkhuql1uhscb" path="res://assets/Room_Hub/Post_It/Post_It.fbx" id="9_103ec"]
 [ext_resource type="PackedScene" uid="uid://b43vpswns7vc3" path="res://levels/tv-hub/postit_code.tscn" id="10_2x5y6"]
 
@@ -244,7 +244,7 @@ attenuation_filter_cutoff_hz = 1000.0
 transform = Transform3D(1, 0, 0, 0, -0.021186717, -0.9997755, 0, 0.9997755, -0.021186717, 0, 0.67000854, 0)
 
 [node name="Post_It" parent="." unique_id=1760039133 instance=ExtResource("9_103ec")]
-transform = Transform3D(-9.1793915e-08, 1.435, 0, -2.1, -6.272584e-08, 0, 0, 0, 1.787, 0.3888635, 0.26455438, 0.21498963)
+transform = Transform3D(-0.45888764, 0.14817192, -1.7340237, -2.0120952, 0.23791032, 0.41710234, 0.38845178, 1.4073623, 0.11205403, 0.289974, 0.2754466, 0.34654376)
 
 [node name="Sprite3D" type="Sprite3D" parent="Post_It" unique_id=786913756]
 transform = Transform3D(-0.006317596, -0.010202353, 6.9722705e-10, -6.1519123e-10, -4.391335e-10, -0.012, 0.010202353, -0.0063175955, -2.9184424e-10, -0.0053831637, -0.011000007, 0)
